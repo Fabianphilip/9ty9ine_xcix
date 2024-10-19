@@ -1,529 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home 5 || Raymond</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="shortcut icon" href="assets/img/favicon.webp" />
-        <!-- Google Font -->
-    <link rel="preconnect" href="assets/fonts.googleapis.com/index.html">
-    <link rel="preconnect" href="assets/fonts.gstatic.com/index.html" crossorigin>
-    <link href="assets/fonts.googleapis.com/css24895.css?family=Monda:wght@400;700&amp;family=Oswald:wght@300;400;700&amp;family=Playfair+Display:ital,wght@0,400;1,700&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!-- animate css -->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!-- jquery-ui.min css -->
-        <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-        <!-- meanmenu css -->
-        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-        <!-- owl.carousel css -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">
-        <!-- fancybox CSS -->
-        <link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
-        <!-- font-awesome css -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <!-- pe-icon-7-stroke css -->
-        <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
-        <!-- nivo slider CSS -->
-        <link rel="stylesheet" href="assets/custom-slider/css/nivo-slider.css" type="text/css" />
-        <link rel="stylesheet" href="assets/custom-slider/css/preview.css" type="text/css" media="screen" />
-        <!-- style css -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!-- responsive css -->
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        <!-- modernizr js -->
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-
-        <!-- HEADER AREA START -->
-        <header>
-            <!-- HEADER-TOP START -->
-            <div class="header-top-ber hide-show">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="top-menu">
-                                <ul>
-                                    <li><a href="index.html"><img width="80" src="assets/img/logo.png" alt="Logo"></a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-none d-md-block">
-                            <div class="header-right">
-
-                                <div class="search-box-area">
-
-                                    <div class="headerFormRelative" style="position: relative;">
-                                        <input type="search" class="headerFormInput" style="z-index: 20; width: 400px;" name="search" id="search" onkeyup="searchCheck()" placeholder="Search everything" value="">
-                                        <button aria-label="Search icon" class="absolute bn br-100 hover-bg-navy search-icon-redesigned-v2" style="cursor:pointer">
-                                            <i class="ld ld-Search absolute" style="font-size:1rem;vertical-align:-0.175em;top:50%;left:50%;transform:translate(-50%, -50%);width:1rem;height:1rem;box-sizing:content-box"></i>
-                                        </button>
-                                        <div id="resultBox" style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid #ddd; z-index: 19; margin-top: -52px; display: none;">
-                                        </div>
-                                    </div>
-
-                                    <div class="header-menu-item-icon" style="display: none;">
-                                       <a href="#" class="icon-search">
-                                            <span>Search</span>
-                                            <i class="fa animated fa-search search-icon fa-flip-horizontal"></i>
-                                        </a>
-                                    </div>
-                                     <div class="search-form">
-                                        <form action="#" method="post">
-                                            <input type="text" placeholder="Search here...">
-                                            <a title="Close" class="close-icon" href="#">X</a>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="user-menu-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon">
-                                            <i class="fa animated fa-gear"></i>
-                                        </a>
-                                        <div class="user-menu">
-                                            <h3>ACCOUNT</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="my-account.html"><i class="fa fa-fw fa-user"></i>My Account</a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html"><i class="fa fa-fw fa-heart"></i>My Wishlist</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shopping-cart.html"><i class="fa fa-fw fa-shopping-cart"></i>My Cart</a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout.html"><i class="fa fa-fw fa-usd"></i>Checkout</a>
-                                                </li>
-                                                <li>
-                                                    <a href="login.html"><i class="fa fa-fw fa-unlock-alt"></i>Login</a>
-                                                </li>
-                                            </ul>
-                                            <h3>LANGUAGE</h3>
-                                            <ul>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/en.webp" alt="">English</a></li>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/fr.webp" alt="">French</a></li>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/ge.webp" alt="">German </a></li>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/sp.webp" alt="">Spanish</a></li>
-                                            </ul>
-                                            <h3>CURRENCY</h3>
-                                            <ul>
-                                                <li><a href="#">$ - USD</a></li>
-                                                <li><a href="#">€ - Euro</a></li>
-                                                <li><a href="#">£ - GBP</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mini-cart-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="icon-cart">
-                                            <i class="fa animated fa-shopping-cart"></i>
-                                            <span class="cart-total">2 Items</span>
-                                        </a>
-                                        <div class="mini-cart">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/1.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$450.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/2.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$180.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <p class="total">
-                                                <strong>Total:</strong>
-                                                <span class="total-price">$630</span>
-                                            </p>
-                                            <p class="buttons">
-                                                <a href="shoppint-cart.html">Go To Cart</a>
-                                                <a href="checkout.html">Check Out</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- HEADER-TOP END -->
-            <div class="header-area header-two hm-5" id="sticker">
-                <div class="container">
-                    <div class="row">
-                        <!-- LOGO AREA START -->
-                        <div class="col-lg-2 col-md-6">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img width="144" height="60" src="assets/img/logowhite.jpg" alt="Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- LOGO AREA END -->
-                        <!-- MAIN MENU AREA START -->
-                        <div class="col-lg-7 d-none d-lg-block">
-                            <div class="mainmenu">
-                                <nav>
-                                    <ul>
-                                        <li class="active">
-                                            <a href="index.html">Home</a>
-                                            <ul class="dropdown">
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                                <li><a href="index-4.html">Home Four</a></li>
-                                                <li><a href="index-5.html">Home Five</a></li>
-                                                <li><a href="index-6.html">Home Six</a></li>
-                                                <li><a href="index-7.html">Home Seven</a></li>
-                                                <li><a href="index-8.html">Home Eight</a></li>
-                                                <li><a href="index-9.html">Home Nine</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Shop</a>
-                                            <ul class="dropdown">
-                                                <li><a href="shop-full-width.html">Shop Full Width</a></li>
-                                                <li><a href="shop.html">Shop Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                <li><a href="shop-2-columns.html">Shop 2 Columns</a></li>
-                                                <li><a href="shop.html">Shop 3 Column</a></li>
-                                                <li><a href="shop-5-columns.html">Shop 5 columns</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Elements</a>
-                                            <div class="mega-menu">
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop.html">Product Elements</a>
-                                                    </h3>
-                                                    <a href="shop.html">Products By Category</a>
-                                                    <a href="shop.html">
-                                                        <span class="new-pro">Product Featured Video</span>
-                                                    </a>
-                                                    <a href="shop.html">Product Image Zoom</a>
-                                                    <a href="shop.html">
-                                                        <span class="hot-pro">Product No Sidebar</span>
-                                                    </a>
-                                                    <a href="shop.html">Variable Product</a>
-                                                    <a href="shop.html">Product Layout</a>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop.html">Product Elements</a>
-                                                    </h3>
-                                                    <a href="shop.html">Products – Best Selling</a>
-                                                    <a href="shop.html">
-                                                        <span class="sale-pro">Product On Sale</span>
-                                                    </a>
-                                                    <a href="shop.html">Products – Top Rate</a>
-                                                    <a href="shop.html">
-                                                        <span class="new-pro">Products – Featured</span>
-                                                    </a>
-                                                    <a href="shop.html">Products – Recent</a>
-                                                    <a href="shop.html">Product Columns</a>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="#">Theme Elements</a>
-                                                    </h3>
-                                                    <a href="#">Accordion / Tabs</a>
-                                                    <a href="#">Google Maps</a>
-                                                    <a href="#">Columns</a>
-                                                    <a href="#">Team & Testimonials</a>
-                                                    <a href="#">
-                                                        <span class="hot-pro">Raymond Banner & Slider</span>
-                                                    </a>
-                                                    <a href="shop.html">
-                                                        <span class="new-pro">Custom search, Icon & Others</span>
-                                                    </a>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <div class="menu-img">
-                                                        <img width="240" height="193" src="assets/img/menu.webp" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#">Blogs</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                                <li><a href="blog-2-columns.html">Blog 2 Columns</a></li>
-                                                <li><a href="blog-3-columns.html">Blog 3 Columns</a></li>
-                                                <li><a href="blog-4-columns.html">Blog 4 Columns</a></li>
-                                                <li><a href="blog-details.html">Detail Blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Portfolio</a>
-                                             <ul class="dropdown">
-                                                <li><a href="portfolio-2-columns.html">Portfolio 2 columns</a></li>
-                                                <li><a href="portfolio-3-columns.html">Portfolio 3 columns</a></li>
-                                                <li><a href="portfolio-4-columns.html">Portfolio 4 columns</a></li>
-                                                <li><a href="portfolio-with-pagination-no-filter.html">Portfolio With Pagination</a></li>
-                                                <li><a href="portfolio-details.html">Detail Portfolio</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="single-product.html">Product Details</a></li>
-                                                <li><a href="shopping-cart.html">Cart</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="login.html">Login Or Register</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="404.html">404 Error</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- MAIN MENU AREA END -->
-                        <!-- HEADER RIGHT START -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="header-right">
-                                <div class="search-box-area">
-                                    <div class="header-menu-item-icon">
-                                       <a href="#" class="icon-search">
-                                            <i class="fa animated fa-search search-icon"></i>
-                                        </a>
-                                    </div>
-                                    <div class="search-form">
-                                        <form action="#" method="post">
-                                            <input type="text" placeholder="Search here...">
-                                            <a title="Close" class="close-icon" href="#">X</a>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="user-menu-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon">
-                                            <i class="fa animated fa-gear"></i>
-                                        </a>
-                                        <div class="user-menu">
-                                            <h3>ACCOUNT</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="my-account.html">
-                                                        <i class="fa fa-fw fa-user"></i>My Account
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html">
-                                                        <i class="fa fa-fw fa-heart"></i>My Wishlist
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <i class="fa fa-fw fa-shopping-cart"></i>My Cart
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <i class="fa fa-fw fa-usd"></i>Checkout
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <i class="fa fa-fw fa-unlock-alt"></i>Login
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <h3>LANGUAGE</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/en.webp" alt="">English
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/fr.webp" alt="">French
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/ge.webp" alt="">German
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/sp.webp" alt="">Spanish
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <h3>CURRENCY</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">$ - USD</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">€ - Euro</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">£ - GBP</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mini-cart-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="icon-cart">
-                                            <i class="fa animated fa-shopping-cart"></i>
-                                            <span class="cart-total">2</span>
-                                        </a>
-                                        <div class="mini-cart">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/1.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$450.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/2.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$180.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <p class="total">
-                                                <strong>Total:</strong>
-                                                <span class="total-price">$630</span>
-                                            </p>
-                                            <p class="buttons">
-                                                <a href="">Go To Cart</a>
-                                                <a href="">Check Out</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                         <!-- HEADER RIGHT END -->
-                    </div>
-                </div>
-                <!-- mobile-menu-area start -->
-                <div class="mobile-menu-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="mobile-menu">
-                                    <nav id="dropdown">
-                                        <ul>
-                                            <li><a href="index.html">Home</a>
-                                                <ul>
-                                                    <li><a href="">Home Two</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="">Shop</a>
-                                                <ul>                                        
-                                                    <li><a href="">Shop Full Width</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="">Elements</a>
-                                                <ul>
-                                                    <li><a href="">Products By Category</a></li>
-                                                    <li><a href="">Product Image Zoom</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">More</a>
-                                                <ul>
-                                                    <li><a href="">About Us</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>                  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- mobile-menu-area end -->          
-            </div>
-        </header>
-        <!-- HEADER AREA END -->
+<?php include 'header.php' ?>
 
         <!-- SLIDER AREA START -->
         <div class="">
@@ -617,7 +92,7 @@
                         <div class="single-category-product">
                             <a href="#">
                                 <div class="category-thumb">
-                                    <img width="540" height="692" src="assets/img/product/34.webp" alt="Category">
+                                    <img width="540" height="692" src="img/product/34.webp" alt="Category">
                                 </div>
                                 <div class="category-title">
                                     <h3>
@@ -631,7 +106,7 @@
                         <div class="single-category-product">
                             <a href="#">
                                 <div class="category-thumb">
-                                    <img width="540" height="692" src="assets/img/product/35.webp" alt="Category">
+                                    <img width="540" height="692" src="img/product/35.webp" alt="Category">
                                 </div>
                                 <div class="category-title">
                                     <h3>
@@ -645,7 +120,7 @@
                         <div class="single-category-product">
                             <a href="#">
                                 <div class="category-thumb">
-                                    <img width="540" height="692" src="assets/img/product/36.webp" alt="Category">
+                                    <img width="540" height="692" src="img/product/36.webp" alt="Category">
                                 </div>
                                 <div class="category-title">
                                     <h3>
@@ -659,7 +134,7 @@
                         <div class="single-category-product">
                             <a href="#">
                                 <div class="category-thumb">
-                                    <img width="540" height="692" src="assets/img/product/37.webp" alt="Category">
+                                    <img width="540" height="692" src="img/product/37.webp" alt="Category">
                                 </div>
                                 <div class="category-title">
                                     <h3>
@@ -673,7 +148,7 @@
                         <div class="single-category-product">
                             <a href="#">
                                 <div class="category-thumb">
-                                    <img width="540" height="692" src="assets/img/product/38.webp" alt="Category">
+                                    <img width="540" height="692" src="img/product/38.webp" alt="Category">
                                 </div>
                                 <div class="category-title">
                                     <h3>
@@ -3473,7 +2948,180 @@
                 </div>
             </div>
         </div>
-        
+        <!-- PRODUCT-TAB AREA END -->
+        <!-- BLOG AREA START -->
+        <div class="blog-area marg-b70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="section-title">
+                            <h2>LATEST FROM BLOGS</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="blog-carosul nav-button-style-one owl-carousel owl-theme">
+                        <!-- single-blog-start -->
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="#">
+                                    <img width="750" height="618" src="assets/img/blog/1.webp" alt="Blog">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-info">
+                                    <span class="author-name">
+                                        <i class="fa fa-user"></i>By 
+                                        <a href="#">Johny Lee</a>
+                                    </span>
+                                    <span class="blog-date">
+                                        <a href="#">
+                                            <span class="month-date"><small>20</small>Jan</span>
+                                        </a>
+                                    </span>
+                                    <span class="comments-number">
+                                        <i class="fa fa-comment"></i>0 Comment
+                                    </span>
+                                </div>
+                                <div class="title-desc">
+                                    <a href="#">
+                                        <h4>Vintage Lambskin Shoe</h4>
+                                    </a>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-blog-end -->
+                        <!-- single-blog-start -->
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="#">
+                                    <img width="750" height="618" src="assets/img/blog/2.webp" alt="Blog">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-info">
+                                    <span class="author-name">
+                                        <i class="fa fa-user"></i>By 
+                                        <a href="#">Johny Lee</a>
+                                    </span>
+                                    <span class="blog-date">
+                                        <a href="#">
+                                            <span class="month-date"><small>20</small>Jan</span>
+                                        </a>
+                                    </span>
+                                    <span class="comments-number">
+                                        <i class="fa fa-comment"></i>0 Comment
+                                    </span>
+                                </div>
+                                <div class="title-desc">
+                                    <a href="#">
+                                        <h4>Vintage Lambskin Shoe</h4>
+                                    </a>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-blog-end -->
+                        <!-- single-blog-start -->
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="#">
+                                    <img width="750" height="618" src="assets/img/blog/3.webp" alt="Blog">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-info">
+                                    <span class="author-name">
+                                        <i class="fa fa-user"></i>By 
+                                        <a href="#">Johny Lee</a>
+                                    </span>
+                                    <span class="blog-date">
+                                        <a href="#">
+                                            <span class="month-date"><small>20</small>Jan</span>
+                                        </a>
+                                    </span>
+                                    <span class="comments-number">
+                                        <i class="fa fa-comment"></i>0 Comment
+                                    </span>
+                                </div>
+                                <div class="title-desc">
+                                    <a href="#">
+                                        <h4>Vintage Lambskin Shoe</h4>
+                                    </a>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-blog-end -->
+                        <!-- single-blog-start -->
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="#">
+                                    <img width="750" height="618" src="assets/img/blog/4.webp" alt="Blog">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-info">
+                                    <span class="author-name">
+                                        <i class="fa fa-user"></i>By 
+                                        <a href="#">Johny Lee</a>
+                                    </span>
+                                    <span class="blog-date">
+                                        <a href="#">
+                                            <span class="month-date"><small>20</small>Jan</span>
+                                        </a>
+                                    </span>
+                                    <span class="comments-number">
+                                        <i class="fa fa-comment"></i>0 Comment
+                                    </span>
+                                </div>
+                                <div class="title-desc">
+                                    <a href="#">
+                                        <h4>Vintage Lambskin Shoe</h4>
+                                    </a>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-blog-end -->
+                        <!-- single-blog-start -->
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="#">
+                                    <img width="750" height="618" src="assets/img/blog/5.webp" alt="Blog">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-info">
+                                    <span class="author-name">
+                                        <i class="fa fa-user"></i>By 
+                                        <a href="#">Johny Lee</a>
+                                    </span>
+                                    <span class="blog-date">
+                                        <a href="#">
+                                            <span class="month-date"><small>20</small>Jan</span>
+                                        </a>
+                                    </span>
+                                    <span class="comments-number">
+                                        <i class="fa fa-comment"></i>0 Comment
+                                    </span>
+                                </div>
+                                <div class="title-desc">
+                                    <a href="#">
+                                        <h4>Vintage Lambskin Shoe</h4>
+                                    </a>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-blog-end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- BLOG AREA END -->
+        <!-- BRAND-LOGO-AREA START -->
         <div class="brand-logo-area">
             <div class="container">
                 <div class="row">
@@ -3493,279 +3141,4 @@
             </div>
         </div>
         <!-- BRAND-LOGO-AREA END -->
-         <div class="footer-top-area hm-4">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="footer-logo">
-                            <a href="index.html">
-                                <img width="144" height="60" src="assets/img/logo2.jpg" alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                     <div class="col-lg-3 col-md-4">
-                        <div class="footer-socials">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4">
-                        <div class="news-letter-button">
-                            <a data-bs-target="#newslatterModal" data-bs-toggle="modal" href="#">JOIN OUR NEWSLETTER</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FOOTER TOP AREA END -->
-        <!-- FOOTER MIDDLE AREA START -->
-        <div class="footer-middle hm-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="contact-info">
-                            <h3 class="footer-title">CONTACT US</h3>
-                            <div class="address-area">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fa fa-map-marker"></i>
-                                        <span>Raymond London Oxford Street 02 United Kingdom.</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-envelope"></i>
-                                            <span>demo@example.com demo@example.com</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-phone"></i>
-                                        <span>0123456789 <br>0123456789</span></a>
-                                    </li>
-                                </ul>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-menu">
-                            <h3 class="footer-title">QUICK LINK</h3>
-                            <ul>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="#">Logout</a></li>
-                            </ul>
-                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-menu">
-                            <h3 class="footer-title">POLICIES</h3>
-                            <ul>
-                                <li><a href="#">New collection</a></li>
-                                <li><a href="#">Best sellers</a></li>
-                                <li><a href="#">Manufacturers</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Suppliers</a></li>
-                                <li><a href="#">Delivery & returns</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-menu">
-                            <h3 class="footer-title">QUICK LINK</h3>
-                            <ul>
-                                <li><a href="#">New collection</a></li>
-                                <li><a href="#">Best sellers</a></li>
-                                <li><a href="#">Manufacturers</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Suppliers</a></li>
-                                <li><a href="#">Delivery & returns</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FOOTER MIDDLE AREA END -->
-        <!-- FOOTER BOTTOM AREA START -->
-        <div class="footer-bottom hm-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <div class="copy-right">
-                            ©  2021 Raymond Made with <i class="fa fa-heart text-danger"></i> by  <a href="https://hasthemes.com/" target="_blank">HasThemes</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="footer-socials">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FOOTER BOTTOM AREA END -->
-
-
-        <!-- NEWS LATTER MODAL START-->
-        <div class="newslatterModal">
-            <div class="modal fade" id="newslatterModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="newsletter-bg text-center">
-                                        <img alt="background newsletter" width="330" height="447" src="assets/img/newsletter.webp">
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="newsletter-desc">
-                                        <h3>JOIN OUR NEWSLETTER</h3>
-                                        <p>Sign up for our newsletter and get <span>20%</span> off your next order. Pretty sweet, we know.</p>
-                                        <div class="newsletter-form">
-                                            <form method="post" action="#">
-                                                <p>
-                                                    <input type="email" placeholder="Type your email here">
-                                                </p>
-                                                <p>
-                                                    <input type="submit" value="Subscribe">
-                                                </p>
-                                                <div class="newsletter-checkbox">
-                                                    <input type="checkbox">
-                                                    <span>Don’t show this popup again</span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- .modal-body -->
-                    </div><!-- .modal-content -->
-                </div><!-- .modal-dialog -->
-            </div>
-        </div>
-        <!-- NEWS LATTER MODAL END-->
-
-        <!-- QUICKVIEW PRODUCT -->
-        <div id="quickview-wrapper">
-            <!-- Modal -->
-            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-product">
-                                <div class="product-images">
-                                    <div class="main-image images">
-                                        <img alt="" width="540" height="692" src="assets/img/product/1.webp">
-                                    </div>
-                                </div><!-- .product-images -->
-                                
-                                <div class="product-info">
-                                    <h1>Vestibulum et mollis nunc</h1>
-                                    <div class="price-box">
-                                        <p class="price">
-                                            <span class="special-price">
-                                                <span class="amount">$120.00</span>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="#" class="see-all">See all features</a>
-                                    <div class="quick-add-to-cart">
-                                        <form method="post" class="cart">
-                                            <div class="numbers-row">
-                                                <input type="number" id="french-hens" value="3">
-                                            </div>
-                                            <button class="single_add_to_cart_button" type="submit">Add to cart</button>
-                                        </form>
-                                    </div>
-                                    <div class="quick-desc">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.
-                                    </div>
-                                    <div class="social-sharing">
-                                        <div class="widget widget_socialsharing_widget">
-                                            <h3 class="widget-title-modal">Share this product</h3>
-                                            <ul class="social-icons">
-                                                <li>
-                                                    <a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div><!-- .product-info -->
-                            </div><!-- .modal-product -->
-                        </div><!-- .modal-body -->
-                    </div><!-- .modal-content -->
-                </div><!-- .modal-dialog -->
-            </div>
-            <!-- END Modal -->
-        </div>
-        <!-- END QUICKVIEW PRODUCT -->
-
-        <!-- all js here -->
-        <!-- jquery latest version -->
-        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <!-- bootstrap js -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Nivo slider js -->        
-        <script src="assets/custom-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
-        <script src="assets/custom-slider/home.js" type="text/javascript"></script>
-        <!-- owl.carousel js -->
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <!-- meanmenu js -->
-        <script src="assets/js/jquery.meanmenu.js"></script>
-        <!-- jquery-ui js -->
-        <script src="assets/js/jquery-ui.min.js"></script>
-        <!-- jquery.mixitup js -->
-        <script src="assets/js/jquery.mixitup.min.js"></script>
-        <!-- fancybox js -->
-        <script src="assets/js/fancybox/jquery.fancybox.pack.js"></script>
-        <!-- jquery.counterup js -->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/waypoints.js"></script>
-        <!-- elevateZoom js -->
-        <script src="assets/js/jquery.elevateZoom-3.0.8.min.js"></script>
-        <!-- jquery.bxslider.min.js -->       
-        <script src="assets/js/jquery.bxslider.min.js"></script>
-        <!-- wow js -->
-        <script src="assets/js/wow.min.js"></script>
-        <!-- plugins js -->
-        <script src="assets/js/plugins.js"></script>
-        <!-- main js -->
-        <script src="assets/js/main.js"></script>
-    </body>
- 
-</html>
+        <?php include 'footer.php' ?>
