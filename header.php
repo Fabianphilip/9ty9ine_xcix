@@ -71,15 +71,15 @@
                         <div class="col-12 col-md-6">
                             <div class="top-menu">
                                 <ul>
-                                    <li><a href="index.html"><img width="80" src="assets/img/logo.png" alt="Logo"></a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="index.html"><img width="80" src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"></a></li>
+                                    <li><a href="my-account">My Account</a></li>
+                                    <li><a href="wishlist">Wishlist</a></li>
+                                    <li><a href="checkout">Checkout</a></li>
+                                    <li><a href="login">Login</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 d-none d-md-block">
+                        <div class="col-12 col-md-6 d-none d-md-block m-0 p-0">
                             <div class="header-right">
 
                                 <div class="search-box-area">
@@ -94,7 +94,7 @@
                                     </div>
 
                                     <div class="header-menu-item-icon" style="display: none;">
-                                       <a href="#" class="icon-search">
+                                       <a href="#" class="icon-search m-0 p-0">
                                             <span>Search</span>
                                             <i class="fa animated fa-search search-icon fa-flip-horizontal"></i>
                                         </a>
@@ -108,102 +108,74 @@
                                 </div>
                                 <div class="user-menu-area">
                                     <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon">
+                                        <a href="#" class="user-icon m-0 p-0">
                                             <i class="fa animated fa-gear"></i>
                                         </a>
                                         <div class="user-menu">
                                             <h3>ACCOUNT</h3>
                                             <ul>
                                                 <li>
-                                                    <a href="my-account.html"><i class="fa fa-fw fa-user"></i>My Account</a>
+                                                    <a href="users/dashboard"><i class="fa fa-fw fa-user"></i>My Account</a>
                                                 </li>
                                                 <li>
-                                                    <a href="wishlist.html"><i class="fa fa-fw fa-heart"></i>My Wishlist</a>
+                                                    <a href="checkout"><i class="fa fa-fw fa-usd"></i>Checkout</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shopping-cart.html"><i class="fa fa-fw fa-shopping-cart"></i>My Cart</a>
+                                                    <a href="login"><i class="fa fa-fw fa-unlock-alt"></i>Login</a>
                                                 </li>
-                                                <li>
-                                                    <a href="checkout.html"><i class="fa fa-fw fa-usd"></i>Checkout</a>
-                                                </li>
-                                                <li>
-                                                    <a href="login.html"><i class="fa fa-fw fa-unlock-alt"></i>Login</a>
-                                                </li>
-                                            </ul>
-                                            <h3>LANGUAGE</h3>
-                                            <ul>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/en.webp" alt="">English</a></li>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/fr.webp" alt="">French</a></li>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/ge.webp" alt="">German </a></li>
-                                                <li><a href="#"><img width="18" height="12" src="assets/img/icon/sp.webp" alt="">Spanish</a></li>
-                                            </ul>
-                                            <h3>CURRENCY</h3>
-                                            <ul>
-                                                <li><a href="#">$ - USD</a></li>
-                                                <li><a href="#">€ - Euro</a></li>
-                                                <li><a href="#">£ - GBP</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mini-cart-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="icon-cart">
+                                    <div class="header-menu-item-icon m-0 p-0">
+                                        <a href="#" class="icon-cart m-0 p-0">
                                             <i class="fa animated fa-shopping-cart"></i>
-                                            <span class="cart-total">2 Items</span>
+                                            <span class="cart-total"><span id="cartSpan"><?php echo $countCart ?></span> Items | ₦<span id="cartSpanTotal"><?php echo number_format($totalPrice,2) ?></span></span>
                                         </a>
                                         <div class="mini-cart">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/1.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$450.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/2.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$180.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                            <ul id="cardsidebar">
+                                                <?php
+                                                    $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+                                                    if(mysqli_num_rows($queryProduct) > 0){
+                                                        while($rowProduct = mysqli_fetch_array($queryProduct)){
+                                                          ?>
+                                                        <li id="sideccart_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>">
+                                                            <a href="javascript:void(0)" class="remove" onclick="removefromcartsidebar('product_<?php echo $rowProduct['id'] ?>_0')">X</a>
+                                                            <div class="pro-img">
+                                                                <img width="180" height="228" src="product_images/<?php echo $rowProduct['image']; ?>" alt="">
+                                                            </div>
+                                                            <div class="cart-poro-details">
+                                                                <h2>
+                                                                    <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['name']; ?></a>
+                                                                </h2>
+                                                                <div class="star-rating">
+                                                                    <?php
+                                                                        for ($i = 1; $i <= $rowProduct['rating']; $i++) {
+                                                                            echo "<i class='fa fa-star'></i>";
+                                                                        }
+                                                                    ?>
+                                                                </div>
+                                                                <div class="quantity">
+                                                                    <?php echo $rowProduct['qty'] ?>x<span>₦<?php echo number_format($rowProduct['price'],2); ?></span>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="number" class="w_hhLG w_8nsR pointer flex items-center justify-center shadow-1" style="padding:5px 20px; width: 100px;" value="<?php echo $rowProduct['qty'] ?>" id="sidecartproduct_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>', this.id)" onchange="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <?php
+                                                        }
+                                                    }
+                                                ?>
                                             </ul>
-                                            <p class="total">
+                                            <p class="total" style="display: none;">
                                                 <strong>Total:</strong>
-                                                <span class="total-price">$630</span>
+                                                <span class="total-price"></span>
                                             </p>
                                             <p class="buttons">
-                                                <a href="shoppint-cart.html">Go To Cart</a>
-                                                <a href="checkout.html">Check Out</a>
+                                                <a href="">Go To Cart</a>
+                                                <a href="checkout">Check Out</a>
                                             </p>
                                         </div>
                                     </div>
@@ -221,7 +193,7 @@
                         <div class="col-lg-2 col-md-6">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img width="144" height="60" src="assets/img/logowhite.jpg" alt="Logo">
+                                    <img width="144" height="60" src="assets/img/9ty9inelogo.png" alt="Logo">
                                 </a>
                             </div>
                         </div>
@@ -260,90 +232,182 @@
                                             <div class="mega-menu">
                                                 <div class="single-mega-menu">
                                                     <h3 class="menu-hedding">
-                                                        <a href="shop.html">Product Elements</a>
+                                                        <a href="shop?category=all">Product Category</a>
                                                     </h3>
-                                                    <a href="shop.html">Products By Category</a>
-                                                    <a href="shop.html">
-                                                        <span class="new-pro">Product Featured Video</span>
-                                                    </a>
-                                                    <a href="shop.html">Product Image Zoom</a>
-                                                    <a href="shop.html">
-                                                        <span class="hot-pro">Product No Sidebar</span>
-                                                    </a>
-                                                    <a href="shop.html">Variable Product</a>
-                                                    <a href="shop.html">Product Layout</a>
+                                                    <a href="shop?category=all">View all></a>
+                                                    <?php
+                                                        $queryCategories = mysqli_query($conn, "SELECT * FROM category");
+                                                        if(mysqli_num_rows($queryCategories) > 0){
+                                                            $sn = 1;
+                                                            while ($rowCategories = mysqli_fetch_array($queryCategories)) {
+                                                                ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                                                            }
+                                                        }
+                                                    ?>
                                                 </div>
                                                 <div class="single-mega-menu">
                                                     <h3 class="menu-hedding">
-                                                        <a href="shop.html">Product Elements</a>
+                                                        <a href="shop?feature=all">Featured Products</a>
                                                     </h3>
-                                                    <a href="shop.html">Products – Best Selling</a>
-                                                    <a href="shop.html">
-                                                        <span class="sale-pro">Product On Sale</span>
-                                                    </a>
-                                                    <a href="shop.html">Products – Top Rate</a>
-                                                    <a href="shop.html">
-                                                        <span class="new-pro">Products – Featured</span>
-                                                    </a>
-                                                    <a href="shop.html">Products – Recent</a>
-                                                    <a href="shop.html">Product Columns</a>
+                                                    <a href="shop?category=feature">View all></a>
+                                                    <?php
+                                                        $queryFeatures = mysqli_query($conn, "SELECT * FROM feature");
+                                                        if(mysqli_num_rows($queryFeatures) > 0){
+                                                            $sn = 1;
+                                                            while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
+                                                                ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><?php echo $rowFeatures['name'] ?></a><?php
+                                                            }
+                                                        }
+                                                    ?>
                                                 </div>
                                                 <div class="single-mega-menu">
                                                     <h3 class="menu-hedding">
-                                                        <a href="#">Theme Elements</a>
+                                                        <a href="shop?category=men">Men</a>
                                                     </h3>
-                                                    <a href="#">Accordion / Tabs</a>
-                                                    <a href="#">Google Maps</a>
-                                                    <a href="#">Columns</a>
-                                                    <a href="#">Team & Testimonials</a>
-                                                    <a href="#">
-                                                        <span class="hot-pro">Raymond Banner & Slider</span>
-                                                    </a>
-                                                    <a href="shop.html">
-                                                        <span class="new-pro">Custom search, Icon & Others</span>
-                                                    </a>
+                                                    <a href="shop?category=menn">View all></a>
+                                                    <?php
+                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%'");
+                                                        if(mysqli_num_rows($getCategory) > 0){
+                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
+                                                            $categoryID = $rowCategoryy['id'];
+                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
+                                                            if(mysqli_num_rows($queryCategories) > 0){
+                                                                $sn = 1;
+                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
+                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                    ?>
                                                 </div>
                                                 <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?category=women">Women</a>
+                                                    </h3>
+                                                    <a href="shop?category=women">View all></a>
+                                                    <?php
+                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%'");
+                                                        if(mysqli_num_rows($getCategory) > 0){
+                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
+                                                            $categoryID = $rowCategoryy['id'];
+                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
+                                                            if(mysqli_num_rows($queryCategories) > 0){
+                                                                $sn = 1;
+                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
+                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                    ?>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?category=unisex">Unisex</a>
+                                                    </h3>
+                                                    <a href="shop?category=unisex">View all></a>
                                                     <div class="menu-img">
-                                                        <img width="240" height="193" src="assets/img/menu.webp" alt="">
+                                                        <?php
+                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%unisex%'");
+                                                        if(mysqli_num_rows($getCategory) > 0){
+                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
+                                                            ?><img src="category_images/<?php echo $rowCategoryy['image'] ?>" alt=""><?php
+                                                        }
+                                                        
+                                                    ?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
+
                                         <li>
-											<a href="#">Blogs</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                                <li><a href="blog-2-columns.html">Blog 2 Columns</a></li>
-                                                <li><a href="blog-3-columns.html">Blog 3 Columns</a></li>
-                                                <li><a href="blog-4-columns.html">Blog 4 Columns</a></li>
-                                                <li><a href="blog-details.html">Detail Blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-											<a href="#">Portfolio</a>
-                                             <ul class="dropdown">
-                                                <li><a href="portfolio-2-columns.html">Portfolio 2 columns</a></li>
-                                                <li><a href="portfolio-3-columns.html">Portfolio 3 columns</a></li>
-                                                <li><a href="portfolio-4-columns.html">Portfolio 4 columns</a></li>
-                                                <li><a href="portfolio-with-pagination-no-filter.html">Portfolio With Pagination</a></li>
-                                                <li><a href="portfolio-details.html">Detail Portfolio</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-											<a href="#">Pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="about-us.html">About Us</a></li>
-                                                <li><a href="single-product.html">Product Details</a></li>
-                                                <li><a href="shopping-cart.html">Cart</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="login.html">Login Or Register</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="404.html">404 Error</a></li>
-                                            </ul>
+                                            <a href="#">Brands</a>
+                                            <div class="mega-menu">
+                                                <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?category=all">A-Z Brands</a>
+                                                    </h3>
+                                                    <?php
+                                                        $queryBrands = mysqli_query($conn, "SELECT * FROM brand ORDER BY name ASC");
+                                                        if(mysqli_num_rows($queryBrands) > 0){
+                                                            $sn = 1;
+                                                            while ($rowBrands = mysqli_fetch_array($queryBrands)) {
+                                                                ?><a href="shop?category=<?php echo $rowBrands['id'] ?>"><?php echo $rowBrands['name'] ?></a><?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?feature=all">Featured Products</a>
+                                                    </h3>
+                                                    <?php
+                                                        $queryFeatures = mysqli_query($conn, "SELECT * FROM feature");
+                                                        if(mysqli_num_rows($queryFeatures) > 0){
+                                                            $sn = 1;
+                                                            while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
+                                                                ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><?php echo $rowFeatures['name'] ?></a><?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?category=men">Men</a>
+                                                    </h3>
+                                                    <?php
+                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%'");
+                                                        if(mysqli_num_rows($getCategory) > 0){
+                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
+                                                            $categoryID = $rowCategoryy['id'];
+                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
+                                                            if(mysqli_num_rows($queryCategories) > 0){
+                                                                $sn = 1;
+                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
+                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                    ?>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?category=women">Women</a>
+                                                    </h3>
+                                                    <?php
+                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%'");
+                                                        if(mysqli_num_rows($getCategory) > 0){
+                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
+                                                            $categoryID = $rowCategoryy['id'];
+                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
+                                                            if(mysqli_num_rows($queryCategories) > 0){
+                                                                $sn = 1;
+                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
+                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                                                                }
+                                                            }
+                                                        }
+                                                        
+                                                    ?>
+                                                </div>
+                                                <div class="single-mega-menu">
+                                                    <h3 class="menu-hedding">
+                                                        <a href="shop?category=unisex">Unisex</a>
+                                                    </h3>
+                                                    <div class="menu-img">
+                                                        <?php
+                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%unisex%'");
+                                                        if(mysqli_num_rows($getCategory) > 0){
+                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
+                                                            ?><img src="category_images/<?php echo $rowCategoryy['image'] ?>" alt=""><?php
+                                                        }
+                                                        
+                                                    ?>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </nav>
@@ -442,60 +506,51 @@
                                     <div class="header-menu-item-icon">
                                         <a href="#" class="icon-cart">
                                             <i class="fa animated fa-shopping-cart"></i>
-                                            <span class="cart-total">2</span>
+                                            <span class="cart-total" id="carttotal2">0</span>
                                         </a>
                                         <div class="mini-cart">
-                                            <ul>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/1.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$450.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="remove">X</a>
-                                                    <div class="pro-img">
-                                                        <img width="180" height="228" src="assets/img/cart/2.webp" alt="">
-                                                    </div>
-                                                    <div class="cart-poro-details">
-                                                        <h2>
-                                                            <a href="#">New Oxford Blazer</a>
-                                                        </h2>
-                                                        <div class="star-rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                        <div class="quantity">
-                                                            1x<span>$180.00</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                            <ul id="cardsidebar2">
+
+                                                <?php
+                                                    $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+                                                    if(mysqli_num_rows($queryProduct) > 0){
+                                                        while($rowProduct = mysqli_fetch_array($queryProduct)){
+                                                          ?>
+                                                        <li id="sideccart_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>">
+                                                            <a href="javascript:void(0)" class="remove" onclick="removefromcartsidebar('product_<?php echo $rowProduct['id'] ?>_0')">X</a>
+                                                            <div class="pro-img">
+                                                                <img width="180" height="228" src="product_images/<?php echo $rowProduct['image']; ?>" alt="">
+                                                            </div>
+                                                            <div class="cart-poro-details">
+                                                                <h2>
+                                                                    <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['name']; ?></a>
+                                                                </h2>
+                                                                <div class="star-rating">
+                                                                    <?php
+                                                                        for ($i = 1; $i <= $rowProduct['rating']; $i++) {
+                                                                            echo "<i class='fa fa-star'></i>";
+                                                                        }
+                                                                    ?>
+                                                                </div>
+                                                                <div class="quantity">
+                                                                    <?php echo $rowProduct['qty'] ?>x<span>₦<?php echo number_format($rowProduct['price'],2); ?></span>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="number" class="w_hhLG w_8nsR pointer flex items-center justify-center shadow-1" style="padding:5px 20px; width: 100px;" value="<?php echo $rowProduct['qty'] ?>" id="sidecartproduct_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>', this.id)" onchange="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <?php
+                                                        }
+                                                    }
+                                                ?>
                                             </ul>
-                                            <p class="total">
+                                            <p class="total" style="display: none;">
                                                 <strong>Total:</strong>
                                                 <span class="total-price">$630</span>
                                             </p>
                                             <p class="buttons">
-                                                <a href="shopping-cart.html">Go To Cart</a>
-                                                <a href="checkout.html">Check Out</a>
+                                                <a href="checkout">Check Out</a>
                                             </p>
                                         </div>
                                     </div>

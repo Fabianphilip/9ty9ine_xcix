@@ -14,19 +14,18 @@
     
     $name = tp_input($conn, 'name');
     $content = tp_input($conn, 'content');
-    $position = tp_input($conn, 'position');
     $discount_news = tp_input($conn, 'discount_news');
     $edit_id = tp_input($conn, 'edit_id');
     $editform = tp_input($conn, 'editform');
 
     
     if(!empty($del)){
-        $del = mysqli_query($conn, "DELETE FROM feature WHERE id = '$del'");
+        $del = mysqli_query($conn, "DELETE FROM brand WHERE id = '$del'");
         if($del){
-            ?><script type="text/javascript">window.location = "manage-feature?success=1"</script><?php
+            ?><script type="text/javascript">window.location = "manage-brand?success=1"</script><?php
         }else{
             echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "manage-feature?error=1"</script><?php
+            ?><script type="text/javascript">window.location = "manage-brand?error=1"</script><?php
         }
     }
     
@@ -39,52 +38,52 @@
         $slug = str_replace(" ", "_", $name);
         $token = random_strings(22);
 
-        $image = addslashes($_FILES['featureImages']['name']);
+        $image = addslashes($_FILES['brandImages']['name']);
         $extension = pathinfo($image, PATHINFO_EXTENSION);
         $image = uniqid() . '.' . $extension;
-        move_uploaded_file($_FILES["featureImages"]["tmp_name"], "../feature_images/" .$image);
-        $sql = mysqli_query($conn, "INSERT INTO feature (name, slug, content, image, discount_news, position) VALUES ('$name', '$slug', '$content', '$image', '$discount_news', '$position')");
+        move_uploaded_file($_FILES["brandImages"]["tmp_name"], "../brand_images/" .$image);
+        $sql = mysqli_query($conn, "INSERT INTO brand (name, slug, content, image, discount_news) VALUES ('$name', '$slug', '$content', '$image', '$discount_news')");
 
         
 
         if($sql){
-            ?><script type="text/javascript">window.location = "manage-feature?success=1"</script><?php
+            ?><script type="text/javascript">window.location = "manage-brand?success=1"</script><?php
         }else{
             echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "manage-feature?error=1"</script><?php
+            ?><script type="text/javascript">window.location = "manage-brand?error=1"</script><?php
         }
     }
 
     
     if(isset($_POST['edit'])){
         $slug = str_replace(" ", "_", $name);
-        if(!empty($_FILES["featureImages"]["name"])) {
-            $image = addslashes($_FILES['featureImages']['name']);
+        if(!empty($_FILES["brandImages"]["name"])) {
+            $image = addslashes($_FILES['brandImages']['name']);
             $extension = pathinfo($image, PATHINFO_EXTENSION);
             $image = uniqid() . '.' . $extension;
-            move_uploaded_file($_FILES["featureImages"]["tmp_name"], "../feature_images/" .$image);
+            move_uploaded_file($_FILES["brandImages"]["tmp_name"], "../brand_images/" .$image);
         }else{
-            $queryImage = mysqli_query($conn, "SELECT * FROM feature WHERE id = '$edit_id'");
+            $queryImage = mysqli_query($conn, "SELECT * FROM brand WHERE id = '$edit_id'");
             if(mysqli_num_rows($queryImage) > 0){
                 $rowImage = mysqli_fetch_array($queryImage);
                 $image = $rowImage['image'];
             }
         }
-        $sql = mysqli_query($conn, "UPDATE feature SET name = '$name', slug = '$slug', content = '$content', image = '$image', discount_news = '$discount_news', position = '$position' WHERE id = '$edit_id'");
+        $sql = mysqli_query($conn, "UPDATE brand SET name = '$name', slug = '$slug', content = '$content', image = '$image', discount_news = '$discount_news' WHERE id = '$edit_id'");
         if($sql){
-            ?><script type="text/javascript">window.location = "manage-feature?edit=<?php echo $edit_id ?>&success=1"</script><?php
+            ?><script type="text/javascript">window.location = "manage-brand?edit=<?php echo $edit_id ?>&success=1"</script><?php
         }else{
             echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "manage-feature?edit=<?php echo $edit_id ?>&error=1"</script><?php
+            ?><script type="text/javascript">window.location = "manage-brand?edit=<?php echo $edit_id ?>&error=1"</script><?php
         }
     }
 
     
     
-    $result = mysqli_query($conn, "SELECT * FROM feature");
+    $result = mysqli_query($conn, "SELECT * FROM brand");
     $count = mysqli_num_rows($result);
     
-    $result = mysqli_query($conn, "SELECT * FROM feature ORDER BY id DESC");
+    $result = mysqli_query($conn, "SELECT * FROM brand ORDER BY id DESC");
 ?>
 
     <?php if(!empty($success)){ ?> <br><br><div class="alert alert-success"> Success </div> <?php } ?>
@@ -106,10 +105,10 @@
                     <div class="row d-flex justify-content-center">
                         <?php if(empty($add) && empty($edit) && empty($view)){ ?>
                             <div class="col-md-6 p-2 my-0">
-                                <h4>Management Features</h4>
+                                <h4>Management brands</h4>
                             </div>
                             <div class="col-md-6 p-2 my-0">
-                                <a href="manage-feature?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add Features</a>
+                                <a href="manage-brand?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add brands</a>
                             </div>
                             <hr>
                             <div class="col-md-12">
@@ -121,7 +120,6 @@
                                             <th>Name</th>
                                             <th>Content</th>
                                             <th>Discount News</th>
-                                            <th>Position</th>
                                             <th style="width: 100px;">Action</th>
                                         </thead>
                                         <tbody>
@@ -132,16 +130,15 @@
                                                     ?>
                                                     <tr>
                                                         <td><?php echo $sn++; ?></td>
-                                                        <td><img src="../feature_images/<?php echo $row['image']; ?>" style="width: 35px;"></td>
+                                                        <td><img src="../brand_images/<?php echo $row['image']; ?>" style="width: 35px;"></td>
                                                         <td><?php echo $row['name']; ?></td>
                                                         <td><?php echo $row['content']; ?></td>
                                                         <td><?php echo $row['discount_news']; ?></td>
-                                                        <td><?php echo $row['position']; ?></td>
                                                         <td>
                                                             <div class="row d-flex" style="width: 170px;">
-                                                                <div class="col-auto px-0"><a href="manage-feature?edit=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-edit"></i></a></div>
-                                                                <div class="col-auto px-0"><a href="manage-feature?del=<?php echo $row['id'] ?>" class="btn btn-secondary m-1"><i class="fa fa-trash"></i></a></div>
-                                                                <div class="col-auto px-0"><a href="manage-feature?view=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-eye"></i></a></div>
+                                                                <div class="col-auto px-0"><a href="manage-brand?edit=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-edit"></i></a></div>
+                                                                <div class="col-auto px-0"><a href="manage-brand?del=<?php echo $row['id'] ?>" class="btn btn-secondary m-1"><i class="fa fa-trash"></i></a></div>
+                                                                <div class="col-auto px-0"><a href="manage-brand?view=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-eye"></i></a></div>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -155,10 +152,10 @@
                         <?php } ?>
                         <?php if(!empty($add)){ ?>
                             <div class="col-md-4 p-2 my-0">
-                                <h4>Add Feature</h4>
+                                <h4>Add brand</h4>
                             </div>
                             <div class="col-md-8 p-2 my-0">
-                                <a href="manage-feature" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
+                                <a href="manage-brand" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
                             </div>
                             <hr>
                         
@@ -168,35 +165,24 @@
                                         <div class="row">
 
                                             <div class="col-md-12 my-2">
-                                                <p class="m-0">feature Image</p>
-                                                <input type="file" id="featureImages" name="featureImages">
+                                                <p class="m-0">Brand Image</p>
+                                                <input type="file" id="brandImages" name="brandImages">
                                                 <div class="preview-container" id="previewContainer"></div>
                                             </div>
 
                                             <div class="col-md-6 my-2">
-                                                <p class="m-0">Feature Text</p>
-                                                <input type="text" name="name" class="form-control" required placeholder="Feature" value="">
+                                                <p class="m-0">Brand Text</p>
+                                                <input type="text" name="name" class="form-control" required placeholder="Brand" value="">
                                             </div>
 
                                             <div class="col-md-6 my-2">
-                                                <p class="m-0">Feature Content</p>
-                                                <input type="text" name="content" class="form-control" required placeholder="Feature" value="">
+                                                <p class="m-0">Brand Content</p>
+                                                <input type="text" name="content" class="form-control" required placeholder="Brand" value="">
                                             </div>
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Discount News</p>
-                                                <input type="text" name="discount_news" class="form-control" required placeholder="Feature" value="">
-                                            </div>
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Position</p>
-                                                <select class="form-control" name="position">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
+                                                <input type="text" name="discount_news" class="form-control" required placeholder="Brand" value="">
                                             </div>
                                         </div>
                                         
@@ -212,15 +198,15 @@
                         <?php } ?>
                         <?php if(!empty($edit)){ ?>
                             <?php
-                                $query_edit = mysqli_query($conn, "SELECT * FROM feature WHERE id = '$edit'");
+                                $query_edit = mysqli_query($conn, "SELECT * FROM brand WHERE id = '$edit'");
                                 $row = mysqli_fetch_array($query_edit);
                             ?>
                             <div class="col-md-4 p-2 my-0">
-                                <h4>Edit Feature</h4>
+                                <h4>Edit Brand</h4>
                             </div>
                             <div class="col-md-8 p-2 my-0">
-                                <a href="manage-feature" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                                <a href="manage-feature?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
+                                <a href="manage-brand" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
+                                <a href="manage-brand?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
                             </div>
                             <hr>
                         
@@ -231,36 +217,26 @@
                                             <input type="hidden" name="edit_id" value="<?php echo $edit; ?>">
 
                                             <div class="col-md-12 my-2">
-                                                <p class="m-0">feature Image</p>
-                                                <input type="file" id="featureImages" name="featureImages">
+                                                <p class="m-0">Brand Image</p>
+                                                <input type="file" id="brandImages" name="brandImages">
                                                 <div class="preview-container" id="previewContainer"></div>
                                             </div>
 
                                             <div class="col-md-6 my-2">
-                                                <p class="m-0">Feature Name</p>
-                                                <input type="text" name="name" class="form-control" required placeholder="Feature Name" value="<?php echo $row['name'] ?>">
+                                                <p class="m-0">Brand Name</p>
+                                                <input type="text" name="name" class="form-control" required placeholder="Brand Name" value="<?php echo $row['name'] ?>">
                                             </div>
 
                                             <div class="col-md-6 my-2">
-                                                <p class="m-0">Feature Content</p>
-                                                <input type="text" name="content" class="form-control" required placeholder="Feature Content" value="<?php echo $row['content'] ?>">
+                                                <p class="m-0">Brand Content</p>
+                                                <input type="text" name="content" class="form-control" required placeholder="Brand Content" value="<?php echo $row['content'] ?>">
                                             </div>
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Discount News</p>
-                                                <input type="text" name="discount_news" class="form-control" required placeholder="Feature Content" value="<?php echo $row['discount_news'] ?>">
+                                                <input type="text" name="discount_news" class="form-control" required placeholder="Brand Content" value="<?php echo $row['discount_news'] ?>">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Position</p>
-                                                <select class="form-control" name="position">
-                                                    <option value="1" <?php if($row['position'] == '1'){ ?> selected <?php } ?>>1</option>
-                                                    <option value="2" <?php if($row['position'] == '2'){ ?> selected <?php } ?>>2</option>
-                                                    <option value="3" <?php if($row['position'] == '3'){ ?> selected <?php } ?>>3</option>
-                                                    <option value="4" <?php if($row['position'] == '4'){ ?> selected <?php } ?>>4</option>
-                                                    <option value="5" <?php if($row['position'] == '5'){ ?> selected <?php } ?>>5</option>
-                                                </select>
-                                            </div>
                                         </div>
                                         
                                         
@@ -276,16 +252,16 @@
                         <?php } ?>
                         <?php if(!empty($view)){ ?>
                             <?php
-                                $query_view = mysqli_query($conn, "SELECT * FROM feature WHERE id = '$view'");
+                                $query_view = mysqli_query($conn, "SELECT * FROM brand WHERE id = '$view'");
                                 $row = mysqli_fetch_array($query_view);
                                 $name = $row['name'];
                             ?>
                             <div class="col-md-4 p-2 my-0">
-                                <h4>View Feature</h4>
+                                <h4>View Brand</h4>
                             </div>
                             <div class="col-md-8 p-2 my-0">
-                                <a href="manage-feature" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                                <a href="manage-feature?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
+                                <a href="manage-brand" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
+                                <a href="manage-brand?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
                             </div>
                             <hr>
                             
@@ -297,21 +273,17 @@
                                     <div class="row">
                                         <div class="col-md-3">Image:</div>
                                         <div class="col-md-9">
-                                            <img src="../feature_images/<?php echo $row['image'] ?>" style="max-width: 100px; max-height: 100px; margin: 10px;">
+                                            <img src="../brand_images/<?php echo $row['image'] ?>" style="max-width: 100px; max-height: 100px; margin: 10px;">
                                         </div>
                                     </div><hr>
                                     <div class="row">
-                                        <div class="col-md-3">Feature Name:</div><div class="col-md-9"><?php echo $row['name'] ?></div>
+                                        <div class="col-md-3">Brand Name:</div><div class="col-md-9"><?php echo $row['name'] ?></div>
                                     </div><hr>
                                     <div class="row">
-                                        <div class="col-md-3">Feature Content:</div><div class="col-md-9"><?php echo $row['content'] ?></div>
+                                        <div class="col-md-3">Brand Content:</div><div class="col-md-9"><?php echo $row['content'] ?></div>
                                     </div><hr>
                                     <div class="row">
                                         <div class="col-md-3">Discount News:</div><div class="col-md-9"><?php echo $row['discount_news'] ?></div>
-                                    </div><hr>
-
-                                    <div class="row">
-                                        <div class="col-md-3">Position:</div><div class="col-md-9"><?php echo $row['position'] ?></div>
                                     </div><hr>
                                 </div>
                             </div>
@@ -324,7 +296,7 @@
         </div>
     </div> <!-- / .container-fluid -->
     <script type="text/javascript">
-         const featureImages = document.getElementById('featureImages');
+         const brandImages = document.getElementById('brandImages');
         const previewContainer = document.getElementById('previewContainer');
         let filesArray = [];
 
@@ -333,10 +305,10 @@
 
         const existingImages = [
           <?php
-                $query_product = mysqli_query($conn, "SELECT * FROM feature WHERE id = '$edit'");  
+                $query_product = mysqli_query($conn, "SELECT * FROM brand WHERE id = '$edit'");  
                 if(mysqli_num_rows($query_product) > 0){
                     $rowProduct = mysqli_fetch_array($query_product);
-                    ?>{ id: <?php echo $rowProduct['id'] ?>, path: '../feature_images/<?php echo $rowProduct['image'] ?>' },<?php
+                    ?>{ id: <?php echo $rowProduct['id'] ?>, path: '../brand_images/<?php echo $rowProduct['image'] ?>' },<?php
                 } 
             ?>
         ];
@@ -372,8 +344,8 @@
 
 
 
-        featureImages.addEventListener('change', function () {
-          const files = Array.from(featureImages.files);
+        brandImages.addEventListener('change', function () {
+          const files = Array.from(brandImages.files);
           files.forEach(file => {
             if (file && file.type.includes('image')) {
               const reader = new FileReader();
@@ -411,7 +383,7 @@
           filesArray.forEach(file => {
             dataTransfer.items.add(file);
           });
-          featureImages.files = dataTransfer.files;
+          brandImages.files = dataTransfer.files;
         }
     </script>
 <?php } ?>

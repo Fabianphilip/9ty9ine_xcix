@@ -23,6 +23,7 @@
     $discount = tp_input($conn, 'discount');
     $rating = tp_input($conn, 'rating');
     $category = tp_input($conn, 'category');
+    $brand = tp_input($conn, 'brand');
     $sub_category = tp_input($conn, 'sub_category');
     $quantity = tp_input($conn, 'quantity');
     $parking = tp_input($conn, 'parking');
@@ -57,7 +58,7 @@
         } else {
             $feature = ''; 
         }
-        $sql = mysqli_query($conn, "INSERT INTO product (name, price, cost_price, outside_price, outside_cost_price, description, keypoint, search_keyword, discount, rating, feature, category, sub_category, quantity, parking, image_token, slug, origin, type, sku, out_of_stock) VALUES ('$name', '$price', '$cost_price', '$outside_price', '$outside_cost_price', '$description', '$keypoint', '$search_keyword', '$discount', '$rating', '$feature', '$category', '$sub_category', '$quantity', '$parking', '$token', '$slug', '$origin', '$type', '$sku', '$out_of_stock')");
+        $sql = mysqli_query($conn, "INSERT INTO product (name, price, cost_price, outside_price, outside_cost_price, description, keypoint, search_keyword, discount, rating, feature, brand, category, sub_category, quantity, parking, image_token, slug, origin, type, sku, out_of_stock) VALUES ('$name', '$price', '$cost_price', '$outside_price', '$outside_cost_price', '$description', '$keypoint', '$search_keyword', '$discount', '$rating', '$feature', '$brand', '$category', '$sub_category', '$quantity', '$parking', '$token', '$slug', '$origin', '$type', '$sku', '$out_of_stock')");
 
         for ($i=0; $i < count($_FILES["productImages"]["name"]); $i++) { 
           $image = addslashes($_FILES['productImages']['name'][$i]);
@@ -113,7 +114,7 @@
             }
         }
         $slug = str_replace(" ", "_", $name);
-        $sql = mysqli_query($conn, "UPDATE product SET name = '$name', price = '$price', cost_price = '$cost_price', outside_price = '$outside_price', outside_cost_price = '$outside_cost_price', description = '$description', keypoint = '$keypoint', search_keyword = '$search_keyword', discount = '$discount', rating = '$rating', feature = '$feature', category = '$category', sub_category = '$category', quantity = '$quantity', parking = '$parking', slug = '$slug', origin = '$origin', type = '$type', sku = '$sku', out_of_stock = '$out_of_stock' WHERE id = '$edit_id'");
+        $sql = mysqli_query($conn, "UPDATE product SET name = '$name', price = '$price', cost_price = '$cost_price', outside_price = '$outside_price', outside_cost_price = '$outside_cost_price', description = '$description', keypoint = '$keypoint', search_keyword = '$search_keyword', discount = '$discount', rating = '$rating', feature = '$feature', brand = '$brand', category = '$category', sub_category = '$category', quantity = '$quantity', parking = '$parking', slug = '$slug', origin = '$origin', type = '$type', sku = '$sku', out_of_stock = '$out_of_stock' WHERE id = '$edit_id'");
 
         $del_variation = mysqli_query($conn, "DELETE FROM variations WHERE token = '$token'");
 
@@ -324,6 +325,21 @@
                                             </div>
 
                                             <div class="col-md-6 my-2">
+                                                <p class="m-0">Brand</p>
+                                                <select class="form-select" required name="brand" id="brand">
+                                                    <option value=""> ** Choose Brand</option>
+                                                    <?php  
+                                                        $query_brand = mysqli_query($conn, "SELECT * FROM brand");
+                                                        if(mysqli_num_rows($query_brand) > 0){
+                                                            while($row_brand = mysqli_fetch_array($query_brand)){
+                                                                ?><option value="<?php echo $row_brand['id'] ?>"><?php echo $row_brand['name'] ?></option><?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6 my-2">
                                                 <p class="m-0">Category</p>
                                                 <select class="form-select" required name="category" id="category" onchange="selectCategory();">
                                                     <option> ** Choose Category</option>
@@ -529,6 +545,20 @@
                                             </div>
 
                                             <div class="col-md-6 my-2">
+                                                <p class="m-0">Brand</p>
+                                                <select class="form-select" name="category" id="category" onchange="selectCategory();">
+                                                    <?php  
+                                                        $query_brand = mysqli_query($conn, "SELECT * FROM brand");
+                                                        if(mysqli_num_rows($query_brand) > 0){
+                                                            while($row_brand = mysqli_fetch_array($query_brand)){
+                                                                ?><option value="<?php echo $row_brand['id'] ?>" <?php if($row_brand['id'] == $row['brand']){ ?> selected <?php } ?>><?php echo $row_brand['name'] ?></option><?php
+                                                            }
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-6 my-2">
                                                 <p class="m-0">Category</p>
                                                 <select class="form-select" name="category" id="category" onchange="selectCategory();">
                                                     <?php  
@@ -705,6 +735,7 @@
                                 $feature = $row['feature'];
                                 $category = $row['category'];
                                 $sub_category = $row['sub_category'];
+                                $brand = $row['brand'];
                             ?>
                             <div class="col-md-4 p-2 my-0">
                                 <h4>View Product</h4>
@@ -768,6 +799,19 @@
                                                 if(mysqli_num_rows($query_feature) > 0){
                                                     while($row_feature = mysqli_fetch_array($query_feature)){
                                                         echo $row_feature['name']." | ";
+                                                    }
+                                                } 
+                                            ?>
+                                        </div>
+                                    </div><hr>
+                                    <div class="row">
+                                        <div class="col-md-3">Brand:</div>
+                                        <div class="col-md-9">
+                                            <?php
+                                                $query_category = mysqli_query($conn, "SELECT * FROM brand WHERE id = '$brand'");
+                                                if(mysqli_num_rows($query_brand) > 0){
+                                                    while($row_brand = mysqli_fetch_array($query_brand)){
+                                                        echo $row_brand['name'];
                                                     }
                                                 } 
                                             ?>

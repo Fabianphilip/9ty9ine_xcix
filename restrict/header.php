@@ -55,11 +55,15 @@
     <a href="manage-sub_category" class="<?php if($web_file_name == 'manage-sub_category'){ ?>active<?php } ?>"><i class="fas fa-cogs"></i> Sub Category</a>
     <h5 style="color: silver; padding: 20px 0px 0px 20px;">Feature Management</h5>
     <a href="manage-feature" class="<?php if($web_file_name == 'manage-feature'){ ?>active<?php } ?>"><i class="fas fa-chart-line"></i> Feature</a>
+    <h5 style="color: silver; padding: 20px 0px 0px 20px;">Brand Management</h5>
+    <a href="manage-brand" class="<?php if($web_file_name == 'manage-brand'){ ?>active<?php } ?>"><i class="fas fa-home"></i> Brand</a>
     <h5 style="color: silver; padding: 20px 0px 0px 20px;">Transaction Management</h5>
     <a href="manage-payments" class="<?php if($web_file_name == 'manage-payments'){ ?>active<?php } ?>"><i class="fas fa-chart-line"></i> Payments</a>
     <a href="manage-transaction_log" class="<?php if($web_file_name == 'manage-transaction_log'){ ?>active<?php } ?>"><i class="fas fa-chart-line"></i> Teansaction Log</a>
     <h5 style="color: silver; padding: 20px 0px 0px 20px;">Role Management</h5>
     <a href="role-management" class="<?php if($web_file_name == 'role-management'){ ?>active<?php } ?>"><i class="fas fa-user"></i> Role Management</a>
+    <h5 style="color: silver; padding: 20px 0px 0px 20px;">Settings / General Management</h5>
+    <a href="general-management" class="<?php if($web_file_name == 'general-management'){ ?>active<?php } ?>"><i class="fas fa-cogs"></i> General Management</a>
     <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
   </div>
 

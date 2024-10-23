@@ -69,24 +69,30 @@
       if(mysqli_num_rows($queryProduct) > 0){
         while($rowProduct = mysqli_fetch_array($queryProduct)){
           ?>
-          <tr>
-              <td>
-                  <div class="row">
-                      <div class="col-auto"><img src="product_images/<?php echo $rowProduct['image']; ?>" style="width: 50px" alt="Product Image"></div>
-                      <div class="col-auto">
-                          <?php echo $rowProduct['name']; ?>
-                          <div>
-                              <input type="number" class="w_hhLG w_8nsR pointer flex items-center justify-center shadow-1" style="padding:5px 20px; width: 100px;" value="<?php echo $rowProduct['qty'] ?>" id="sidecartproduct_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>', this.id)" onchange="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)">
-                          </div>
-                      </div>
-                  </div>
-              </td>
-              <!--<td><img src="product_images/<?php echo $rowProduct['image']; ?>" style="width: 50px" alt="Product Image"> <?php echo $rowProduct['name']; ?></td>-->
-              <td>₦<?php echo number_format($rowProduct['price'],2); ?></td>
-              <td><?php echo $rowProduct['qty'] ?></td>
-              <td>₦<?php echo number_format($rowProduct['cartprice'],2); ?></td> 
-              <td style="padding: 10px;" onclick="removefromcartsidebar('product_<?php echo $rowProduct['id'] ?>_0')"><i class="fa fa-times"></i></td>
-          </tr>
+          <li id="sideccart_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>">
+            <a href="javascript:void(0)" class="remove" onclick="removefromcartsidebar('product_<?php echo $rowProduct['id'] ?>_0')">X</a>
+            <div class="pro-img">
+                <img width="180" height="228" src="product_images/<?php echo $rowProduct['image']; ?>" alt="">
+            </div>
+            <div class="cart-poro-details">
+                <h2>
+                    <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['name']; ?></a>
+                </h2>
+                <div class="star-rating">
+                    <?php
+                        for ($i = 1; $i <= $rowProduct['rating']; $i++) {
+                            echo "<i class='fa fa-star'></i>";
+                        }
+                    ?>
+                </div>
+                <div class="quantity">
+                    <?php echo $rowProduct['qty'] ?>x<span>₦<?php echo number_format($rowProduct['price'],2); ?></span>
+                </div>
+                <div>
+                  <input type="number" class="w_hhLG w_8nsR pointer flex items-center justify-center shadow-1" style="padding:5px 20px; width: 100px;" value="<?php echo $rowProduct['qty'] ?>" id="sidecartproduct_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>', this.id)" onchange="sidecart_quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)">
+                </div>
+            </div>
+        </li>
           <?php
             }
           }else{
@@ -199,6 +205,7 @@
 
     if(!empty($country)){
     ?>
+      <label>State<span class="required">*</span></label>  
         <select name="state">
           <?php
           $query_c = mysqli_query($conn, "SELECT * FROM countries_ WHERE country_name='$country'");

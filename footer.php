@@ -1,4 +1,4 @@
- <div class="footer-top-area hm-4">
+<div class="footer-top-area hm-4">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4">
@@ -238,6 +238,9 @@
             </div>
             <!-- END Modal -->
         </div>
+        <script type="text/javascript">
+            document.getElementById("carttotal2").innerHTML = document.getElementById("cartSpan").innerHTML;
+        </script>
 
 
         <script type="text/javascript">
@@ -355,6 +358,7 @@
                 var currentDate = new Date();
                 xhttp.onload = function() {
                   document.getElementById("cardsidebar").innerHTML = this.responseText;
+                  document.getElementById("cardsidebar2").innerHTML = this.responseText;
                 }
                 xhttp.open("GET", "xhttp?cartsidebar=1&currentdate="+ currentDate + "&sessionId=<?php echo $sessionId ?><?php if(!empty($email)){ ?>&email=<?php if(!empty($email)){ echo $email; } ?><?php } ?>");
                 xhttp.send();
