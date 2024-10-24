@@ -37,7 +37,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home 5 || Raymond</title>
+        <title><?php echo $row_general['site_name'] ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="assets/img/favicon.webp" />
@@ -61,6 +61,12 @@
         <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     </head>
     <body>
+        <div class="btn btn-success p-2" id="succesAlert" style="color: white; position: fixed; z-index: 999999; width: 100%; display: none;">
+            <center>Successfull added to cart</center>
+        </div>
+        <div class="btn btn-secondary p-2" id="removalAlert" style="color: white; position: fixed; z-index: 999999; width: 100%; display: none;">
+            <center>Successfull removed to cart</center>
+        </div>
 
         <!-- HEADER AREA START -->
         <header>
@@ -68,7 +74,7 @@
             <div class="header-top-ber hide-show">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-4">
                             <div class="top-menu">
                                 <ul>
                                     <li><a href="/"><img width="80" src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"></a></li>
@@ -78,7 +84,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 d-none d-md-block m-0 p-0">
+                        <div class="col-12 col-md-8 d-none d-md-block m-0 p-0">
                             <div class="header-right">
 
                                 <div class="search-box-area">
@@ -135,7 +141,7 @@
                                         <div class="mini-cart">
                                             <ul id="cardsidebar">
                                                 <?php
-                                                    $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+                                                    $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
                                                     if(mysqli_num_rows($queryProduct) > 0){
                                                         while($rowProduct = mysqli_fetch_array($queryProduct)){
                                                           ?>
@@ -192,7 +198,7 @@
                         <div class="col-lg-2 col-md-6">
                             <div class="logo">
                                 <a href="/">
-                                    <img width="144" height="60" src="assets/img/9ty9inelogo.png" alt="Logo">
+                                    <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;">
                                 </a>
                             </div>
                         </div>
@@ -320,7 +326,7 @@
                                             <ul id="cardsidebar2">
 
                                                 <?php
-                                                    $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+                                                    $queryProduct = mysqli_query($conn, "SELECT p.image_token AS image_token, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
                                                     if(mysqli_num_rows($queryProduct) > 0){
                                                         while($rowProduct = mysqli_fetch_array($queryProduct)){
                                                           ?>

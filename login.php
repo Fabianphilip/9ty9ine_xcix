@@ -34,8 +34,7 @@
 
 		        $query = mysqli_query($conn,"SELECT * FROM users WHERE email='$email' and password='$main_password' ");
 		        $count = mysqli_num_rows($query);
-		        $row = mysqli_fetch_array($query, MYSQLI_ASSOC);
-		        $status = $row['status'];
+		        
 		        if(isset($_SESSION['link'])){
 		            $goto_link =  $_SESSION['link'];
 		            $link = $goto_link;
@@ -44,7 +43,8 @@
 		        }
 
 		        if ($count > 0) {
-
+		        	$row = mysqli_fetch_array($query, MYSQLI_ASSOC);
+		        	$status = $row['status'];
 		            $_SESSION['email'] = $row['email'];
 		            $email = $_SESSION['email'];
 		            $result=mysqli_num_rows($query);

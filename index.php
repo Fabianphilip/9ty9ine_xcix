@@ -24,11 +24,11 @@
                                             <img class="fadeInRight" width="890" height="910" src="feature_images/<?php echo $rowFeatures['image'] ?>" alt="">
                                             <div class="slider-text">
                                                 <div class="sl-heading">
-                                                    <h2 class="bounceInUp"><?php echo $rowFeatures['name'] ?></h2>
+                                                    <center><h2 class="bounceInUp" style="width: 60%;"><?php echo $rowFeatures['name'] ?></h2></center>
                                                     <h2 class="off-text fadeInLeft"><?php echo $rowFeatures['discount_news'] ?></h2>
                                                 </div>
                                                 <div class="sub-title">
-                                                    <p class="fadeInDown"><?php echo $rowFeatures['content'] ?></p>
+                                                    <center><p class="fadeInDown" style="width: 70%;"><?php echo $rowFeatures['content'] ?></p></center>
                                                 </div>
                                                 <a href="#" class="sl-button fadeInUp">SHOP NOW</a>
                                             </div>
@@ -54,11 +54,11 @@
                                             <img class="fadeInUp" width="890" height="910" src="feature_images/<?php echo $rowFeatures['image'] ?>" alt="">
                                             <div class="slider-text">
                                                 <div class="sl-heading">
-                                                    <h2 class="bounceInUp"><?php echo $rowFeatures['name'] ?></h2>
+                                                    <center><h2 class="bounceInUp" style="width: 60%;"><?php echo $rowFeatures['name'] ?></h2></center>
                                                     <h2 class="off-text fadeInLeft"><?php echo $rowFeatures['discount_news'] ?></h2>
                                                 </div>
                                                 <div class="sub-title">
-                                                    <p class="fadeInDown"><?php echo $rowFeatures['content'] ?></p>
+                                                    <center><p class="fadeInDown" style="width: 70%;"><?php echo $rowFeatures['content'] ?></p></center>
                                                 </div>
                                                 <a href="#" class="sl-button fadeInUp">SHOP NOW</a>
                                             </div>
@@ -161,12 +161,12 @@
                                         while($rowProduct = mysqli_fetch_array($queryProduct)){
                                             $images = explode(',', $rowProduct['images']);
                                     ?>
-                                        <div class="col-lg-3 col-md-6 col-12">
+                                        <div class="col-lg-3 col-sm-6 col-md-6 col-12">
                                             <div class="single-product">
-                                                <div class="product-image">
+                                                <div class="product-image" style="height: 500px;">
                                                     <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                                                        <img class="primary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>">
-                                                        <img class="secondary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>">
+                                                        <img class="primary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;height: 500px;">
+                                                        <img class="secondary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;height: 500px;">
                                                     </a>
                                                     <span class="onsale">Sale!</span>
                                                     <div class="category-action-buttons">
@@ -210,17 +210,22 @@
                                                         ?>
                                                         </div>
                                                         <div class="price">
-                                                            <span class="old-price">₦
+                                                            <span class="old-price">
                                                             <?php 
-                                                                if(!empty($rowProduct['discount'])){
-                                                                    $slashed = $rowProduct['discount'] * $rowProduct['price'];
-                                                                    $slashed = $slashed / 100;
-                                                                    $slashed = $rowProduct['price'] + $slashed;
-                                                                    echo number_format($slashed, 2);
+                                                                if($rowProduct['discount'] > 1){
+                                                                  $slashed = $rowProduct['discount'] * $rowProduct['price'];
+                                                                  $slashed = $slashed / 100;
+                                                                  $slashed = $rowProduct['price'] + $slashed;
+                                                                  echo '₦'.number_format($slashed, 2);
                                                                 }
                                                             ?>
                                                             </span>
-                                                            <span class="new-price">₦<?php echo number_format($rowProduct['price'], 2); ?></span>
+                                                            <span class="new-price"><?php if($rowProduct['discount'] > 1){
+                                                              $slashed = $rowProduct['discount'] * $rowProduct['price'];
+                                                              $slashed = $slashed / 100;
+                                                              $slashed = $rowProduct['price'] - $slashed;
+                                                              echo number_format($slashed, 2);
+                                                            }else{ echo '₦'.number_format($rowProduct['price'], 2); } ?></span>
                                                         </div>
                                                     </div>
                                                 </div>

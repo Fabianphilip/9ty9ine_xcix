@@ -1,15 +1,15 @@
 <div class="mega-menu">
     <div class="single-mega-menu">
         <h3 class="menu-hedding">
-            <a href="shop?category=all">A-Z Brands</a>
+            <a href="shop?category=all">Product Category</a>
         </h3>
-        <a href="shop?category=brand">View all</a>
+        <a href="shop?category=all">View all</a>
         <?php
-            $queryBrands = mysqli_query($conn, "SELECT * FROM brand ORDER BY name ASC");
-            if(mysqli_num_rows($queryBrands) > 0){
+            $queryCategories = mysqli_query($conn, "SELECT * FROM category");
+            if(mysqli_num_rows($queryCategories) > 0){
                 $sn = 1;
-                while ($rowBrands = mysqli_fetch_array($queryBrands)) {
-                    ?><a href="shop?category=<?php echo $rowBrands['id'] ?>"><?php echo $rowBrands['name'] ?></a><?php
+                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
+                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>" class="my-1"><img src="category_images/<?php echo $rowCategories['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
                 }
             }
         ?>
@@ -18,13 +18,13 @@
         <h3 class="menu-hedding">
             <a href="shop?feature=all">Featured Products</a>
         </h3>
-        <a href="shop?feature=all">View all</a>
+        <a href="shop?category=feature">View all</a>
         <?php
             $queryFeatures = mysqli_query($conn, "SELECT * FROM feature");
             if(mysqli_num_rows($queryFeatures) > 0){
                 $sn = 1;
                 while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
-                    ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><?php echo $rowFeatures['name'] ?></a><?php
+                    ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><img src="feature_images/<?php echo $rowFeatures['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowFeatures['name'] ?></a><?php
                 }
             }
         ?>
@@ -33,7 +33,7 @@
         <h3 class="menu-hedding">
             <a href="shop?category=men">Men</a>
         </h3>
-        <a href="shop?category=men">View all</a>
+        <a href="shop?category=menn">View all</a>
         <?php
             $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%'");
             if(mysqli_num_rows($getCategory) > 0){
@@ -43,7 +43,7 @@
                 if(mysqli_num_rows($queryCategories) > 0){
                     $sn = 1;
                     while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><img src="sub_category_images/<?php echo $rowCategories['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
                     }
                 }
             }
@@ -64,14 +64,14 @@
                 if(mysqli_num_rows($queryCategories) > 0){
                     $sn = 1;
                     while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
+                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><img src="sub_category_images/<?php echo $rowCategories['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
                     }
                 }
             }
             
         ?>
     </div>
-    <div class="single-mega-menu">
+    <div class="single-mega-menu" style="display: none;">
         <h3 class="menu-hedding">
             <a href="shop?category=unisex">Unisex</a>
         </h3>

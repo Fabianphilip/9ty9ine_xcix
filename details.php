@@ -2,7 +2,7 @@
 
 <?php
   	$productId = get_input($conn, 'id');
-  	$queryProduct = mysqli_query($conn, "SELECT p.name AS name, c.name AS category_name, sc.name AS sub_category_name, p.description AS description, p.price AS price, p.discount AS discount, p.image_token AS image_token, p.category AS category, p.keypoint AS keypoint FROM product p JOIN category c ON c.id = p.category JOIN sub_category sc ON sc.id = p.sub_category  WHERE p.id = '$productId'");
+  	$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.out_of_stock AS out_of_stock, p.name AS name, c.name AS category_name, sc.name AS sub_category_name, p.description AS description, p.price AS price, p.discount AS discount, p.image_token AS image_token, p.category AS category, p.keypoint AS keypoint FROM product p JOIN category c ON c.id = p.category JOIN sub_category sc ON sc.id = p.sub_category  WHERE p.id = '$productId'");
     if(mysqli_num_rows($queryProduct) > 0){
       	$rowProduct = mysqli_fetch_array($queryProduct);
       	$token = $rowProduct['image_token'];
@@ -105,17 +105,22 @@
                                             <div class="price">
                                                 <span class="old-price">₦
                                                 <?php 
-                                                    if(!empty($rowProduct['discount'])){
-                                                        $slashed = $rowProduct['discount'] * $rowProduct['price'];
-                                                        $slashed = $slashed / 100;
-                                                        $slashed = $rowProduct['price'] + $slashed;
-                                                        echo number_format($slashed, 2);
+                                                    if($rowProduct['discount'] > 0){
+                                                      $slashed = $rowProduct['discount'] * $rowProduct['price'];
+                                                      $slashed = $slashed / 100;
+                                                      $slashed = $rowProduct['price'] + $slashed;
+                                                      echo '₦'.number_format($slashed, 2);
                                                     }
                                                 ?>
                                                 </span>
-                                                <span class="new-price">₦<?php echo number_format($rowProduct['price'], 2); ?></span>
+                                                <span class="new-price">₦<?php if($rowProduct['discount'] > 0){
+                                                  $slashed = $rowProduct['discount'] * $rowProduct['price'];
+                                                  $slashed = $slashed / 100;
+                                                  $slashed = $rowProduct['price'] - $slashed;
+                                                  echo number_format($slashed, 2);
+                                                }else{ echo number_format($rowProduct['price'], 2); } ?></span>
                                             </div>
-                                            <div class="stock"> Avaiability: <span> in stock</span></div>
+                                            <div class="stock"> Avaiability: <?php if($rowProduct['out_of_stock'] == 'no'){ ?><span> in stock</span> <?php }else{ ?> <span style="color: red;"> out of stock </span> <?php } ?></div>
                                         </div>
                                         <div class="product-desc">
                                             <?php echo $rowProduct['description'] ?>
@@ -132,18 +137,15 @@
                                                 				<tr>
 			                                                        <td class="label-text">
 			                                                            <label><?php echo $rowVariations['option_type'] ?></label>
-			                                                            <span> *</span>
 			                                                        </td>
 			                                                        <td class="value">
 			                                                            <select>
 			                                                                <option value="">Choose an option</option>
 			                                                                <?php
 			                                                                foreach($option_value AS $option_value ){
-			                                                                	?><option value="black"><?php echo $option_value ?></option><?php
+			                                                                	?><option value="<?php echo $option_value ?><"><?php echo $option_value ?></option><?php
 			                                                                }
 			                                                                ?>
-			                                                                <option value="black">Black</option>
-			                                                                <option value="white">White</option>
 			                                                            </select>                     
 			                                                        </td>
 			                                                    </tr>
@@ -152,17 +154,16 @@
                                                 		}
                                                 	?>
                                                 </table>
-                                                <div class="quantity-inc">
+                                                <div class="quantity-inc" id="product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" data-qty="1" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: block;<?php }else{ ?>display: none;<?php } ?>">
                                                     <label>Qty<span> *</span></label>
                                                     <div class="numbers-row">
-                                                        <span class="dec button">-</span>
-                                                        <input type="text" value="2" name="#">
-                                                        <span class="inc button">+</span>
+                                                        <input type="number" value="1" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: block;<?php }else{ ?>display: none;<?php } ?>" data-qty="1" id="product_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)" onchange="quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)" name="#">
+                                                        
                                                    </div>
                                                 </div>
                                                 <div class="product-button">
                                                     <ul>
-                                                        <li><a href="#" class="curt-button">Select options</a></li>
+                                                        <li><a href="javascript:void(0)" class="curt-button" id="addproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="addtocart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: none;<?php  } ?>"> Add to cart</a></li>
                                                         <li>
                                                             <a href="#"><i class="pe-7s-like"></i></a>
                                                         </li>
@@ -184,8 +185,6 @@
                                     <div class="prod-tab-menu">
                                         <ul class="nav">
                                             <li class="nav-item"><button class="nav-link active" data-bs-target="#description" data-bs-toggle="tab">Description</button></li>
-                                            <li class="nav-item"><button class="nav-link" data-bs-target="#additionalinformation" data-bs-toggle="tab">Additional Information</button></li>
-                                            <li class="nav-item"><button class="nav-link" data-bs-target="#reviews" data-bs-toggle="tab">Reviews (1)</button></li>
                                             <li class="nav-item"><button class="nav-link" data-bs-target="#tags" data-bs-toggle="tab">TAGS</button></li>
                                         </ul>
                                     </div>
@@ -193,89 +192,6 @@
                                         <div id="description" class="tab-pane fade active show">
                                             <h2>Product Description</h2>
                                             <p><?php echo $rowProduct['description'] ?></p>
-                                        </div>
-                                        <div id="additionalinformation" class="tab-pane fade">
-                                            <h2>Additional Information</h2>
-                                            <table class="shop-attributes">
-                                                <tbody>
-                                                    <tr class="">
-                                                        <th>Weight</th>
-                                                        <td class="product-weight">100 kg</td>
-                                                    </tr>
-                                                    <tr class="alt">
-                                                        <th>Dimensions</th>
-                                                        <td class="product-dimensions">
-                                                            100 x 200 x 100 cm
-                                                        </td>
-                                                    </tr>                                            
-                                                    <tr class="">
-                                                        <th>Color</th>
-                                                        <td><p>Black, Blue, Orange, White</p></td>
-                                                    </tr>
-                                                    <tr class="alt">
-                                                        <th>Brand</th>
-                                                        <td><p>Dior, Hermès, Prada</p></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div id="reviews" class="tab-pane fade">
-                                            <h2>1 review for New Oxford Blazer</h2>
-                                            <div class="review-area">
-                                                <div class="single-review">
-                                                    <img width="60" height="60" src="img/user.webp" alt="User">
-                                                    <div class="comment-text">
-                                                        <div class="meta-rating-area">
-                                                            <div class="meta-area">
-                                                                <strong>John Doe</strong>
-                                                                <span>January 28, 2016</span>
-                                                            </div>
-                                                            <div class="user-rating">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="description">
-                                                            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="review-form-area">
-                                                <h3>Add a review </h3>
-                                                <form action="#" method="post">
-                                                    <p class="comment-notes">Your email address will not be published.Required fields are marked <span class="required">*</span>
-                                                    </p>
-                                                    <p class="comment-form-rating">
-                                                        <label>Your Rating</label>
-                                                        <span>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                        </span>
-                                                    </p>
-                                                    <p>
-                                                        <label>Your Review <span class="required">*</span></label>
-                                                        <textarea rows="8" cols="45" name="comment"></textarea>
-                                                    </p>
-                                                    <p>
-                                                        <label>Name <span class="required">*</span></label> 
-                                                        <input type="text" name="author">
-                                                    </p>
-                                                    <p>
-                                                        <label>Email <span class="required">*</span>
-                                                        </label> 
-                                                        <input type="email" name="email">
-                                                    </p>
-                                                    <p>
-                                                        <input type="submit" value="Submit" name="submit">
-                                                    </p>
-                                                </form>
-                                            </div>
                                         </div>
                                         <div id="tags" class="tab-pane fade">
                                            <span class="tagged_as">Tags: 
@@ -356,17 +272,22 @@
 	                                                    <i class="fa fa-star"></i>
 	                                                </div>
 	                                                <div class="price">
-	                                                    <span class="old-price">₦
+	                                                    <span class="old-price">
                                                         <?php 
-                                                            if(!empty($rowProduct['discount'])){
-                                                                $slashed = $rowProduct['discount'] * $rowProduct['price'];
-                                                                $slashed = $slashed / 100;
-                                                                $slashed = $rowProduct['price'] + $slashed;
-                                                                echo number_format($slashed, 2);
+                                                            if($rowProduct['discount'] > 1){
+                                                              $slashed = $rowProduct['discount'] * $rowProduct['price'];
+                                                              $slashed = $slashed / 100;
+                                                              $slashed = $rowProduct['price'] + $slashed;
+                                                              echo '₦'.number_format($slashed, 2);
                                                             }
                                                         ?>
                                                         </span>
-                                                        <span class="new-price">₦<?php echo number_format($rowProduct['price'], 2); ?></span>
+                                                        <span class="new-price"><?php if($rowProduct['discount'] > 1){
+                                                          $slashed = $rowProduct['discount'] * $rowProduct['price'];
+                                                          $slashed = $slashed / 100;
+                                                          $slashed = $rowProduct['price'] - $slashed;
+                                                          echo number_format($slashed, 2);
+                                                        }else{ echo '₦'.number_format($rowProduct['price'], 2); } ?></span>
 	                                                </div>
 	                                            </div>
 	                                        </div>

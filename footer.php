@@ -280,7 +280,7 @@
                   var productId = parts[1];
                   var currentDate = new Date();
                   var qty = document.getElementById('product_qty' + parts[1] + '_' + parts[2]).value;
-                  //alert(data + " | " + productId + "---" + qty);
+                  alert(data + " | " + productId + "---" + qty);
                   xhttp.onload = function() {
                     if(this.responseText == 1){
                       document.getElementById("succesAlert").style.display = "block";

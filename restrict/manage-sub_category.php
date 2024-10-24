@@ -36,7 +36,13 @@
         }
         $slug = str_replace(" ", "_", $name);
         $token = random_strings(22);
-        $sql = mysqli_query($conn, "INSERT INTO sub_category (name, slug, category_id) VALUES ('$name', '$slug', '$category_id')");
+        $image = addslashes($_FILES['subcategoryImages']['name']);
+        $extension = pathinfo($image, PATHINFO_EXTENSION);
+        $image = uniqid() . '.' . $extension;
+        move_uploaded_file($_FILES["subcategoryImages"]["tmp_name"], "../sub_category_images/" .$image);
+
+
+        $sql = mysqli_query($conn, "INSERT INTO sub_category (name, slug, category_id, image) VALUES ('$name', '$slug', '$category_id', '$image')");
 
         
 
@@ -51,7 +57,22 @@
     
     if(isset($_POST['edit'])){
         $slug = str_replace(" ", "_", $name);
-        $sql = mysqli_query($conn, "UPDATE sub_category SET name = '$name', slug = '$slug', category_id = '$category_id' WHERE id = '$edit_id'");
+
+        if(!empty($_FILES["subcategoryImages"]["name"])) {
+            $image = addslashes($_FILES['subcategoryImages']['name']);
+            $extension = pathinfo($image, PATHINFO_EXTENSION);
+            $image = uniqid() . '.' . $extension;
+            move_uploaded_file($_FILES["subcategoryImages"]["tmp_name"], "../sub_category_images/" .$image);
+        }else{
+            $queryImage = mysqli_query($conn, "SELECT * FROM category WHERE id = '$edit_id'");
+            if(mysqli_num_rows($queryImage) > 0){
+                $rowImage = mysqli_fetch_array($queryImage);
+                $image = $rowImage['image'];
+            }
+        }
+
+
+        $sql = mysqli_query($conn, "UPDATE sub_category SET name = '$name', slug = '$slug', category_id = '$category_id', image = '$image' WHERE id = '$edit_id'");
         if($sql){
             ?><script type="text/javascript">window.location = "manage-sub_category?edit=<?php echo $edit_id ?>&success=1"</script><?php
         }else{
@@ -98,6 +119,7 @@
                                     <table class="table" id="table">
                                         <thead>
                                             <th>Sn</th>
+                                            <th>Image</th>
                                             <th>Category</th>
                                             <th>Sub Category</th>
                                             <th style="width: 100px;">Action</th>
@@ -111,6 +133,7 @@
                                                     ?>
                                                     <tr>
                                                         <td><?php echo $sn++; ?></td>
+                                                        <td><img src="../sub_category_images/<?php echo $row['image']; ?>" style="width: 35px;"></td>
                                                         <td>
                                                             <?php  
                                                                 $query_category = mysqli_query($conn, "SELECT * FROM category WHERE id = '$category'");
@@ -150,6 +173,12 @@
                                 <div class="card p-4">
                                     <form method="POST" action="" enctype="multipart/form-data">
                                         <div class="row">
+                                            <div class="col-md-12 my-2">
+                                                <p class="m-0">Sub Category Image</p>
+                                                <input type="file" id="subcategoryImages" name="subcategoryImages">
+                                                <div class="preview-container" id="previewContainer"></div>
+                                            </div>
+
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Category</p>
                                                 <select class="form-select" name="category_id" id="category" onchange="selectCategory();">
@@ -199,6 +228,12 @@
                                     <form method="POST" action="" enctype="multipart/form-data">
                                         <div class="row">
                                             <input type="hidden" name="edit_id" value="<?php echo $edit; ?>">
+                                            <div class="col-md-12 my-2">
+                                                <p class="m-0">Sub Category Image</p>
+                                                <input type="file" id="subcategoryImages" name="subcategoryImages">
+                                                <div class="preview-container" id="previewContainer"></div>
+                                            </div>
+
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Category</p>
                                                 <select class="form-select" name="category_id" id="category" onchange="selectCategory();">
@@ -247,6 +282,13 @@
                             
                             <div class="col-md-12">
                                 <div class="card p-4">
+                                    <div class="row">
+                                        <div class="col-md-3">Image:</div>
+                                        <div class="col-md-9">
+                                            <img src="../sub_category_images/<?php echo $row['image'] ?>" style="max-width: 100px; max-height: 100px; margin: 10px;">
+                                        </div>
+                                    </div><hr>
+
                                     <div class="row">
                                         <div class="col-md-3">Id:</div><div class="col-md-9"><?php echo $row['id'] ?></div>
                                     </div><hr>

@@ -47,6 +47,8 @@
     
     
     if(isset($_POST['upload'])){
+        $discount = empty($discount) || $discount == '0' ? 1 : $discount ;
+        $quantity = empty($quantity) || $quantity == '0' ? 1 : $quantity ;
         if(empty($editform)){ 
             $success_alert_link = "";
             $success_alert = "";
@@ -83,13 +85,16 @@
         if($sql){
             ?><script type="text/javascript">window.location = "manage-product?success=1"</script><?php
         }else{
-            die('Error note' . mysqli_error($conn));
-            ?><script type="text/javascript">window.location = "manage-product?error=1"</script><?php
+            echo "$name ------- $price ------- $cost_price ------- $outside_price ------- $outside_cost_price ------- $description ------- $keypoint ------- $search_keyword ------- $discount ------- $rating ------- $feature ------- $brand ------- $category ------- $sub_category ------- $quantity ------- $parking ------- $token ------- $slug ------- $origin ------- $type ------- $sku ------- $out_of_stock ";
+            echo 'Error note' . mysqli_error($conn);
+            ?><script type="text/javascript">//window.location = "manage-product?error=1"</script><?php
         }
     }
 
     
     if(isset($_POST['edit'])){
+        $discount = empty($discount) || $discount == '0' ? 1 : $discount ;
+        $quantity = empty($quantity) || $quantity == '0' ? 1 : $quantity ;
         if (!empty($_POST['feature'])) {
             $feature = implode(",", $_POST['feature']);
         } else {
@@ -131,6 +136,7 @@
         if($sql){
             ?><script type="text/javascript">window.location = "manage-product?edit=<?php echo $edit_id ?>&success=1"</script><?php
         }else{
+            echo "$name ------- $price ------- $cost_price ------- $outside_price ------- $outside_cost_price ------- $description ------- $keypoint ------- $search_keyword ------- $discount ------- $rating ------- $feature ------- $brand ------- $category ------- $sub_category ------- $quantity ------- $parking ------- $token ------- $slug ------- $origin ------- $type ------- $sku ------- $out_of_stock ";
             die('Error note' . mysqli_error($conn));
             ?><script type="text/javascript">window.location = "manage-product?edit=<?php echo $edit_id ?>&error=1"</script><?php
         }
@@ -326,7 +332,7 @@
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Brand</p>
-                                                <select class="form-select" required name="brand" id="brand">
+                                                <select class="form-select" name="brand" id="brand">
                                                     <option value=""> ** Choose Brand</option>
                                                     <?php  
                                                         $query_brand = mysqli_query($conn, "SELECT * FROM brand");
@@ -529,7 +535,7 @@
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Discount</p>
-                                                <input type="number" name="discount" class="form-control" required placeholder="discount" value="<?php echo $row['discount'] ?>">
+                                                <input type="number" name="discount" class="form-control" placeholder="discount" value="<?php echo $row['discount'] ?>">
                                             </div>
 
                                             <div class="col-md-6 my-2">
