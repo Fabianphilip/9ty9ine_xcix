@@ -131,7 +131,7 @@
                                     <div class="header-menu-item-icon m-0 p-0">
                                         <a href="#" class="icon-cart m-0 p-0">
                                             <i class="fa animated fa-shopping-cart"></i>
-                                            <span class="cart-total"><span id="cartSpan"><?php echo $countCart ?></span> Items | ₦<span id="cartSpanTotal"><?php echo number_format($totalPrice,2) ?></span></span>
+                                            <span class="cart-total"><span id="cartSpan"><?php echo $countCart ?></span> Items | ₦<span id="cartSpanTotal"><?php if($totalPrice > 0){ echo number_format($totalPrice,2); }else{ echo '0.0'; } ?></span></span>
                                         </a>
                                         <div class="mini-cart">
                                             <ul id="cardsidebar">
