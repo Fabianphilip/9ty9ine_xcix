@@ -5,12 +5,12 @@
     $feature = get_input($conn, 'feature');
 
     $where = 'WHERE p.id > 0';
-    if(!empty($category)){ $where .= "AND c.name = '$category'"; }
-    if(!empty($feature)){ $where .= "AND f.name = '$feature'"; }
+    if(!empty($category)){ $where .= " AND c.name = '$category'"; }
+    if(!empty($feature)){ $where .= " AND f.name = '$feature'"; }
 ?>
 
 
-<div class="row">
+<div class="row my-5">
     <?php
         $queryProduct = mysqli_query($conn, "SELECT c.name AS category_name, p.id AS id, p.price AS price, p.rating AS rating, p.discount AS discount, p.name AS name, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images, p.image_token AS image_token FROM product p JOIN product_images i ON i.token  = p.image_token JOIN category c ON c.id = p.category JOIN feature f ON FIND_IN_SET(f.id, p.feature) $where GROUP BY p.id ");
         if(mysqli_num_rows($queryProduct) > 0){

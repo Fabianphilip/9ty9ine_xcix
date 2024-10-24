@@ -66,6 +66,9 @@
                 .product_height{
                     height: 200px;
                 }
+                .mobilexmargin{
+                    margin: 0px 0px 0px 0px !important;
+                }
             }
             @media only screen and (min-width: 600px){
                 .product_height{

@@ -118,7 +118,7 @@
         
         <!-- PRODUCT-TAB AREA START -->
         <div class="product-tab-area marg-b70">
-            <div class="container">
+            <div class="container mobilexmargin">
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title style-two">
