@@ -161,9 +161,9 @@
                                         while($rowProduct = mysqli_fetch_array($queryProduct)){
                                             $images = explode(',', $rowProduct['images']);
                                     ?>
-                                        <div class="col-lg-3 col-sm-6 col-md-6 col-6">
+                                        <div class="col-6 col-lg-3 col-sm-6 col-md-6">
                                             <div class="single-product">
-                                                <div class="product-image" style="height: 500px;">
+                                                <div class="product-image product_height">
                                                     <a href="details?id=<?php echo $rowProduct['id']; ?>">
                                                         <img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;">
                                                         <img class="secondary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;">

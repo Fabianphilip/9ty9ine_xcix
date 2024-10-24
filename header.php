@@ -204,11 +204,11 @@
             </div>
             <!-- HEADER-TOP END -->
 			<div class="header-area header-two hm-5" id="sticker">
-                <div class="container">
+                <div class="">
                     <div class="row">
                         <!-- LOGO AREA START -->
-                        <div class="col-lg-2 col-md-6">
-                            <div class="logo">
+                        <div class="col-4 col-lg-2 col-md-6">
+                            <div class="logo m-0">
                                 <a href="/">
                                     <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;">
                                 </a>
@@ -241,7 +241,7 @@
                         </div>
                         <!-- MAIN MENU AREA END -->
                         <!-- HEADER RIGHT START -->
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-8 col-lg-3 col-md-6">
                             <div class="header-right">
                                 <div class="search-box-area">
                                     <div class="header-menu-item-icon">
