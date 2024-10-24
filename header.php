@@ -71,9 +71,8 @@
                         <div class="col-12 col-md-6">
                             <div class="top-menu">
                                 <ul>
-                                    <li><a href="index.html"><img width="80" src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"></a></li>
-                                    <li><a href="my-account">My Account</a></li>
-                                    <li><a href="wishlist">Wishlist</a></li>
+                                    <li><a href="/"><img width="80" src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"></a></li>
+                                    <li><a href="shop">Shop</a></li>
                                     <li><a href="checkout">Checkout</a></li>
                                     <li><a href="login">Login</a></li>
                                 </ul>
@@ -192,7 +191,7 @@
                         <!-- LOGO AREA START -->
                         <div class="col-lg-2 col-md-6">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img width="144" height="60" src="assets/img/9ty9inelogo.png" alt="Logo">
                                 </a>
                             </div>
@@ -204,210 +203,19 @@
                                 <nav>
                                     <ul>
                                         <li class="active">
-											<a href="index.html">Home</a>
-                                            <ul class="dropdown">
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                                <li><a href="index-4.html">Home Four</a></li>
-                                                <li><a href="index-5.html">Home Five</a></li>
-                                                <li><a href="index-6.html">Home Six</a></li>
-                                                <li><a href="index-7.html">Home Seven</a></li>
-                                                <li><a href="index-8.html">Home Eight</a></li>
-                                                <li><a href="index-9.html">Home Nine</a></li>
-                                            </ul>
+											<a href="/">Home</a>
                                         </li>
                                         <li>
-											<a href="#">Shop</a>
-                                            <ul class="dropdown">
-                                                <li><a href="shop-full-width.html">Shop Full Width</a></li>
-                                                <li><a href="shop.html">Shop Left Sidebar</a></li>
-                                                <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                <li><a href="shop-2-columns.html">Shop 2 Columns</a></li>
-                                                <li><a href="shop.html">Shop 3 Column</a></li>
-                                                <li><a href="shop-5-columns.html">Shop 5 columns</a></li>
-                                            </ul>
+											<a href="shop">Shop</a>
                                         </li>
                                         <li>
-											<a href="#">Elements</a>
-                                            <div class="mega-menu">
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=all">Product Category</a>
-                                                    </h3>
-                                                    <a href="shop?category=all">View all></a>
-                                                    <?php
-                                                        $queryCategories = mysqli_query($conn, "SELECT * FROM category");
-                                                        if(mysqli_num_rows($queryCategories) > 0){
-                                                            $sn = 1;
-                                                            while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                                                                ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
-                                                            }
-                                                        }
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?feature=all">Featured Products</a>
-                                                    </h3>
-                                                    <a href="shop?category=feature">View all></a>
-                                                    <?php
-                                                        $queryFeatures = mysqli_query($conn, "SELECT * FROM feature");
-                                                        if(mysqli_num_rows($queryFeatures) > 0){
-                                                            $sn = 1;
-                                                            while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
-                                                                ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><?php echo $rowFeatures['name'] ?></a><?php
-                                                            }
-                                                        }
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=men">Men</a>
-                                                    </h3>
-                                                    <a href="shop?category=menn">View all></a>
-                                                    <?php
-                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%'");
-                                                        if(mysqli_num_rows($getCategory) > 0){
-                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
-                                                            $categoryID = $rowCategoryy['id'];
-                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
-                                                            if(mysqli_num_rows($queryCategories) > 0){
-                                                                $sn = 1;
-                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
-                                                                }
-                                                            }
-                                                        }
-                                                        
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=women">Women</a>
-                                                    </h3>
-                                                    <a href="shop?category=women">View all></a>
-                                                    <?php
-                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%'");
-                                                        if(mysqli_num_rows($getCategory) > 0){
-                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
-                                                            $categoryID = $rowCategoryy['id'];
-                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
-                                                            if(mysqli_num_rows($queryCategories) > 0){
-                                                                $sn = 1;
-                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
-                                                                }
-                                                            }
-                                                        }
-                                                        
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=unisex">Unisex</a>
-                                                    </h3>
-                                                    <a href="shop?category=unisex">View all></a>
-                                                    <div class="menu-img">
-                                                        <?php
-                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%unisex%'");
-                                                        if(mysqli_num_rows($getCategory) > 0){
-                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
-                                                            ?><img src="category_images/<?php echo $rowCategoryy['image'] ?>" alt=""><?php
-                                                        }
-                                                        
-                                                    ?>
-                                                    </div>
-                                                </div>
-                                            </div>
+											<a href="#">Items</a>
+                                            <?php include 'mega-menu.php' ?>
                                         </li>
 
                                         <li>
                                             <a href="#">Brands</a>
-                                            <div class="mega-menu">
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=all">A-Z Brands</a>
-                                                    </h3>
-                                                    <?php
-                                                        $queryBrands = mysqli_query($conn, "SELECT * FROM brand ORDER BY name ASC");
-                                                        if(mysqli_num_rows($queryBrands) > 0){
-                                                            $sn = 1;
-                                                            while ($rowBrands = mysqli_fetch_array($queryBrands)) {
-                                                                ?><a href="shop?category=<?php echo $rowBrands['id'] ?>"><?php echo $rowBrands['name'] ?></a><?php
-                                                            }
-                                                        }
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?feature=all">Featured Products</a>
-                                                    </h3>
-                                                    <?php
-                                                        $queryFeatures = mysqli_query($conn, "SELECT * FROM feature");
-                                                        if(mysqli_num_rows($queryFeatures) > 0){
-                                                            $sn = 1;
-                                                            while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
-                                                                ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><?php echo $rowFeatures['name'] ?></a><?php
-                                                            }
-                                                        }
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=men">Men</a>
-                                                    </h3>
-                                                    <?php
-                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%'");
-                                                        if(mysqli_num_rows($getCategory) > 0){
-                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
-                                                            $categoryID = $rowCategoryy['id'];
-                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
-                                                            if(mysqli_num_rows($queryCategories) > 0){
-                                                                $sn = 1;
-                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
-                                                                }
-                                                            }
-                                                        }
-                                                        
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=women">Women</a>
-                                                    </h3>
-                                                    <?php
-                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%'");
-                                                        if(mysqli_num_rows($getCategory) > 0){
-                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
-                                                            $categoryID = $rowCategoryy['id'];
-                                                            $queryCategories = mysqli_query($conn, "SELECT * FROM sub_category WHERE category_id = '$categoryID'");
-                                                            if(mysqli_num_rows($queryCategories) > 0){
-                                                                $sn = 1;
-                                                                while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                                                                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><?php echo $rowCategories['name'] ?></a><?php
-                                                                }
-                                                            }
-                                                        }
-                                                        
-                                                    ?>
-                                                </div>
-                                                <div class="single-mega-menu">
-                                                    <h3 class="menu-hedding">
-                                                        <a href="shop?category=unisex">Unisex</a>
-                                                    </h3>
-                                                    <div class="menu-img">
-                                                        <?php
-                                                        $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%unisex%'");
-                                                        if(mysqli_num_rows($getCategory) > 0){
-                                                            $rowCategoryy = mysqli_fetch_array($getCategory);
-                                                            ?><img src="category_images/<?php echo $rowCategoryy['image'] ?>" alt=""><?php
-                                                        }
-                                                        
-                                                    ?>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php include 'mega-menu2.php'; ?>
                                         </li>
                                     </ul>
                                 </nav>
@@ -568,69 +376,17 @@
                                 <div class="mobile-menu">
                                     <nav id="dropdown">
                                         <ul>
-                                            <li><a href="index.html">Home</a>
-                                                <ul>
-                                                    <li><a href="index-2.html">Home Two</a></li>
-                                                    <li><a href="index-3.html">Home Three</a></li>
-                                                    <li><a href="index-4.html">Home Four</a></li>
-                                                    <li><a href="index-5.html">Home Five</a></li>
-                                                    <li><a href="index-6.html">Home Six</a></li>
-                                                    <li><a href="index-7.html">Home Seven</a></li>
-                                                    <li><a href="index-8.html">Home Eight</a></li>
-                                                    <li><a href="index-9.html">Home Nine</a></li>
-                                                </ul>
+                                            <li><a href="/">Home</a>
                                             </li>
-                                            <li><a href="shop.html">Shop</a>
-                                                <ul>                                        
-                                                    <li><a href="shop-full-width.html">Shop Full Width</a></li>
-                                                    <li><a href="shop.html">Shop Left Sidebar</a></li>
-                                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                    <li><a href="shop-2-columns.html">Shop 2 Columns</a></li>
-                                                    <li><a href="shop.html">Shop 3 Column</a></li>
-                                                    <li><a href="shop-5-columns.html">Shop 5 columns</a></li>
-                                                </ul>
+                                            <li><a href="shop">Shop</a>
                                             </li>
-                                            <li><a href="shop.html">Elements</a>
-                                                <ul>
-                                                    <li><a href="shop.html">Products By Category</a></li>
-                                                    <li><a href="shop.html">Product Image Zoom</a></li>
-                                                    <li><a href="shop.html">Variable Product</a></li>
-                                                    <li><a href="shop.html">Product Layout</a></li>
-                                                </ul>
+                                            <li><a href="shop">Items</a>
+                                                <?php include 'mega-menu.php' ?>
                                             </li>
-                                            <li><a href="blog-left-sidebar.html">Blogs</a>
-                                                <ul>
-                                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                                    <li><a href="blog-2-columns.html">Blog 2 Columns</a></li>
-                                                    <li><a href="blog-3-columns.html">Blog 3 Columns</a></li>
-                                                    <li><a href="blog-4-columns.html">Blog 4 Columns</a></li>
-                                                    <li><a href="blog-details.html">Detail Blog</a></li>
-                                                </ul>
+                                            <li><a href="brands">Brands</a>
+                                                <<?php include 'mega-menu2.php'; ?>
                                             </li>
-                                            <li><a href="portfolio-2-columns.html">Portfolio</a>
-                                                <ul>
-                                                    <li><a href="portfolio-2-columns.html">Portfolio 2 columns</a></li>
-                                                    <li><a href="portfolio-3-columns.html">Portfolio 3 columns</a></li>
-                                                    <li><a href="portfolio-4-columns.html">Portfolio 4 columns</a></li>
-                                                    <li><a href="portfolio-with-pagination-no-filter.html">Portfolio With Pagination</a></li>
-                                                    <li><a href="portfolio-details.html">Detail Portfolio</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Pages</a>
-                                                <ul>
-                                                    <li><a href="about-us.html">About Us</a></li>
-                                                    <li><a href="single-product.html">Product Details</a></li>
-                                                    <li><a href="shopping-cart.html">Cart</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="login.html">Login Or Register</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                    <li><a href="404.html">404 Error</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact-us.html">Contact</a></li>
+                                            <li><a href="contact">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>                  

@@ -156,7 +156,7 @@
                         <div id="<?php echo $rowFeatures['slug'] ?>" class="tab-pane fade <?php if($snn == '1'){ ?>active show <?php } ?>">
                             <div class="row">
                                 <?php
-                                    $queryProduct = mysqli_query($conn, "SELECT c.name AS category_name, p.id AS id, p.price AS price, p.rating AS rating, p.discount AS discount, p.name AS name, GROUP_CONCAT(i.image ORDER BY i.id ASC LIMIT 2) AS images, p.image_token AS image_token FROM product p JOIN product_images i ON i.token  = p.image_token JOIN category c ON c.id = p.category WHERE p.feature LIKE '%$featureId%' GROUP BY p.id ");
+                                    $queryProduct = mysqli_query($conn, "SELECT c.name AS category_name, p.id AS id, p.price AS price, p.rating AS rating, p.discount AS discount, p.name AS name, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images, p.image_token AS image_token FROM product p JOIN product_images i ON i.token  = p.image_token JOIN category c ON c.id = p.category WHERE p.feature LIKE '%$featureId%' GROUP BY p.id ");
                                     if(mysqli_num_rows($queryProduct) > 0){
                                         while($rowProduct = mysqli_fetch_array($queryProduct)){
                                             $images = explode(',', $rowProduct['images']);
