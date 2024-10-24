@@ -18,7 +18,7 @@
     $site_address = tp_input($conn, 'site_address');
     $site_facebook = tp_input($conn, 'site_facebook');
     $site_phone = tp_input($conn, 'site_phone');
-    $site_currency = tp_input($conn, 'site_currency');
+    $currency = tp_input($conn, 'currency');
     $sqmbol = tp_input($conn, 'sqmbol');
     $site_insta = tp_input($conn, 'site_insta');
     $site_linkedin = tp_input($conn, 'site_linkedin');
@@ -29,10 +29,10 @@
     if(!empty($del)){
         $del = mysqli_query($conn, "DELETE FROM general WHERE id = '$del'");
         if($del){
-            ?><script type="text/javascript">window.location = "general-manage?success=1"</script><?php
+            ?><script type="text/javascript">window.location = "general-management?success=1"</script><?php
         }else{
             echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "general-manage?error=1"</script><?php
+            ?><script type="text/javascript">window.location = "general-management?error=1"</script><?php
         }
     }
     
@@ -42,7 +42,7 @@
             $success_alert_link = "";
             $success_alert = "";
         }
-        $slug = str_replace(" ", "_", $name);
+        $slug = str_replace(" ", "_", $site_name);
         $token = random_strings(22);
 
         $site_logo = addslashes($_FILES['sitelogo']['name']);
@@ -54,21 +54,21 @@
         $extension = pathinfo($site_logo2, PATHINFO_EXTENSION);
         $site_logo2 = uniqid() . '.' . $extension;
         move_uploaded_file($_FILES["sitelogo2"]["tmp_name"], "../assets/img/" .$site_logo2);
-        $sql = mysqli_query($conn, "INSERT INTO general (site_name, domain, site_email, site_address, site_facebook, site_phone, site_currency, sqmbol, site_insta, site_linkedin, site_logo, site_logo2) VALUES ('$site_name', '$domain', '$site_email', '$site_address', '$site_facebook', '$site_phone', '$site_currency', '$sqmbol', '$site_insta', '$site_linkedin', '$site_logo', '$site_logo2')");
+        $sql = mysqli_query($conn, "INSERT INTO general (site_name, domain, site_email, site_address, site_facebook, site_phone, currency, sqmbol, site_insta, site_linkedin, site_logo, site_logo2) VALUES ('$site_name', '$domain', '$site_email', '$site_address', '$site_facebook', '$site_phone', '$currency', '$sqmbol', '$site_insta', '$site_linkedin', '$site_logo', '$site_logo2')");
 
         
 
         if($sql){
-            ?><script type="text/javascript">window.location = "general-manage?success=1"</script><?php
+            ?><script type="text/javascript">window.location = "general-management?success=1"</script><?php
         }else{
             echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "general-manage?error=1"</script><?php
+            ?><script type="text/javascript">window.location = "general-management?error=1"</script><?php
         }
     }
 
     
     if(isset($_POST['edit'])){
-        $slug = str_replace(" ", "_", $name);
+        $slug = str_replace(" ", "_", $site_name);
         if(!empty($_FILES["sitelogo"]["name"])) {
             $site_logo = addslashes($_FILES['sitelogo']['name']);
             $extension = pathinfo($site_logo, PATHINFO_EXTENSION);
@@ -93,12 +93,12 @@
                 $site_logo2 = $rowImage['site_logo2'];
             }
         }
-        $sql = mysqli_query($conn, "UPDATE general SET site_name = '$site_name', domain = '$domain', site_email = '$site_email', site_address = '$site_address', site_facebook = '$site_facebook', site_phone = '$site_phone', site_currency = '$site_currency', sqmbol = '$sqmbol', site_insta = '$site_insta', site_linkedin = '$site_linkedin', site_logo = '$site_logo', site_logo2 = '$site_logo2' WHERE id = '$edit_id'");
+        $sql = mysqli_query($conn, "UPDATE general SET site_name = '$site_name', domain = '$domain', site_email = '$site_email', site_address = '$site_address', site_facebook = '$site_facebook', site_phone = '$site_phone', currency = '$currency', sqmbol = '$sqmbol', site_insta = '$site_insta', site_linkedin = '$site_linkedin', site_logo = '$site_logo', site_logo2 = '$site_logo2' WHERE id = '$edit_id'");
         if($sql){
-            ?><script type="text/javascript">window.location = "general-manage?edit=<?php echo $edit_id ?>&success=1"</script><?php
+            ?><script type="text/javascript">window.location = "general-management?edit=<?php echo $edit_id ?>&success=1"</script><?php
         }else{
             echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "general-manage?edit=<?php echo $edit_id ?>&error=1"</script><?php
+            ?><script type="text/javascript">window.location = "general-management?edit=<?php echo $edit_id ?>&error=1"</script><?php
         }
     }
 
@@ -132,7 +132,7 @@
                                 <h4>Management Features</h4>
                             </div>
                             <div class="col-md-6 p-2 my-0">
-                                <a href="general-manage?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add Features</a>
+                                <a href="general-management?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add Features</a>
                             </div>
                             <hr>
                             <div class="col-md-12">
@@ -165,9 +165,9 @@
                                                         <td><?php echo $row['site_phone']; ?></td>
                                                         <td>
                                                             <div class="row d-flex" style="width: 170px;">
-                                                                <div class="col-auto px-0"><a href="general-manage?edit=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-edit"></i></a></div>
-                                                                <div class="col-auto px-0"><a href="general-manage?del=<?php echo $row['id'] ?>" class="btn btn-secondary m-1"><i class="fa fa-trash"></i></a></div>
-                                                                <div class="col-auto px-0"><a href="general-manage?view=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-eye"></i></a></div>
+                                                                <div class="col-auto px-0"><a href="general-management?edit=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-edit"></i></a></div>
+                                                                <div class="col-auto px-0"><a href="general-management?del=<?php echo $row['id'] ?>" class="btn btn-secondary m-1"><i class="fa fa-trash"></i></a></div>
+                                                                <div class="col-auto px-0"><a href="general-management?view=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-eye"></i></a></div>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -184,7 +184,7 @@
                                 <h4>Add Feature</h4>
                             </div>
                             <div class="col-md-8 p-2 my-0">
-                                <a href="general-manage" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
+                                <a href="general-management" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
                             </div>
                             <hr>
                         
@@ -228,7 +228,7 @@
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Site Currency</p>
-                                                <input type="text" name="site_currency" class="form-control" required placeholder="Site Currency" >
+                                                <input type="text" name="currency" class="form-control" required placeholder="Site Currency" >
                                             </div>
 
                                             <div class="col-md-6 my-2">
@@ -267,8 +267,8 @@
                                 <h4>Edit Feature</h4>
                             </div>
                             <div class="col-md-8 p-2 my-0">
-                                <a href="general-manage" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                                <a href="general-manage?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
+                                <a href="general-management" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
+                                <a href="general-management?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
                             </div>
                             <hr>
                         
@@ -314,7 +314,7 @@
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Site Currency</p>
-                                                <input type="text" name="site_currency" class="form-control" required placeholder="Site Currency" value="<?php echo $row['site_currency'] ?>">
+                                                <input type="text" name="currency" class="form-control" required placeholder="Site Currency" value="<?php echo $row['currency'] ?>">
                                             </div>
 
                                             <div class="col-md-6 my-2">
@@ -355,8 +355,8 @@
                                 <h4>View Feature</h4>
                             </div>
                             <div class="col-md-8 p-2 my-0">
-                                <a href="general-manage" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                                <a href="general-manage?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
+                                <a href="general-management" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
+                                <a href="general-management?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
                             </div>
                             <hr>
                             
@@ -392,7 +392,7 @@
                                         <div class="col-md-3">Site Phone:</div><div class="col-md-9"><?php echo $row['site_phone'] ?></div>
                                     </div><hr>
                                     <div class="row">
-                                        <div class="col-md-3">Site currency:</div><div class="col-md-9"><?php echo $row['site_currency'] ?></div>
+                                        <div class="col-md-3">Site currency:</div><div class="col-md-9"><?php echo $row['currency'] ?></div>
                                     </div><hr>
                                     <div class="row">
                                         <div class="col-md-3">Symbol:</div><div class="col-md-9"><?php echo $row['sqmbol'] ?></div>
