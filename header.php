@@ -61,6 +61,18 @@
         <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     </head>
     <body>
+        <style type="text/css">
+            @media only screen and (max-width: 600px){
+                .product_height{
+                    height: 200px;
+                }
+            }
+            @media only screen and (min-width: 600px){
+                .product_height{
+                    height: 200px;
+                }
+            }
+        </style>
         <div class="btn btn-success p-2" id="succesAlert" style="color: white; position: fixed; z-index: 999999; width: 100%; display: none;">
             <center>Successfull added to cart</center>
         </div>

@@ -21,8 +21,8 @@
                 <div class="single-product">
                     <div class="product-image" style="height: 500px;">
                         <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                            <img class="primary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;height: 500px;">
-                            <img class="secondary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;height: 500px;">
+                            <img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;">
+                            <img class="secondary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;">
                         </a>
                         <span class="onsale">Sale!</span>
                         <div class="category-action-buttons">
@@ -66,7 +66,7 @@
                             ?>
                             </div>
                             <div class="price">
-                                <span class="old-price">₦
+                                <span class="old-price">
                                 <?php 
                                     if($rowProduct['discount'] > 1){
                                       $slashed = $rowProduct['discount'] * $rowProduct['price'];
@@ -76,12 +76,12 @@
                                     }
                                 ?>
                                 </span>
-                                <span class="new-price">₦<?php if($rowProduct['discount'] > 1){
+                                <span class="new-price"><?php if($rowProduct['discount'] > 1){
                                   $slashed = $rowProduct['discount'] * $rowProduct['price'];
                                   $slashed = $slashed / 100;
                                   $slashed = $rowProduct['price'] - $slashed;
                                   echo number_format($slashed, 2);
-                                }else{ echo number_format($rowProduct['price'], 2); } ?></span>
+                                }else{ echo '₦'.number_format($rowProduct['price'], 2); } ?></span>
                             </div>
                         </div>
                     </div>
