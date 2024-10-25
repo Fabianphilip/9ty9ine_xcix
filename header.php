@@ -68,6 +68,7 @@
                 }
                 .mobilexmargin{
                     margin: 0px 0px 0px 0px !important;
+                    width: 100% !important;
                 }
             }
             @media only screen and (min-width: 600px){
