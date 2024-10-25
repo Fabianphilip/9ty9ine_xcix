@@ -89,6 +89,8 @@
             </div>
             <?php
             }
+        }else{
+            echo 'no product to show';
         }
     ?>
 </div>

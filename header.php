@@ -89,17 +89,19 @@
             <div class="header-top-ber hide-show">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-5">
                             <div class="top-menu">
                                 <ul>
                                     <li><a href="/"><img width="80" src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"></a></li>
                                     <li><a href="shop">Shop</a></li>
+                                    <li><a href="shop?category=men">Men</a></li>
+                                    <li><a href="shop?category=women">Women</a></li>
                                     <li><a href="checkout">Checkout</a></li>
                                     <li><a href="login">Login</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12 col-md-8 d-none d-md-block m-0 p-0">
+                        <div class="col-12 col-md-7 d-none d-md-block m-0 p-0">
                             <div class="header-right">
 
                                 <div class="search-box-area">

@@ -1,4 +1,17 @@
 <?php include 'header.php' ?>
+    <?php if(!isset($_SESSION['firstsee'])){ 
+        $_SESSION['firstsee'] = 1;
+    ?>
+    <div id="firstsee" style="position: fixed;top: 0;left: 0; width: 100%;height: 100%;background-color: white;align-items: center;justify-content: center;z-index: 1000;text-align: center; align-content: center;">
+        <img src="assets/img/9ty9inelogo.png" style="background-color: #fff;padding: 20px; width: 80%;max-width: 400px;border-radius: 8px;position: relative;text-align: center; animation: fadeIn 0.3s ease-in-out;"><br>
+        <span style="padding: 10px 10px; background: black; color: white; font-weight: 900; border-radius: 50px; display: inline-block;" onclick="closefirstseen()">Continue</span>
+    </div>
+    <script type="text/javascript">
+        function closefirstseen(){
+            document.getElementById("firstsee").style.display = 'none';
+        }
+    </script>
+    <?php } ?>
 
         <!-- SLIDER AREA START -->
         <div class="">
