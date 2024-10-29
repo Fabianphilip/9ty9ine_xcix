@@ -7,6 +7,7 @@
       	$rowProduct = mysqli_fetch_array($queryProduct);
       	$token = $rowProduct['image_token'];
       	$category = $rowProduct['category'];
+        $category_name = $rowProduct['category_name'];
     }
 ?>
 
@@ -220,7 +221,7 @@
                             <div class="row">
                                 <div class="product-carosul-2 nav-button-style-one owl-carousel owl-theme">
                                     <?php
-	                                    $queryProduct = mysqli_query($conn, "SELECT c.name AS category_name, p.id AS id, p.price AS price, p.rating AS rating, p.discount AS discount, p.name AS name, GROUP_CONCAT(i.image ORDER BY i.id ASC LIMIT 2) AS images, p.image_token AS image_token FROM product p JOIN product_images i ON i.token  = p.image_token JOIN category c ON c.id = p.category WHERE c.name LIKE '%$category%' GROUP BY p.id ");
+	                                    $queryProduct = mysqli_query($conn, "SELECT c.name AS category_name, p.id AS id, p.price AS price, p.rating AS rating, p.discount AS discount, p.name AS name, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images, p.image_token AS image_token FROM product p JOIN product_images i ON i.token  = p.image_token JOIN category c ON c.id = p.category WHERE c.name LIKE '%$category_name%' GROUP BY p.id ");
 	                                    if(mysqli_num_rows($queryProduct) > 0){
 	                                        while($rowProduct = mysqli_fetch_array($queryProduct)){
 	                                            $images = explode(',', $rowProduct['images']);
@@ -311,14 +312,15 @@
                             
                             <div class="special-product">
                                 <?php
-	                            	$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.feature AS feature, p.name AS name, i.image AS image, p.rating AS rating, p.discount AS discount FROM product p JOIN product_images i ON i.token = p.image_token WHERE p.feature LIKE '%4%' ");
+	                            	$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.feature AS feature, p.name AS name, i.image AS image, p.rating AS rating, p.discount AS discount, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images FROM product p JOIN product_images i ON i.token = p.image_token WHERE p.feature LIKE '%4%' ");
 						            if(mysqli_num_rows($queryProduct) > 0){
 						              	while($rowProduct = mysqli_fetch_array($queryProduct)){
+                                            $images = explode(',', $rowProduct['images']);
 	                            	?>
 	                                <div class="special-single-product">
 	                                    <div class="sp-img">
 	                                        <a href="#">
-	                                            <img alt="" width="180" height="228" src="product_images/<?php echo $rowProduct['image']; ?>">
+	                                            <img alt="" width="180" height="228" src="product_images/<?php echo $images[0]; ?>">
 	                                        </a>
 	                                    </div>
 	                                    <div class="sp-prod-info">
