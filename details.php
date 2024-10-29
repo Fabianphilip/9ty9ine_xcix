@@ -312,7 +312,7 @@
                             
                             <div class="special-product">
                                 <?php
-	                            	$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.feature AS feature, p.name AS name, i.image AS image, p.rating AS rating, p.discount AS discount, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images FROM product p JOIN product_images i ON i.token = p.image_token WHERE p.feature LIKE '%4%' ");
+	                            	$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.feature AS feature, p.name AS name, i.image AS image, p.rating AS rating, p.discount AS discount, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images FROM product p JOIN product_images i ON i.token = p.image_token WHERE p.feature LIKE '%4%' GROUP BY p.id");
 						            if(mysqli_num_rows($queryProduct) > 0){
 						              	while($rowProduct = mysqli_fetch_array($queryProduct)){
                                             $images = explode(',', $rowProduct['images']);
