@@ -1,9 +1,13 @@
 <?php include 'header.php' ?>
 <?php if(!empty($email)){ ?>
+<style>
+    .cke_notifications_area{
+        display: none !important;
+    }
+</style>
 <div class="container mt-4">
 
 <?php           
-    $add = get_input($conn, 'add');
     $edit = get_input($conn, 'edit');
     $view = get_input($conn, 'view');
     $send = get_input($conn, 'send');
@@ -22,6 +26,9 @@
     $sqmbol = tp_input($conn, 'sqmbol');
     $site_insta = tp_input($conn, 'site_insta');
     $site_linkedin = tp_input($conn, 'site_linkedin');
+    $about = tp_input($conn, 'about');
+    $terms = tp_input($conn, 'terms');
+    $policies = tp_input($conn, 'policies');
     $edit_id = tp_input($conn, 'edit_id');
     $editform = tp_input($conn, 'editform');
 
@@ -37,34 +44,7 @@
     }
     
     
-    if(isset($_POST['upload'])){
-        if(empty($editform)){ 
-            $success_alert_link = "";
-            $success_alert = "";
-        }
-        $slug = str_replace(" ", "_", $site_name);
-        $token = random_strings(22);
-
-        $site_logo = addslashes($_FILES['sitelogo']['name']);
-        $extension = pathinfo($site_logo, PATHINFO_EXTENSION);
-        $site_logo = uniqid() . '.' . $extension;
-        move_uploaded_file($_FILES["sitelogo"]["tmp_name"], "../assets/img/" .$site_logo);
-
-        $site_logo2 = addslashes($_FILES['sitelogo2']['name']);
-        $extension = pathinfo($site_logo2, PATHINFO_EXTENSION);
-        $site_logo2 = uniqid() . '.' . $extension;
-        move_uploaded_file($_FILES["sitelogo2"]["tmp_name"], "../assets/img/" .$site_logo2);
-        $sql = mysqli_query($conn, "INSERT INTO general (site_name, domain, site_email, site_address, site_facebook, site_phone, currency, sqmbol, site_insta, site_linkedin, site_logo, site_logo2) VALUES ('$site_name', '$domain', '$site_email', '$site_address', '$site_facebook', '$site_phone', '$currency', '$sqmbol', '$site_insta', '$site_linkedin', '$site_logo', '$site_logo2')");
-
-        
-
-        if($sql){
-            ?><script type="text/javascript">window.location = "general-management?success=1"</script><?php
-        }else{
-            echo mysqli_error($conn);
-            ?><script type="text/javascript">window.location = "general-management?error=1"</script><?php
-        }
-    }
+    
 
     
     if(isset($_POST['edit'])){
@@ -93,7 +73,7 @@
                 $site_logo2 = $rowImage['site_logo2'];
             }
         }
-        $sql = mysqli_query($conn, "UPDATE general SET site_name = '$site_name', domain = '$domain', site_email = '$site_email', site_address = '$site_address', site_facebook = '$site_facebook', site_phone = '$site_phone', currency = '$currency', sqmbol = '$sqmbol', site_insta = '$site_insta', site_linkedin = '$site_linkedin', site_logo = '$site_logo', site_logo2 = '$site_logo2' WHERE id = '$edit_id'");
+        $sql = mysqli_query($conn, "UPDATE general SET site_name = '$site_name', domain = '$domain', site_email = '$site_email', site_address = '$site_address', site_facebook = '$site_facebook', site_phone = '$site_phone', currency = '$currency', sqmbol = '$sqmbol', site_insta = '$site_insta', site_linkedin = '$site_linkedin', site_logo = '$site_logo', site_logo2 = '$site_logo2', about = '$about', policies = '$policies', terms = '$terms' WHERE id = '$edit_id'");
         if($sql){
             ?><script type="text/javascript">window.location = "general-management?edit=<?php echo $edit_id ?>&success=1"</script><?php
         }else{
@@ -127,12 +107,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row d-flex justify-content-center">
-                        <?php if(empty($add) && empty($edit) && empty($view)){ ?>
+                        <?php if(empty($edit) && empty($view)){ ?>
                             <div class="col-md-6 p-2 my-0">
                                 <h4>Management Features</h4>
                             </div>
                             <div class="col-md-6 p-2 my-0">
-                                <a href="general-management?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add Features</a>
                             </div>
                             <hr>
                             <div class="col-md-12">
@@ -179,85 +158,6 @@
                                 </div>
                             </div>
                         <?php } ?>
-                        <?php if(!empty($add)){ ?>
-                            <div class="col-md-4 p-2 my-0">
-                                <h4>Add Feature</h4>
-                            </div>
-                            <div class="col-md-8 p-2 my-0">
-                                <a href="general-management" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                            </div>
-                            <hr>
-                        
-                            <div class="col-md-12">
-                                <div class="card p-4">
-                                    <form method="POST" action="" enctype="multipart/form-data">
-                                        <div class="row">
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Name</p>
-                                                <input type="text" name="site_name" class="form-control" required placeholder="Site Name" >
-                                            </div>
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Domain</p>
-                                                <input type="text" name="domain" class="form-control" required placeholder="Domain" >
-                                            </div>
-
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Email</p>
-                                                <input type="text" name="site_email" class="form-control" required placeholder="Site Email" >
-                                            </div>
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Address</p>
-                                                <input type="text" name="site_address" class="form-control" required placeholder="Site Address" >
-                                            </div>
-
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Facebook</p>
-                                                <input type="text" name="site_facebook" class="form-control" required placeholder="Site Facebook" >
-                                            </div>
-
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Phone</p>
-                                                <input type="text" name="site_phone" class="form-control" required placeholder="Site Phone">
-                                            </div>
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Currency</p>
-                                                <input type="text" name="currency" class="form-control" required placeholder="Site Currency" >
-                                            </div>
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Symbol</p>
-                                                <input type="text" name="sqmbol" class="form-control" required placeholder="Symbol" >
-                                            </div>
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Insta</p>
-                                                <input type="text" name="site_insta" class="form-control" required placeholder="Site Insta" >
-                                            </div>
-
-
-                                            <div class="col-md-6 my-2">
-                                                <p class="m-0">Site Linkedin</p>
-                                                <input type="text" name="site_linkedin" class="form-control" required placeholder="Site Linkedin">
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                        
-                                        <div class="input-group my-4">
-                                            <input type="submit" name="upload" class="btn btn-primary" value="upload">
-                                        </div>  
-                                    </form>
-                                </div>
-                            </div>
-                        
-                        <?php } ?>
                         <?php if(!empty($edit)){ ?>
                             <?php
                                 $query_edit = mysqli_query($conn, "SELECT * FROM general WHERE id = '$edit'");
@@ -268,7 +168,6 @@
                             </div>
                             <div class="col-md-8 p-2 my-0">
                                 <a href="general-management" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                                <a href="general-management?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
                             </div>
                             <hr>
                         
@@ -332,7 +231,31 @@
                                                 <p class="m-0">Site Linkedin</p>
                                                 <input type="text" name="site_linkedin" class="form-control" required placeholder="Site Linkedin" value="<?php echo $row['site_linkedin'] ?>">
                                             </div>
+
+                                            <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
+                                            <div class="col-md-12 my-2">
+                                                <p class="m-0">About</p>
+                                                <textarea id="message1" class="form-control" name="about"><?php echo $row['about'] ?></textarea>
+                                            </div>
+
+                                            <div class="col-md-12 my-2">
+                                                <p class="m-0">Terms</p>
+                                                <textarea id="message2" class="form-control" name="terms"><?php echo $row['terms'] ?></textarea>
+                                            </div>
+
+                                            <div class="col-md-12 my-2">
+                                                <p class="m-0">Policies</p>
+                                                <textarea id="message3" class="form-control" name="policies"><?php echo $row['policies'] ?></textarea>
+                                            </div>
                                         </div>
+
+
+                                        
+                                        <script>
+                                            CKEDITOR.replace('message1');
+                                            CKEDITOR.replace('message2');
+                                            CKEDITOR.replace('message3');
+                                        </script> 
                                         
                                         
                                         
@@ -356,7 +279,6 @@
                             </div>
                             <div class="col-md-8 p-2 my-0">
                                 <a href="general-management" class="btn btn-primary float-right mx-2" style="float: right;"> Go Back </a>
-                                <a href="general-management?add=1" class="btn btn-primary float-right mx-2" style="float: right;"> Add </a>
                             </div>
                             <hr>
                             
@@ -413,6 +335,11 @@
             </div>
         </div>
     </div> <!-- / .container-fluid -->
+    <script>
+        document.querySelectorAll('.cke_notifications_area').forEach(function(element) {
+            element.style.display = 'none';
+          });
+    </script>
     <script type="text/javascript">
          const featureImages = document.getElementById('featureImages');
         const previewContainer = document.getElementById('previewContainer');

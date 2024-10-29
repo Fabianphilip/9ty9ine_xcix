@@ -3,7 +3,7 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4">
                         <div class="footer-logo">
-                            <a href="index.html">
+                            <a href="">
                                 <img width="144" height="60" src="assets/img/logo2.jpg" alt="Logo">
                             </a>
                         </div>
@@ -11,15 +11,14 @@
                      <div class="col-lg-3 col-md-4">
                         <div class="footer-socials">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_facebook'] ?>"><i class="fa fa-facebook" style="color:blue;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:red;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_instagram'] ?>"><i class="fa fa-instagram" style="color:pink;"></i></a></li>
+                                <li><a href="wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:green;"></i></a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-3 col-md-4" style="display: none;">
                         <div class="news-letter-button">
                             <a data-bs-target="#newslatterModal" data-bs-toggle="modal" href="#">JOIN OUR NEWSLETTER</a>
                         </div>
@@ -38,17 +37,17 @@
                             <div class="address-area">
                                 <ul>
                                     <li>
-                                        <a href="#"><i class="fa fa-map-marker"></i>
+                                        <a href="#"><i class="fa fa-map-marker" style="color:red;"></i>
                                         <span><?php echo $row_general['site_address'] ?></span></a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="mailto:<?php echo $row_general['site_email'] ?>">
                                             <i class="fa fa-envelope"></i>
                                             <span><?php echo $row_general['site_email'] ?></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-phone"></i>
+                                        <a href="tel:<?php echo $row_general['site_phone'] ?>"><i class="fa fa-phone" style="color:green;"></i>
                                         <span><?php echo $row_general['site_phone'] ?></span></a>
                                     </li>
                                 </ul>
@@ -59,40 +58,12 @@
                         <div class="footer-menu">
                             <h3 class="footer-title">QUICK LINK</h3>
                             <ul>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="my-account.html">Policies</a></li>
+                                <li><a href="wishlist.html">Terms and Conditions</a></li>
+                                <li><a href="wishlist.html">About Us</a></li>
+                                <li><a href="checkout.html">Contact</a></li>
                             </ul>
                          </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-menu">
-                            <h3 class="footer-title">POLICIES</h3>
-                            <ul>
-                                <li><a href="#">New collection</a></li>
-                                <li><a href="#">Best sellers</a></li>
-                                <li><a href="#">Manufacturers</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Suppliers</a></li>
-                                <li><a href="#">Delivery & returns</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-menu">
-                            <h3 class="footer-title">QUICK LINK</h3>
-                            <ul>
-                                <li><a href="#">New collection</a></li>
-                                <li><a href="#">Best sellers</a></li>
-                                <li><a href="#">Manufacturers</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Suppliers</a></li>
-                                <li><a href="#">Delivery & returns</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -104,139 +75,21 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="copy-right">
-                            ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i> by  <a href="https://hasthemes.com/" target="_blank">Norvas</a>
+                            ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i> by  <a href="https://wa.me/+2347030083673" target="_blank">Suave</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="footer-socials">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_facebook'] ?>"><i class="fa fa-facebook" style="color:blue;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:red;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_instagram'] ?>"><i class="fa fa-instagram" style="color:pink;"></i></a></li>
+                                <li><a href="wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:green;"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- FOOTER BOTTOM AREA END -->
-
-
-        <!-- NEWS LATTER MODAL START-->
-        <div class="newslatterModal">
-            <div class="modal fade" id="newslatterModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="newsletter-bg text-center">
-                                        <img alt="background newsletter" width="330" height="447" src="assets/img/newsletter.webp">
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="newsletter-desc">
-                                        <h3>JOIN OUR NEWSLETTER</h3>
-                                        <p>Sign up for our newsletter and get <span>20%</span> off your next order. Pretty sweet, we know.</p>
-                                        <div class="newsletter-form">
-                                            <form method="post" action="#">
-                                                <p>
-                                                    <input type="email" placeholder="Type your email here">
-                                                </p>
-                                                <p>
-                                                    <input type="submit" value="Subscribe">
-                                                </p>
-                                                <div class="newsletter-checkbox">
-                                                    <input type="checkbox">
-                                                    <span>Don’t show this popup again</span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div><!-- .modal-body -->
-                    </div><!-- .modal-content -->
-                </div><!-- .modal-dialog -->
-            </div>
-        </div>
-        <!-- NEWS LATTER MODAL END-->
-
-        <!-- QUICKVIEW PRODUCT -->
-        <div id="quickview-wrapper">
-            <!-- Modal -->
-            <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-product">
-                                <div class="product-images">
-                                    <div class="main-image images">
-                                        <img alt="" width="540" height="692" src="assets/img/product/1.webp">
-                                    </div>
-                                </div><!-- .product-images -->
-                                
-                                <div class="product-info">
-                                    <h1>Vestibulum et mollis nunc</h1>
-                                    <div class="price-box">
-                                        <p class="price">
-                                            <span class="special-price">
-                                                <span class="amount">$120.00</span>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <a href="#" class="see-all">See all features</a>
-                                    <div class="quick-add-to-cart">
-                                        <form method="post" class="cart">
-                                            <div class="numbers-row">
-                                                <input type="number" id="french-hens" value="3">
-                                            </div>
-                                            <button class="single_add_to_cart_button" type="submit">Add to cart</button>
-                                        </form>
-                                    </div>
-                                    <div class="quick-desc">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.
-                                    </div>
-                                    <div class="social-sharing">
-                                        <div class="widget widget_socialsharing_widget">
-                                            <h3 class="widget-title-modal">Share this product</h3>
-                                            <ul class="social-icons">
-                                                <li>
-                                                    <a target="_blank" title="Facebook" href="#" class="facebook social-icon"><i class="fa fa-facebook"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="Twitter" href="#" class="twitter social-icon"><i class="fa fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="Pinterest" href="#" class="pinterest social-icon"><i class="fa fa-pinterest"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="Google +" href="#" class="gplus social-icon"><i class="fa fa-google-plus"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a target="_blank" title="LinkedIn" href="#" class="linkedin social-icon"><i class="fa fa-linkedin"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div><!-- .product-info -->
-                            </div><!-- .modal-product -->
-                        </div><!-- .modal-body -->
-                    </div><!-- .modal-content -->
-                </div><!-- .modal-dialog -->
-            </div>
-            <!-- END Modal -->
         </div>
         <script type="text/javascript">
             document.getElementById("carttotal2").innerHTML = document.getElementById("cartSpan").innerHTML;
@@ -280,7 +133,7 @@
                   var productId = parts[1];
                   var currentDate = new Date();
                   var qty = document.getElementById('product_qty' + parts[1] + '_' + parts[2]).value;
-                  alert(data + " | " + productId + "---" + qty);
+                  // alert(data + " | " + productId + "---" + qty);
                   xhttp.onload = function() {
                     if(this.responseText == 1){
                       document.getElementById("succesAlert").style.display = "block";
@@ -370,30 +223,31 @@
                 var qty = document.getElementById(id).value;
                 var currentDate = new Date();
                 document.getElementById(data).setAttribute('data-qty', qty);
-                
-                if(qty < 1){
-                    var parts2 = id.split('_');
-                    var parts = data.split('_');
-                    removefromcart('product_' +  parts[1] + '_' + parts2[2]);
-                    document.getElementById('product_qty' +  parts[1] + '_' + parts2[2]).style.display = "none";
-                }else{
+                  if(qty != ''){
+                    if(qty < 1){
+                        var parts2 = id.split('_');
+                        var parts = data.split('_');
+                        removefromcart('product_' +  parts[1] + '_' + parts2[2]);
+                        document.getElementById('product_qty' +  parts[1] + '_' + parts2[2]).style.display = "none";
+                    }else{
 
-                    const xhttp = new XMLHttpRequest();
-                    var parts = data.split('_');
-                    var parts2 = id.split('_');
-                    var productId = parts[1];
-                    var qty = document.getElementById('product_qty' + parts[1] + '_' + parts2[2]).value;
-                    //alert(data + " | " + productId + "---" + qty);
-                    xhttp.onload = function() {
-                      if(this.responseText == 1){
-                        document.getElementById("succesAlert").style.display = "block";
-                        setTimeout( function() { document.getElementById("succesAlert").style.display = "none"; }, 2000);
-                        cartsidebar();
-                      }
+                        const xhttp = new XMLHttpRequest();
+                        var parts = data.split('_');
+                        var parts2 = id.split('_');
+                        var productId = parts[1];
+                        var qty = document.getElementById('product_qty' + parts[1] + '_' + parts2[2]).value;
+                        //alert(data + " | " + productId + "---" + qty);
+                        xhttp.onload = function() {
+                          if(this.responseText == 1){
+                            document.getElementById("succesAlert").style.display = "block";
+                            setTimeout( function() { document.getElementById("succesAlert").style.display = "none"; }, 2000);
+                            cartsidebar();
+                          }
+                        }
+                        xhttp.open("GET", "xhttp?quantityChange=1&productId=" + productId + "&qty=" + qty + "&currentdate="+ currentDate + "&sessionId=<?php echo $sessionId ?><?php if(!empty($email)){ ?>&email=<?php if(!empty($email)){ echo $email; } ?><?php } ?>");
+                        xhttp.send();
                     }
-                    xhttp.open("GET", "xhttp?quantityChange=1&productId=" + productId + "&qty=" + qty + "&currentdate="+ currentDate + "&sessionId=<?php echo $sessionId ?><?php if(!empty($email)){ ?>&email=<?php if(!empty($email)){ echo $email; } ?><?php } ?>");
-                    xhttp.send();
-                }
+                  }
               }
               
               function sidecart_quantityChange(data, id) {

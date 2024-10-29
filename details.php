@@ -92,14 +92,18 @@
                                         </h2>
                                         <div class="ro-rate">
                                             <div class="star-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
+                                                <?php
+                                                    for ($i = 1; $i <= $rowProduct['rating']; $i++) {
+                                                        echo "<i class='fa fa-star'></i>";
+                                                    }
+                                                ?>
                                             </div>
                                             <a class="review-link" href="#">
-                                                <span>2</span>
-                                                 Review (s) / Add your Review
+                                                <?php
+                                                    $queryReview = mysqli_query($conn, "SELECT * FROM review WHERE product_id = '$productId'");
+                                                ?>
+                                                <span><?php if(mysqli_num_rows($queryReview)){ echo mysqli_num_rows($queryReview); }else{ echo '0'; } ?></span>
+                                                 Review (s)
                                             </a>
                                         </div>
                                         <div class="product-price-meta">

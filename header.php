@@ -76,6 +76,18 @@
                     height: 200px;
                 }
             }
+            input[type="number"] {
+                -moz-appearance: textfield; /* Firefox */
+                -webkit-appearance: none; /* Safari, Chrome, iOS */
+                appearance: none; /* Standard */
+            }
+
+            input[type="number"]::-webkit-inner-spin-button, 
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: inner-spin-button; /* Ensures spin buttons show */
+                margin: 0; /* Removes any margin for better alignment */
+            }
+
         </style>
         <div class="btn btn-success p-2" id="succesAlert" style="color: white; position: fixed; z-index: 999999; width: 100%; display: none;">
             <center>Successfull added to cart</center>
