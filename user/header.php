@@ -35,13 +35,23 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
 </head>
 <body>
+  <style type="text/css">
+    html{
+            font-size: 70% !important;
+        }
+  </style>
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <a href="/" class="active"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="dashboard" class="<?php if($web_file_name == 'dashboard'){ ?>active<?php } ?>"><i class="fas fa-home"></i> Dashboard</a>
     <?php if($is_admin == '1'){ ?>
-      <a href="../restrict/dashboard" class="active"><i class="fas fa-home"></i> Admin</a>
+      <a href="../restrict/dashboard" class=""><i class="fas fa-home"></i> Admin</a>
     <?php } ?>
+    <a href="reviews" class="<?php if($web_file_name == 'reviews'){ ?>active<?php } ?>"><i class="fas fa-search"></i> Reviews</a>
+    <a href="settings" class="<?php if($web_file_name == 'settings'){ ?>active<?php } ?>"><i class="fas fa-cogs"></i> Settings</a>
+    <a href="orders" class="<?php if($web_file_name == 'orders'){ ?>active<?php } ?>"><i class="fas fa-box"></i> Orders</a>
+    <a href="profile" class="<?php if($web_file_name == 'profile'){ ?>active<?php } ?>"><i class="fas fa-user"></i> Profile</a>
+    <a href="wishlist" class="<?php if($web_file_name == 'wishlist'){ ?>active<?php } ?>"><i class="fas fa-heart"></i> Wishlist</a>
   </div>
 
   <!-- Content -->

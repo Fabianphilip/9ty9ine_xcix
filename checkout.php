@@ -413,29 +413,39 @@ if (mysqli_num_rows($queryProduct) > 0) {
                                                 </tr>                           
                                             </thead>
                                             <tbody>
-                                                <tr class="cart_item">
-                                                    <td class="product-name">
-                                                        Feugiat justo lacinia <strong class="product-quantity"> × 1</strong>
-                                                    </td>
-                                                    <td class="product-total">
-                                                        <span class="amount">£70.00</span>
-                                                    </td>
-                                                </tr>
-                                                <tr class="cart_item">
-                                                    <td class="product-name">
-                                                        Aenean eu tristique <strong class="product-quantity"> × 1</strong>
-                                                    </td>
-                                                    <td class="product-total">
-                                                        <span class="amount">£70.00</span>
-                                                    </td>
-                                                </tr>
+                                                <?php
+                                                    $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+                                                    if(mysqli_num_rows($queryProduct) > 0){
+                                                        while($rowProduct = mysqli_fetch_array($queryProduct)){
+                                                          ?>
+                                                        <tr class="cart_item">
+                                                            <td class="product-name">
+                                                                <?php echo $rowProduct['name']; ?> <strong class="product-quantity"> × <?php echo $rowProduct['qty'] ?></strong>
+                                                            </td>
+                                                            <td class="product-total">
+                                                                <span class="amount">₦<?php echo number_format($rowProduct['cartprice'], 2) ?></span>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                        }
+                                                    }
+                                                ?>
                                             </tbody>
                                             <tfoot>
+                                                <?php
+                                                    $queryProduct = mysqli_query($conn, "SELECT SUM(price) AS totalPrice FROM cart WHERE user = '$userCart' AND status = '1'");
+                                                   if(mysqli_num_rows($queryProduct) > 0){
+                                                    $rowProduct = mysqli_fetch_array($queryProduct);
+                                                        $totalPrice = $rowProduct['totalPrice']; 
+                                                    }else{
+                                                        $totalPrice = 0;
+                                                    }
+                                                ?>
                                                 <tr class="cart-subtotal">
                                                     <th>Cart Subtotal</th>
-                                                    <td><span class="amount">£140.00</span></td>
+                                                    <td><span class="amount">₦<?php echo number_format($totalPrice, 2); ?></span></td>
                                                 </tr>
-                                                <tr class="shipping">
+                                                <tr class="shipping" style="display: none;">
                                                     <th>Shipping</th>
                                                     <td>
                                                         <ul>
@@ -458,7 +468,7 @@ if (mysqli_num_rows($queryProduct) > 0) {
                                                 </tr>
                                                 <tr class="order-total">
                                                     <th>Order Total</th>
-                                                    <td><strong><span class="amount">£215.00</span></strong>
+                                                    <td><strong><span class="amount">₦<?php echo number_format($totalPrice, 2); ?></span></strong>
                                                     </td>
                                                 </tr>                               
                                             </tfoot>
