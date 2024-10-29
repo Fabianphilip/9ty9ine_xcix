@@ -7,7 +7,7 @@
     $where = 'WHERE p.id > 0';
     if(!empty($category)){ 
         $where .= " AND c.name = '$category'"; 
-        if($category == 'unisex'){ $where .= " OR (c.name = 'men' OR c.name = 'women'"; }
+        if($category == 'unisex'){ $where .= " OR (c.name = 'men' OR c.name = 'women')"; }
         if($category == 'men'){ $where .= " OR c.name = 'unisex'"; }
         if($category == 'women'){ $where .= " OR c.name = 'unisex'"; }
     }

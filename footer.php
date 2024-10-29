@@ -39,17 +39,17 @@
                                 <ul>
                                     <li>
                                         <a href="#"><i class="fa fa-map-marker"></i>
-                                        <span>Raymond London Oxford Street 02 United Kingdom.</span></a>
+                                        <span><?php echo $row_general['site_address'] ?></span></a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-envelope"></i>
-                                            <span>demo@example.com demo@example.com</span>
+                                            <span><?php echo $row_general['site_email'] ?></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="fa fa-phone"></i>
-                                        <span>0123456789 <br>0123456789</span></a>
+                                        <span><?php echo $row_general['site_phone'] ?></span></a>
                                     </li>
                                 </ul>
                              </div>

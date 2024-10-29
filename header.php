@@ -97,7 +97,7 @@
                                     <li><a href="shop">Shop</a></li>
                                     <li><a href="shop?category=men">Men</a></li>
                                     <li><a href="shop?category=women">Women</a></li>
-                                    <li><a href="checkout">Checkout</a></li>
+                                    <li><a href="shop?category=unisex">Unisex</a></li>
                                     <li><a href="login">Login</a></li>
                                 </ul>
                             </div>
