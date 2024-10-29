@@ -104,7 +104,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="copy-right">
-                            ©  2021 Raymond Made with <i class="fa fa-heart text-danger"></i> by  <a href="https://hasthemes.com/" target="_blank">HasThemes</a>
+                            ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i> by  <a href="https://hasthemes.com/" target="_blank">Norvas</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
