@@ -250,7 +250,7 @@
                                     </label>
                                 </p>
                                 <p class="login-submit">
-                                    <input type="submit" name="signup" value="LogIn" class="button-primary">
+                                    <input type="submit" name="signup" value="Register" class="button-primary">
                                 </p>
                             </form>
                             <p>Already Registered Signin <a href="login">Here</a></p>

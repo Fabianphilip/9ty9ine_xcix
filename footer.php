@@ -11,10 +11,10 @@
                      <div class="col-lg-3 col-md-4">
                         <div class="footer-socials">
                             <ul>
-                                <li><a href="<?php echo $row_general['site_facebook'] ?>"><i class="fa fa-facebook" style="color:blue;"></i></a></li>
-                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:red;"></i></a></li>
-                                <li><a href="<?php echo $row_general['site_instagram'] ?>"><i class="fa fa-instagram" style="color:pink;"></i></a></li>
-                                <li><a href="wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:green;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_instagram'] ?>"><i class="fa fa-instagram" style="color:#D01688;"></i></a></li>
+                                <li><a href="wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,16 +75,16 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="copy-right">
-                            ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i> by  <a href="https://wa.me/+2347030083673" target="_blank">Suave</a>
+                            ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i><a href="https://wa.me/+2347030083673" target="_blank">Suave</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="footer-socials">
                             <ul>
-                                <li><a href="<?php echo $row_general['site_facebook'] ?>"><i class="fa fa-facebook" style="color:blue;"></i></a></li>
-                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:red;"></i></a></li>
-                                <li><a href="<?php echo $row_general['site_instagram'] ?>"><i class="fa fa-instagram" style="color:pink;"></i></a></li>
-                                <li><a href="wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:green;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li>
+                                <li><a href="<?php echo $row_general['site_instagram'] ?>"><i class="fa fa-instagram" style="color:#D01688;"></i></a></li>
+                                <li><a href="wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
                             </ul>
                         </div>
                     </div>

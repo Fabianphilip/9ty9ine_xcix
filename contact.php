@@ -51,7 +51,7 @@
     </div>
 </div>
 <!-- BREADCRUMB-AREA-END -->
-<div class="container">
+<div class="container my-4 py-4">
     <div class="row">
         <div class="col-12">
             <!-- MAP START-->
@@ -63,15 +63,15 @@
                          <ul>
                             <li>
                                 <a href="#"><i class="fa fa-map-marker"></i>
-                                <span>Raymond London Oxford Street 02 United Kingdom.</span></a>
+                                <span><?php echo $row_general['site_address'] ?></span></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-envelope"></i>
-                                <span>demo@example.com demo@example.com</span></a>
+                                <span><?php echo $row_general['site_email'] ?></span></a>
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-phone"></i>
-                                <span>(+92) 3456 7890 <br>(+92) 1234 5678</span></a>
+                                <span><?php echo $row_general['site_phone'] ?></span></a>
                             </li>
                         </ul>
                      </div>
