@@ -51,7 +51,7 @@
 		            $count=mysqli_num_rows($query);
 
 		            if($count==1){
-		                    if($status == 1){
+		                    //if($status == 1){
 		                    $date_time = date("Y-m-d H:m:i");
 		                    $get_lastLogin = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'");
 		                    $row_lastLogin = mysqli_fetch_array($get_lastLogin);
@@ -82,9 +82,9 @@
 		                        }, 2000);
 		                    </script>
 		                    <?php 
-		                }else{
-		                    ?><div class="row d-flex justify-content-center"><div class="col-md-9 m-4"><div class="alert alert-danger">Your accout is currently being reviewed, kindly excercise patient as this will be done within 24 - 48 hrs</div></div></div><?php
-		                }
+		                //}else{
+		                    ?><div class="row d-flex justify-content-center" style="display: none;"><div class="col-md-9 m-4"><div class="alert alert-danger">Your accout is currently being reviewed, kindly excercise patient as this will be done within 24 - 48 hrs</div></div></div><?php
+		                //}
 		            }
 		        }
 		        else {
