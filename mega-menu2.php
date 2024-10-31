@@ -14,7 +14,7 @@
             }
         ?>
     </div>
-    <div class="single-mega-menu">
+    <div class="single-mega-menu" style="display: none;">
         <h3 class="menu-hedding">
             <a href="shop?feature=all">Featured Products</a>
         </h3>
