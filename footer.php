@@ -14,7 +14,7 @@
                                 <li><a href="<?php echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
                                 <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li>
                                 <li><a href="<?php echo $row_general['site_insta'] ?>"><i class="fa fa-instagram" style="color:#D01688;"></i></a></li>
-                                <li><a href="https://wa.me/<?php echo $row_general['phone'] ?>"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
+                                <li><a href="https://wa.me/<?php echo $row_general['site_phone'] ?>"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                                 <li><a href="<?php echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
                                 <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li>
                                 <li><a href="https://www.instagram.com/high_chief_imoh/profilecard/?igsh=eTd2Z2Uya2ZyYTBy"><i class="fa fa-instagram" style="color:#D01688;"></i></a></li>
-                                <li><a href="https://wa.me/2347019090044"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
+                                <li><a href="https://wa.me/+2347030083673"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
                             </ul>
                         </div>
                     </div>
