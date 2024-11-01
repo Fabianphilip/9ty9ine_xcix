@@ -3,262 +3,21 @@
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
-    $userCart = tp_input($conn, "userCart"); 
-    $full_name = tp_input($conn, "full_name"); 
-    $address = tp_input($conn, "address"); 
-    $country2 = tp_input($conn, "country"); 
-    $state = tp_input($conn, "state"); 
-    $email = tp_input($conn, "email"); 
-    $phone = tp_input($conn, "phone"); 
-    $products = tp_input($conn, "products"); 
-    $product_id = tp_input($conn, "product_id"); 
-    if(isset($_POST['Paystack'])){
-        $payment_method = "Paystack";
-    }
-    if(isset($_POST['Paypal'])){
-        $payment_method = "Paypal";
-    }
+    $_SESSION['payment_userCart'] = tp_input($conn, "userCart"); 
+    $_SESSION['payment_full_name'] = tp_input($conn, "full_name"); 
+    $_SESSION['payment_address'] = tp_input($conn, "address"); 
+    $_SESSION['payment_country'] = tp_input($conn, "country"); 
+    $_SESSION['payment_state'] = tp_input($conn, "state"); 
+    $_SESSION['payment_email'] = tp_input($conn, "email"); 
+    $_SESSION['payment_phone'] = tp_input($conn, "phone");
+    $_SESSION['payment_products'] = tp_input($conn, "products"); 
+    $_SESSION['payment_product_id'] = tp_input($conn, "product_id"); 
     
-    $ref = tp_input($conn, "ref");
-    $_SESSION['ref'] = $ref;
-
-    if($payment_method == "Paypal"){
-        $amount = tp_input($conn, "amount");
-    }
-
-    $sql_sel_t = mysqli_query ($conn, "SELECT sum(price) as total_price FROM cart WHERE user = '$userCart'");
-    $row_t = mysqli_fetch_array($sql_sel_t);
-    if($country == "NG"){
-        $amount = $row_t['total_price'];
-    }else{
-        $amount = $row_t['total_price']/$currency_value;
-    }
-
-    $sql_sel_tt = mysqli_query ($conn, "SELECT sum(price) as total_price, qty, price, product FROM cart WHERE user = '$userCart'");
-    if(mysqli_num_rows($sql_sel_tt) > 0){
-        while($rowCart = mysqli_fetch_array($sql_sel_tt)){
-            $productID = $rowCart['product'];
-            $qty = $rowCart['qty'];
-            $price = $rowCart['price'];
-            $query_checkout = mysqli_query($conn, "INSERT INTO product_order (ref, user_id, full_name, address, country, state, email, phone, products, qty, amount) VALUES ('$ref', '$userCart', '$full_name', '$address', '$country2', '$state', '$email', '$phone', '$productID', '$qty', '$price')");
-            if(!$query_checkout){
-                die("Error checkout $qty $userCart". mysqli_error($conn));
-            }
-        }
-    }
-
-
-    $sql_enter = "INSERT INTO transaction_log ".
-    "(email, amount, reference, payment_method, status ) ".
-    "VALUES ".
-    "('$email', '$amount', '$ref', '$payment_method', '0')";
-
-
-
-
-$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.name AS name, i.image AS image 
-                                     FROM cart c 
-                                     JOIN product p ON p.id = c.product 
-                                     JOIN product_images i ON i.token = p.image_token 
-                                     WHERE c.user = '$userCart' AND c.status = '1'");
-
-$product_list = '';
-
-if (mysqli_num_rows($queryProduct) > 0) {
-    while ($rowProduct = mysqli_fetch_array($queryProduct)) {
-        $product_list .= "
-            <li>
-                <div class='d-flex justify-content-between p-2' style='width: 100%;'>
-                    <span>
-                        <img src='product_images/" . $rowProduct['image'] . "' style='width: 50px' alt='Product Image'> 
-                        " . $rowProduct['name'] . "
-                    </span>
-                    <span>" . $rowProduct['price'] . " 
-                        <span style='padding: 10px;' onclick=\"removefromcartsidebar('product_" . $rowProduct['id'] . "_0')\">
-                            <i class='fa fa-times'></i>
-                        </span>
-                    </span>
-                </div>
-            </li>
-        ";
-    }
-} else {
-    $product_list = "<li>No items in cart</li>";
-}
-
-
-
-                    
-
-    $initials = $full_name;
-    $subject_message = "Payment Attempt Notification";
-    $mail_message = "<table role='presentation' border='0' cellpadding='0' cellspacing='0' class='body'>
-    <tr>
-    <td>&nbsp;</td>
-    <td class='container'>
-    <div class='content'>
-
-    <!-- START CENTERED WHITE CONTAINER -->
-    <table role='presentation' class='main'>
-
-    <!-- START MAIN CONTENT AREA -->
-    <tr>
-    <td class='wrapper'>
-    <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
-    <tr>
-    <td>
-    <center><h3>Payment Attempt Notification</h3></center>
-    <p>Hello $initials,</p>
-    <p>Todays a great day! this is to notify you on your payment attempt for the products <br> 
-    <ul style=''>
-        <li class='dropdown-header' style='width: 100%;'>Cart Items <span style='padding: 10px; float: right;' onclick='closesidecart()'><i class='fa fa-times'></i></span></li>
-        <span>
-        $product_list
-        </span>
-    </ul>
-    <br>with reference no $ref and amount $amount wishing you well</p>
-    <p> Our reperesentative will contact you shortly for briefing</p>
-    <p>You can also feel free to reach out to us</p>
-    <p>Join the fast growing community</p>
-    <table role='presentation' border='0' cellpadding='0' cellspacing='0' class='btn btn-primary'>
-    <tbody>
-    <tr>
-    <td align='left'>
-    <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
-    <tbody>
-    <tr>
-    <td> <a href='http://www.norvas.org/signin' target='_blank'>Continue</a> </td>
-    </tr>
-    </tbody>
-    </table>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-    <p>You just took your first step to faster and richer market online.</p>
-    <p>Good luck!.</p>
-    </td>
-    </tr>
-    </table>
-    </td>
-    </tr>
-
-    <!-- END MAIN CONTENT AREA -->
-    </table>";
-
-    $to = "$email";
-    $subject = $subject_message;
-    $message = $mail_message;
-    $message2 = $message;
-    $message = message_template($subject, $message, $foot_note, $regards, $directory, $domain, $gen_email, $gen_phone);
-    $headers = "Payment Attempt Notification";
-    send_mail($to, $subject, $message, $headers, $gen_email);
-
-
-    $enter_data = mysqli_query($conn, $sql_enter);
-    if (!$enter_data) {
-      die('Could not enter data: ' . $conn->error);
-    }
-
-    if ($payment_method == "Paystack") {
-      $plan = "custom";
-      $next_link = "payment_custom";
-      payment_process1($email, $amount, $country_pay, $country, $ref, $plan, $next_link);
-    }
-
-    if ($payment_method == "Paypal" && !empty($paypal_pay_succ)) {
-        $update_tra_log_paypal = mysqli_query($conn, "UPDATE transaction_log SET status = '1' WHERE reference = '$ref'");
-
-        $transaction_log_order = "UPDATE product_order SET pay_status = '1' WHERE email = '$email' AND ref = '$ref' AND user_id = '$userCart'";
-        $transaction_log_update_order = mysqli_query($conn, $transaction_log_order);
-        if (!$transaction_log_update_order) {
-         die('Could not update data: ' . $conn->error);
-     }
-
-
-
-     $sql_enter = "INSERT INTO payments ".
-     "(email, amount, reference, plan) ".
-     "VALUES ".
-     "('$email', '$amount', '$ref', '$plan')";
-
-     $enter_data = mysqli_query($conn, $sql_enter);
-     if (!$enter_data) {
-         die('Could not enter data: ' . $conn->error);
-     }
-
-     if ($update_tra_log_paypal) {
-        $initials = $firstname;
-        $subject_message = "Payment Success Notification";
-        $mail_message = "<table role='presentation' border='0' cellpadding='0' cellspacing='0' class='body'>
-        <tr>
-        <td>&nbsp;</td>
-        <td class='container'>
-        <div class='content'>
-
-        <!-- START CENTERED WHITE CONTAINER -->
-        <table role='presentation' class='main'>
-
-        <!-- START MAIN CONTENT AREA -->
-        <tr>
-        <td class='wrapper'>
-        <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
-        <tr>
-        <td>
-        <center><h3>Payment Attempt Notification</h3></center>
-        <p>Hello $initials,</p>
-        <p>Todays a great day! this is to notify you on your concluded payment for the products <br> 
-        <ul style=''>
-            <li class='dropdown-header' style='width: 100%;'>Cart Items <span style='padding: 10px; float: right;' onclick='closesidecart()'><i class='fa fa-times'></i></span></li>
-            <span>
-            $product_list
-            </span>
-        </ul>
-        <br> with reference no $ref and amount $currency$amount wishing you well</p>
-        <p>Join the fast growing community</p>
-        <table role='presentation' border='0' cellpadding='0' cellspacing='0' class='btn btn-primary'>
-        <tbody>
-        <tr>
-        <td align='left'>
-        <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
-        <tbody>
-        <tr>
-        <td> <a href='http://www.norvas.org/signin' target='_blank'>Continue</a> </td>
-        </tr>
-        </tbody>
-        </table>
-        </td>
-        </tr>
-        </tbody>
-        </table>
-        <p>You just took your first step to faster and richer market online.</p>
-        <p>Good luck!.</p>
-        </td>
-        </tr>
-        </table>
-        </td>
-        </tr>
-
-        <!-- END MAIN CONTENT AREA -->
-        </table>";
-
-        $to = "$email";
-        $subject = $subject_message;
-        $message = $mail_message;
-        $message2 = $message;
-        $message = message_template($subject, $message, $foot_note, $regards, $directory, $domain, $gen_email, $gen_phone);
-        $headers = "Payment Success Notification";
-        send_mail($to, $subject, $message, $headers, $gen_email);
-
-        $clearCart = mysqli_query($conn, "DELETE FROM cart  WHERE user = '$userCart'");
-    }
     ?>
     <script>
-        alert("Payment successfull");
-        window.location = "/";
+        window.location = "paystack_process";
     </script>
     <?php
-    }
 
 }
 ?>
@@ -318,7 +77,7 @@ if (mysqli_num_rows($queryProduct) > 0) {
 		<div class="checkout-area">
 			<div class="container">
 				<div class="row">
-					<form action="#">
+					<form action="" method="POST">
                         <div class="row">
                             <div class="col-lg-6 col-12">
                                 <div class="checkbox-form">                     
@@ -414,7 +173,7 @@ if (mysqli_num_rows($queryProduct) > 0) {
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                    $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+                                                    $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty, p.image_token AS image_token FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1' GROUP BY p.id");
                                                     if(mysqli_num_rows($queryProduct) > 0){
                                                         while($rowProduct = mysqli_fetch_array($queryProduct)){
                                                           ?>
@@ -475,108 +234,6 @@ if (mysqli_num_rows($queryProduct) > 0) {
                                         </table>
                                     </div>
                                     <div class="checkout-payment-wrapper mt-3">
-                                        <h4 class="title-tertiary text-capitalize">Select Payment Method</h4>
-                                        <div class="checkout-payment">
-                                            <ul>
-                                                <li>
-                                                    <div class="custom-checkbox">
-                                                        <div class="custom-checkbox__group payment_radio">
-                                                            <input type="radio" id="payment_check" class="checkbox_input"
-                                                                name="payment_mathod" checked>
-                                                            <label for="payment_check" class="checkbox__label mb-2">
-                                                                <span class="checkbox__type-radio"></span>
-                                                                Check Payment
-                                                            </label>
-                
-                                                            <div class="payment-option-form" id="payment_check_form"
-                                                                style="display: block;">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="single-form mb-3">
-                                                                            <input type="text"
-                                                                                placeholder="Enter Your Bank Account Number" required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                
-                                                </li>
-                                                <li>
-                                                    <div class="custom-checkbox">
-                                                        <div class="custom-checkbox__group payment_radio">
-                                                            <input type="radio" id="payment_paypal" class="checkbox_input"
-                                                                name="payment_mathod">
-                                                            <label for="payment_paypal" class="checkbox__label mb-2">
-                                                                <span class="checkbox__type-radio"></span>
-                                                                Paypal
-                                                            </label>
-                
-                                                            <div class="payment-option-form" id="payment_paypal_form"
-                                                                style="display: none;">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="single-form mb-3">
-                                                                            <input type="email" placeholder="Enter Your Paypal Email"
-                                                                                required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="custom-checkbox">
-                                                        <div class="custom-checkbox__group payment_radio">
-                                                            <input type="radio" id="payment_card" class="checkbox_input"
-                                                                name="payment_mathod">
-                                                            <label for="payment_card" class="checkbox__label mb-2">
-                                                                <span class="checkbox__type-radio"></span>
-                                                                Card
-                                                            </label>
-                                                            <div class="payment-option-form" id="payment_card_form"
-                                                                style="display: none;">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="single-form  mb-3">
-                                                                            <input type="email" placeholder="Enter Your Card Number"
-                                                                                required>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="custom-checkbox">
-                                                        <div class="custom-checkbox__group payment_radio">
-                                                            <input type="radio" id="payment_cod" class="checkbox_input"
-                                                                name="payment_mathod">
-                                                            <label for="payment_cod" class="checkbox__label mb-2">
-                                                                <span class="checkbox__type-radio"></span>
-                                                                Cash On Delivery
-                                                            </label>
-                
-                                                            <div class="payment-option-form" id="payment_cod_form"
-                                                                style="display: none;">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="single-form  mb-3">
-                                                                            <p>Please send a Check to Store name with Store Street,
-                                                                                Store Town, Store State, Store Postcode, Store Country.
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
                                         <div class="order-button-payment">
                                             <button class="btn" type="submit">Place order</button>
                                         </div>
