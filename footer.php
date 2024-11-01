@@ -11,8 +11,8 @@
                      <div class="col-lg-3 col-md-4">
                         <div class="footer-socials">
                             <ul>
-                                <li><a href="<?php echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
-                                <li><a href="<?php echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li>
+                                <!-- <li><a href="<?php //echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
+                                <li><a href="<?php //echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li> -->
                                 <li><a href="<?php echo $row_general['site_insta'] ?>"><i class="fa fa-instagram" style="color:#D01688;"></i></a></li>
                                 <li><a href="https://wa.me/<?php echo $row_general['site_phone'] ?>"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
                             </ul>
