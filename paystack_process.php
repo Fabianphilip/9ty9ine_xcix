@@ -46,7 +46,7 @@ $product_id = $_SESSION['payment_product_id'];
 echo $full_name . $country2 . $domain . $country2 . $userCart . $country_ip . $user_id . $name .$ref;
 
 $name = $full_name;
-$email = (!empty($row_user['email']))?$row_user['email']:"support@betensured.com";
+$email = (!empty($row_user['email']))?$row_user['email']:"support@9ty9ine.ng";
 $user_id = $userCart;
 if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)){
 
@@ -194,7 +194,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
         'reference'=>$txref,
         'public_key'=>$public_key,
         'callback_url' => "https://$domain/paystack_response?ssiref=".$ref,
-        'payment_plan'=> "1"
+        'payment_plan'=> ""
       ];
     $fields_string = http_build_query($fields);
       //open connection
