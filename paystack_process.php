@@ -43,6 +43,8 @@ $phone = $_SESSION['payment_phone'];
 $products = $_SESSION['payment_products'];
 $product_id = $_SESSION['payment_product_id'];
 
+echo $
+
 $name = $full_name;
 $email = (!empty($row_user['email']))?$row_user['email']:"support@betensured.com";
 $user_id = $userCart;
@@ -186,7 +188,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
     $fields = [
         'email' => $email,
         'amount'=>$amount*100,
-        'country'=>$flutterwave_country,
+        'country'=>$country2,
         'currency'=>$currency,
         'reference'=>$txref,
         'public_key'=>$public_key,
