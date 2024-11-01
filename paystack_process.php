@@ -43,7 +43,7 @@ $phone = $_SESSION['payment_phone'];
 $products = $_SESSION['payment_products'];
 $product_id = $_SESSION['payment_product_id'];
 
-echo $
+echo $full_name . $country2 . $domain . $country2;
 
 $name = $full_name;
 $email = (!empty($row_user['email']))?$row_user['email']:"support@betensured.com";
@@ -58,7 +58,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
         $amount = $row_t['total_price']/$currency_value;
     }
 
-    $sql_sel_tt = mysqli_query ($conn, "SELECT sum(price) as total_price, qty, price, product FROM cart WHERE user = '$userCart'");
+    $sql_sel_tt = mysqli_query ($conn, "SELECT qty, price, product FROM cart WHERE user = '$userCart'");
     if(mysqli_num_rows($sql_sel_tt) > 0){
         while($rowCart = mysqli_fetch_array($sql_sel_tt)){
             $productID = $rowCart['product'];
@@ -70,6 +70,8 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
             }
         }
     }
+
+
 
 
     $sql_enter = "INSERT INTO transaction_log (email, amount, reference, payment_method, status ) VALUES ('$email', '$amount', '$ref', '$payment_method', '0')";
@@ -173,7 +175,6 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
     if (!$enter_data) {
       die('Could not enter data: ' . $conn->error);
     }
-
     /////=============Paystack Process=============//////
 
     $url = "https://api.paystack.co/transaction/initialize";
