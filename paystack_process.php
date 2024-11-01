@@ -188,7 +188,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
 
     $fields = [
         'email' => $email,
-        'amount'=>$amount,
+        'amount'=>2000.00,
         'country'=>"NG",
         'currency'=>"NGN",
         'reference'=>$txref,
