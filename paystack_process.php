@@ -190,7 +190,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
         'email' => $email,
         'amount'=>$amount*100,
         'country'=>$country2,
-        'currency'=>$currency,
+        'currency'=>"NGN",
         'reference'=>$txref,
         'public_key'=>$public_key,
         'callback_url' => "https://$domain/paystack-response?ssiref=".$ref,
