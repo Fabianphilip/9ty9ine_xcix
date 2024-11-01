@@ -43,7 +43,7 @@ $phone = $_SESSION['payment_phone'];
 $products = $_SESSION['payment_products'];
 $product_id = $_SESSION['payment_product_id'];
 
-echo $full_name . $country2 . $domain . $country2;
+echo $full_name . $country2 . $domain . $country2 . $userCart . $country_ip . $user_id . $name;
 
 $name = $full_name;
 $email = (!empty($row_user['email']))?$row_user['email']:"support@betensured.com";
