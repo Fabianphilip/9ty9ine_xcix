@@ -234,7 +234,7 @@
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Site Twitter</p>
-                                                <input type="text" name="site_twitter" class="form-control" required placeholder="Site Linkedin" value="<?php echo $row['site_lwitter'] ?>">
+                                                <input type="text" name="site_twitter" class="form-control" required placeholder="Site Linkedin" value="<?php echo $row['site_twitter'] ?>">
                                             </div>
 
                                             <script src="//cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>

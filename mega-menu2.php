@@ -5,7 +5,7 @@
         </h3>
         <a href="shop?category=all">View all</a>
         <?php
-            $queryCategories = mysqli_query($conn, "SELECT * FROM category");
+            $queryCategories = mysqli_query($conn, "SELECT * FROM category LIMIT 4");
             if(mysqli_num_rows($queryCategories) > 0){
                 $sn = 1;
                 while ($rowCategories = mysqli_fetch_array($queryCategories)) {
@@ -20,7 +20,7 @@
         </h3>
         <a href="shop?category=feature">View all</a>
         <?php
-            $queryFeatures = mysqli_query($conn, "SELECT * FROM feature");
+            $queryFeatures = mysqli_query($conn, "SELECT * FROM feature LIMIT 4");
             if(mysqli_num_rows($queryFeatures) > 0){
                 $sn = 1;
                 while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
@@ -35,7 +35,7 @@
         </h3>
         <a href="shop?category=menn">View all</a>
         <?php
-            $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%'");
+            $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%' LIMIT 4");
             if(mysqli_num_rows($getCategory) > 0){
                 $rowCategoryy = mysqli_fetch_array($getCategory);
                 $categoryID = $rowCategoryy['id'];
@@ -56,7 +56,7 @@
         </h3>
         <a href="shop?category=women">View all</a>
         <?php
-            $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%'");
+            $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%' LIMIT 4");
             if(mysqli_num_rows($getCategory) > 0){
                 $rowCategoryy = mysqli_fetch_array($getCategory);
                 $categoryID = $rowCategoryy['id'];
@@ -78,7 +78,7 @@
         <a href="shop?category=unisex">View all</a>
         <div class="menu-img">
             <?php
-            $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%unisex%'");
+            $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%unisex%' LIMIT 4");
             if(mysqli_num_rows($getCategory) > 0){
                 $rowCategoryy = mysqli_fetch_array($getCategory);
                 ?><img src="category_images/<?php echo $rowCategoryy['image'] ?>" alt=""><?php
