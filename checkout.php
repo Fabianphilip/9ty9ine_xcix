@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $_SESSION['payment_phone'] = tp_input($conn, "phone");
     $_SESSION['payment_products'] = tp_input($conn, "products"); 
     $_SESSION['payment_product_id'] = tp_input($conn, "product_id"); 
+    $_SESSION['payment_ref'] = tp_input($conn, "ref");
     
     ?>
     <script>
