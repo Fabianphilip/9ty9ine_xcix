@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<div class="container">
 				<div class="row">
 					<form action="" method="POST">
+                        <input type="hidden" name="userCart" value="<?php echo $userCart ?>">
                         <div class="row">
                             <div class="col-lg-6 col-12">
                                 <div class="checkbox-form">                     
