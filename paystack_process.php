@@ -43,7 +43,7 @@ $phone = $_SESSION['payment_phone'];
 $products = $_SESSION['payment_products'];
 $product_id = $_SESSION['payment_product_id'];
 
-echo $full_name . $country2 . $domain . $country2 . $userCart . $country_ip . $user_id . $name;
+echo $full_name . $country2 . $domain . $country2 . $userCart . $country_ip . $user_id . $name .$ref;
 
 $name = $full_name;
 $email = (!empty($row_user['email']))?$row_user['email']:"support@betensured.com";
@@ -181,7 +181,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
      $public_key = "pk_test_ad58a6411f3c79ed8f37156bcbdc68f9a580870d"; 
      $secret_key = "sk_test_e2ee709a238dbe23b1457ddb8e049161af692826";
 
-    $redirect_url = "https://$domain/paystack-response"; 
+    $redirect_url = "https://$domain/paystack_response"; 
     $txref = $ref;
     $payment_userCart = ""; 
 
@@ -193,8 +193,8 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
         'currency'=>"NGN",
         'reference'=>$txref,
         'public_key'=>$public_key,
-        'callback_url' => "https://$domain/paystack-response?ssiref=".$ref,
-        'payment_plan'=> $payment_userCart
+        'callback_url' => "https://$domain/paystack_response?ssiref=".$ref,
+        'payment_plan'=> "1"
       ];
     $fields_string = http_build_query($fields);
       //open connection
