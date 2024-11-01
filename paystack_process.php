@@ -194,7 +194,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
         'reference'=>$txref,
         'public_key'=>$public_key,
         'callback_url' => "https://$domain/paystack-response?ssiref=".$ref,
-        'payment_userCart'=> $payment_userCart
+        'payment_plan'=> $payment_userCart
       ];
     $fields_string = http_build_query($fields);
       //open connection
