@@ -37,14 +37,13 @@ $payment_email = $_SESSION['payment_email'];
 
 // echo($merchant_ref);
 // exit;
-$result = mysqli_query($conn, "transaction_log", "WHERE email = '$payment_email' AND reference_no = '$merchant_ref'", "*", "");
-$row = fetch_data($result);
+$result = mysqli_query($conn, "transaction_log", "WHERE email = '$payment_email' AND reference = '$merchant_ref'", "*", "");
+$row = mysqli_fetch_array($result);
 
-$trans_ref = $row["ref"];
+$trans_ref = $row["reference"];
 $log_id = $row["id"];
 $email = $row["email"];
 $reference = $row["reference"];
-$email = $row["email"];
 $name = $_SESSION['payment_full_name']; 
 $amount2 = $row["amount"].'00';
 $amount = $row["amount"];
