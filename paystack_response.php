@@ -37,7 +37,7 @@ $payment_email = $_SESSION['payment_email'];
 
 // echo($merchant_ref);
 // exit;
-$result = mysqli_query($conn, "transaction_log", "WHERE email = '$payment_email' AND reference = '$merchant_ref'", "*", "");
+$result = mysqli_query($conn, "SELECT * FROM transaction_log WHERE email = '$payment_email' AND reference = '$merchant_ref'");
 $row = mysqli_fetch_array($result);
 
 $trans_ref = $row["reference"];
@@ -56,12 +56,6 @@ $message = "";
 $ref = $merchant_ref;
 
 
-// $query = array(
-//     $secret_key => "sk_test_20baee5b886efdfc7aefdccb8faed10e09090040",
-//     "txref" => $ref
-// );
-
-$data_string = json_encode($query);
 
 // $transaction_id = $_GET["trxref"];
 $transaction_id = $_GET["ssiref"];
