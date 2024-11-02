@@ -2,7 +2,7 @@
 
 <?php
   	$productId = get_input($conn, 'id');
-  	$queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.out_of_stock AS out_of_stock, p.name AS name, c.name AS category_name, sc.name AS sub_category_name, p.description AS description, p.price AS price, p.discount AS discount, p.image_token AS image_token, p.category AS category, p.keypoint AS keypoint FROM product p JOIN category c ON c.id = p.category LEFT JOIN sub_category sc ON sc.id = p.sub_category  WHERE p.id = '$productId'");
+  	$queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.id AS id, p.out_of_stock AS out_of_stock, p.name AS name, c.name AS category_name, sc.name AS sub_category_name, p.description AS description, p.price AS price, p.discount AS discount, p.image_token AS image_token, p.category AS category, p.keypoint AS keypoint FROM product p JOIN category c ON c.id = p.category LEFT JOIN sub_category sc ON sc.id = p.sub_category  WHERE p.id = '$productId'");
     if(mysqli_num_rows($queryProduct) > 0){
       	$rowProduct = mysqli_fetch_array($queryProduct);
       	$token = $rowProduct['image_token'];
@@ -233,8 +233,8 @@
 	                                    <div class="single-product">
 	                                        <div class="product-image">
 	                                            <a href="#">
-	                                                <img class="primary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>">
-                                                        <img class="secondary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>">
+	                                                <?php if(!empty($images[0])){ ?><img class="primary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>"><?php } ?>
+                                                        <?php if(!empty($images[1])){ ?><img class="secondary-image" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>"><?php } ?>
 	                                            </a>
 	                                            <span class="onsale">Sale!</span>
 	                                            <div class="category-action-buttons">

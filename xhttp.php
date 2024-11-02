@@ -65,7 +65,7 @@
     }
 
     if(!empty($cartsidebar)){
-      $queryProduct = mysqli_query($conn, "SELECT p.image_token AS image_token, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+      $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.image_token AS image_token, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
       if(mysqli_num_rows($queryProduct) > 0){
         while($rowProduct = mysqli_fetch_array($queryProduct)){
           ?>

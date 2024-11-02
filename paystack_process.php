@@ -50,130 +50,135 @@ $email = (!empty($row_user['email']))?$row_user['email']:"support@9ty9ine.ng";
 $user_id = $userCart;
 if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)){
 
-    $sql_sel_t = mysqli_query ($conn, "SELECT sum(price) as total_price FROM cart WHERE user = '$userCart'");
-    $row_t = mysqli_fetch_array($sql_sel_t);
-    if($country == "NG"){
-        $amount = $row_t['total_price'];
-    }else{
-        $amount = $row_t['total_price']/$currency_value;
-    }
+    $checkRef = mysqli_query($conn, "SELECT * FROM transaction_log WHERE ref = '$ref' AND email = '$payment_email'");
+    if(mysqli_num_rows($checkRef) == 0){
 
-    $sql_sel_tt = mysqli_query ($conn, "SELECT qty, price, product FROM cart WHERE user = '$userCart'");
-    if(mysqli_num_rows($sql_sel_tt) > 0){
-        while($rowCart = mysqli_fetch_array($sql_sel_tt)){
-            $productID = $rowCart['product'];
-            $qty = $rowCart['qty'];
-            $price = $rowCart['price'];
-            $query_checkout = mysqli_query($conn, "INSERT INTO product_order (ref, user_id, full_name, address, country, state, email, phone, products, qty, amount) VALUES ('$ref', '$userCart', '$full_name', '$address', '$country2', '$state', '$payment_email', '$phone', '$productID', '$qty', '$price')");
-            if(!$query_checkout){
-                die("Error checkout $qty $userCart". mysqli_error($conn));
+        $sql_sel_t = mysqli_query ($conn, "SELECT sum(price) as total_price FROM cart WHERE user = '$userCart'");
+        $row_t = mysqli_fetch_array($sql_sel_t);
+        if($country == "NG"){
+            $amount = $row_t['total_price'];
+        }else{
+            // $amount = $row_t['total_price']/$currency_value;
+            $amount = $row_t['total_price'];
+        }
+
+        $sql_sel_tt = mysqli_query ($conn, "SELECT qty, price, product FROM cart WHERE user = '$userCart'");
+        if(mysqli_num_rows($sql_sel_tt) > 0){
+            while($rowCart = mysqli_fetch_array($sql_sel_tt)){
+                $productID = $rowCart['product'];
+                $qty = $rowCart['qty'];
+                $price = $rowCart['price'];
+                $query_checkout = mysqli_query($conn, "INSERT INTO product_order (ref, user_id, full_name, address, country, state, email, phone, products, qty, amount) VALUES ('$ref', '$userCart', '$full_name', '$address', '$country2', '$state', '$payment_email', '$phone', '$productID', '$qty', '$price')");
+                if(!$query_checkout){
+                    die("Error checkout $qty $userCart". mysqli_error($conn));
+                }
             }
         }
-    }
 
 
 
 
-    $sql_enter = "INSERT INTO transaction_log (email, amount, reference, payment_method, status ) VALUES ('$email', '$amount', '$ref', '$payment_method', '0')";
+        $sql_enter = "INSERT INTO transaction_log (email, amount, reference, payment_method, status ) VALUES ('$email', '$amount', '$ref', '$payment_method', '0')";
 
-    $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.name AS name, i.image AS image FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token  WHERE c.user = '$userCart' AND c.status = '1'");
+        $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.name AS name, i.image AS image FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token  WHERE c.user = '$userCart' AND c.status = '1'");
 
-    $product_list = '';
+        $product_list = '';
 
-    if (mysqli_num_rows($queryProduct) > 0) {
-        while ($rowProduct = mysqli_fetch_array($queryProduct)) {
-            $product_list .= "
-                <li>
-                    <div class='d-flex justify-content-between p-2' style='width: 100%;'>
-                        <span>
-                            <img src='product_images/" . $rowProduct['image'] . "' style='width: 50px' alt='Product Image'> 
-                            " . $rowProduct['name'] . "
-                        </span>
-                        <span>" . $rowProduct['price'] . " 
-                            <span style='padding: 10px;' onclick=\"removefromcartsidebar('product_" . $rowProduct['id'] . "_0')\">
-                                <i class='fa fa-times'></i>
+        if (mysqli_num_rows($queryProduct) > 0) {
+            while ($rowProduct = mysqli_fetch_array($queryProduct)) {
+                $product_list .= "
+                    <li>
+                        <div class='d-flex justify-content-between p-2' style='width: 100%;'>
+                            <span>
+                                <img src='product_images/" . $rowProduct['image'] . "' style='width: 50px' alt='Product Image'> 
+                                " . $rowProduct['name'] . "
                             </span>
-                        </span>
-                    </div>
-                </li>
-            ";
+                            <span>" . $rowProduct['price'] . " 
+                                <span style='padding: 10px;' onclick=\"removefromcartsidebar('product_" . $rowProduct['id'] . "_0')\">
+                                    <i class='fa fa-times'></i>
+                                </span>
+                            </span>
+                        </div>
+                    </li>
+                ";
+            }
+        } else {
+            $product_list = "<li>No items in cart</li>";
         }
-    } else {
-        $product_list = "<li>No items in cart</li>";
-    }
 
 
+        echo "hhh".$amount."hhh";
+                        
 
-                    
+        $initials = $full_name;
+        $subject_message = "Payment Attempt Notification";
+        $mail_message = "<table role='presentation' border='0' cellpadding='0' cellspacing='0' class='body'>
+        <tr>
+        <td>&nbsp;</td>
+        <td class='container'>
+        <div class='content'>
 
-    $initials = $full_name;
-    $subject_message = "Payment Attempt Notification";
-    $mail_message = "<table role='presentation' border='0' cellpadding='0' cellspacing='0' class='body'>
-    <tr>
-    <td>&nbsp;</td>
-    <td class='container'>
-    <div class='content'>
+        <!-- START CENTERED WHITE CONTAINER -->
+        <table role='presentation' class='main'>
 
-    <!-- START CENTERED WHITE CONTAINER -->
-    <table role='presentation' class='main'>
+        <!-- START MAIN CONTENT AREA -->
+        <tr>
+        <td class='wrapper'>
+        <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
+        <tr>
+        <td>
+        <center><h3>Payment Attempt Notification</h3></center>
+        <p>Hello $initials,</p>
+        <p>Todays a great day! this is to notify you on your payment attempt for the products <br> 
+        <ul style=''>
+            <li class='dropdown-header' style='width: 100%;'>Cart Items <span style='padding: 10px; float: right;' onclick='closesidecart()'><i class='fa fa-times'></i></span></li>
+            <span>
+            $product_list
+            </span>
+        </ul>
+        <br>with reference no $ref and amount $amount wishing you well</p>
+        <p> Our reperesentative will contact you shortly for briefing</p>
+        <p>You can also feel free to reach out to us</p>
+        <p>Join the fast growing community</p>
+        <table role='presentation' border='0' cellpadding='0' cellspacing='0' class='btn btn-primary'>
+        <tbody>
+        <tr>
+        <td align='left'>
+        <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
+        <tbody>
+        <tr>
+        <td> <a href='http://www.norvas.org/signin' target='_blank'>Continue</a> </td>
+        </tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p>You just took your first step to faster and richer market online.</p>
+        <p>Good luck!.</p>
+        </td>
+        </tr>
+        </table>
+        </td>
+        </tr>
 
-    <!-- START MAIN CONTENT AREA -->
-    <tr>
-    <td class='wrapper'>
-    <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
-    <tr>
-    <td>
-    <center><h3>Payment Attempt Notification</h3></center>
-    <p>Hello $initials,</p>
-    <p>Todays a great day! this is to notify you on your payment attempt for the products <br> 
-    <ul style=''>
-        <li class='dropdown-header' style='width: 100%;'>Cart Items <span style='padding: 10px; float: right;' onclick='closesidecart()'><i class='fa fa-times'></i></span></li>
-        <span>
-        $product_list
-        </span>
-    </ul>
-    <br>with reference no $ref and amount $amount wishing you well</p>
-    <p> Our reperesentative will contact you shortly for briefing</p>
-    <p>You can also feel free to reach out to us</p>
-    <p>Join the fast growing community</p>
-    <table role='presentation' border='0' cellpadding='0' cellspacing='0' class='btn btn-primary'>
-    <tbody>
-    <tr>
-    <td align='left'>
-    <table role='presentation' border='0' cellpadding='0' cellspacing='0'>
-    <tbody>
-    <tr>
-    <td> <a href='http://www.norvas.org/signin' target='_blank'>Continue</a> </td>
-    </tr>
-    </tbody>
-    </table>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-    <p>You just took your first step to faster and richer market online.</p>
-    <p>Good luck!.</p>
-    </td>
-    </tr>
-    </table>
-    </td>
-    </tr>
+        <!-- END MAIN CONTENT AREA -->
+        </table>";
 
-    <!-- END MAIN CONTENT AREA -->
-    </table>";
-
-    $to = "$email";
-    $subject = $subject_message;
-    $message = $mail_message;
-    $message2 = $message;
-    $message = message_template($subject, $message, $foot_note, $regards, $directory, $domain, $gen_email, $gen_phone);
-    $headers = "Payment Attempt Notification";
-    send_mail($to, $subject, $message, $headers, $gen_email);
+        $to = "$email";
+        $subject = $subject_message;
+        $message = $mail_message;
+        $message2 = $message;
+        $message = message_template($subject, $message, $foot_note, $regards, $directory, $domain, $gen_email, $gen_phone);
+        $headers = "Payment Attempt Notification";
+        send_mail($to, $subject, $message, $headers, $gen_email);
 
 
-    $enter_data = mysqli_query($conn, $sql_enter);
-    if (!$enter_data) {
-      die('Could not enter data: ' . $conn->error);
+        $enter_data = mysqli_query($conn, $sql_enter);
+        if (!$enter_data) {
+          die('Could not enter data: ' . $conn->error);
+        }
     }
     /////=============Paystack Process=============//////
 
@@ -188,7 +193,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
 
     $fields = [
         'email' => $email,
-        'amount'=>2000.00,
+        'amount'=> $amount*100,
         'country'=>"NG",
         'currency'=>"NGN",
         'reference'=>$txref,

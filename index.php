@@ -178,8 +178,8 @@
                                             <div class="single-product">
                                                 <div class="product-image product_height">
                                                     <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                                                        <img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;">
-                                                        <img class="secondary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;">
+                                                        <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;"><?php } ?>
+                                                        <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;"><?php } ?>
                                                     </a>
                                                     <span class="onsale">Sale!</span>
                                                     <div class="category-action-buttons">

@@ -65,7 +65,6 @@ $data_string = json_encode($query);
 // $transaction_id = $_GET["trxref"];
 $transaction_id = $_GET["ssiref"];
 $curl = curl_init();
-// $secret_key = "sk_test_20baee5b886efdfc7aefdccb8faed10e09090040";
 $secret_key = "sk_test_e2ee709a238dbe23b1457ddb8e049161af692826";
 curl_setopt_array($curl, array(
     CURLOPT_URL => "https://api.paystack.co/transaction/verify/".$transaction_id,
@@ -227,6 +226,7 @@ if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($
         send_mail($to, $subject, $message, $headers, $gen_email);
 
         $clearCart = mysqli_query($conn, "DELETE FROM cart  WHERE user = '$userCart'"); 
+    }
     
 }else if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($chargeAmount == $amount2)  && ($chargeCurrency == $currency) && $status == 1){
     $update_status = "Account Already Updated";
@@ -290,10 +290,11 @@ $message .= "</td></tr>
     
         <!--<div>-->
             
-            <!--<a href="<?php echo $users; ?>" class="btn gen-btn float-right"><i class="fa fa-dashboard" aria-hidden="true"></i> Back to Dashboard</a>-->
+            <!--<a href="<?php // echo $users; ?>" class="btn gen-btn float-right"><i class="fa fa-dashboard" aria-hidden="true"></i> Back to Dashboard</a>-->
             
         <!--</div>-->
     
         <!--<script src="new-js/general-form.js"></script>-->
     
         </div>
+
