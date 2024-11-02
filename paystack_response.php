@@ -33,9 +33,11 @@ if(mysqli_num_rows($queryProduct) > 0){
 
 // $merchant_ref = $_SESSION["trans_ref"];
 $merchant_ref = $_GET["ssiref"];
+$payment_email = $_SESSION['payment_email'];
+
 // echo($merchant_ref);
 // exit;
-$result = mysqli_query($conn, "transaction_log", "WHERE user_id = '$id' AND reference_no = '$merchant_ref'", "*", "");
+$result = mysqli_query($conn, "transaction_log", "WHERE email = '$payment_email' AND reference_no = '$merchant_ref'", "*", "");
 $row = fetch_data($result);
 
 $trans_ref = $row["ref"];

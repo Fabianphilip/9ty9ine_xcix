@@ -45,7 +45,7 @@
         ?></div><?php
       }
 
-      $querySearch = mysqli_query($conn, "SELECT p.id AS id, i.image AS image, p.name AS name  FROM product p JOIN product_images i ON i.token = p.image_token WHERE name LIKE '%$searchquery%' OR description LIKE '%searchquery%' OR search_keyword LIKE '%$searchquery%' OR keypoint LIKE '%$searchquery%' OR slug LIKE '%searchquery%'");
+      $querySearch = mysqli_query($conn, "SELECT p.id AS id, i.image AS image, p.name AS name  FROM product p JOIN product_images i ON i.token = p.image_token WHERE name LIKE '%$searchquery%' OR description LIKE '%searchquery%' OR search_keyword LIKE '%$searchquery%' OR keypoint LIKE '%$searchquery%' OR slug LIKE '%searchquery%' GROUP BY p.id");
       if(mysqli_num_rows($querySearch) > 0){
         ?><h5 class="mx-2">Products</h5><?php
         while($rowSearch = mysqli_fetch_array($querySearch)){
@@ -65,7 +65,7 @@
     }
 
     if(!empty($cartsidebar)){
-      $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.image_token AS image_token, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1'");
+      $queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.image_token AS image_token, p.id AS id, p.price AS price, c.price AS cartprice, p.name AS name, i.image AS image, c.qty AS qty FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token WHERE c.user = '$userCart' AND c.status = '1' GROUP BY p.id");
       if(mysqli_num_rows($queryProduct) > 0){
         while($rowProduct = mysqli_fetch_array($queryProduct)){
           ?>

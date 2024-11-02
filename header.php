@@ -209,7 +209,7 @@
                                                 <span class="total-price"></span>
                                             </p>
                                             <p class="buttons">
-                                                <a href="">Go To Cart</a>
+                                                <!-- <a href="">Go To Cart</a> -->
                                                 <a href="checkout">Check Out</a>
                                             </p>
                                         </div>

@@ -43,14 +43,13 @@ $phone = $_SESSION['payment_phone'];
 $products = $_SESSION['payment_products'];
 $product_id = $_SESSION['payment_product_id'];
 
-echo $full_name . $country2 . $domain . $country2 . $userCart . $country_ip . $user_id . $name .$ref;
 
 $name = $full_name;
-$email = (!empty($row_user['email']))?$row_user['email']:"support@9ty9ine.ng";
+$email = (!empty($row_user['email']))?$row_user['email']:$_SESSION['payment_email'];
 $user_id = $userCart;
 if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)){
 
-    $checkRef = mysqli_query($conn, "SELECT * FROM transaction_log WHERE ref = '$ref' AND email = '$payment_email'");
+    $checkRef = mysqli_query($conn, "SELECT * FROM transaction_log WHERE reference = '$ref' AND email = '$payment_email'");
     if(mysqli_num_rows($checkRef) == 0){
 
         $sql_sel_t = mysqli_query ($conn, "SELECT sum(price) as total_price FROM cart WHERE user = '$userCart'");
@@ -78,7 +77,7 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
 
 
 
-        $sql_enter = "INSERT INTO transaction_log (email, amount, reference, payment_method, status ) VALUES ('$email', '$amount', '$ref', '$payment_method', '0')";
+        $sql_enter = "INSERT INTO transaction_log (email, amount, reference, payment_method, status ) VALUES ('$email', '$amount', '$ref', 'Paystack', '0')";
 
         $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.name AS name, i.image AS image FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token  WHERE c.user = '$userCart' AND c.status = '1'");
 
