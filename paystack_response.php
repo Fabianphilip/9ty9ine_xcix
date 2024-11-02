@@ -147,17 +147,12 @@ if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($
     } 
 
 
-     $sql_enter = "INSERT INTO payments ".
-     "(email, amount, reference, plan) ".
-     "VALUES ".
-     "('$email', '$amount', '$ref', '$plan')";
-
-     $enter_data = mysqli_query($conn, $sql_enter);
+     $enter_data = mysqli_query($conn, "INSERT INTO payments (email, amount, reference, plan) VALUES ('$email', '$amount', '$ref', 'product')");
      if (!$enter_data) {
          die('Could not enter data: ' . $conn->error);
      }
 
-     if ($update_tra_log_paypal) {
+     if ($enter_data) {
         $initials = $name;
         $subject_message = "Payment Success Notification";
         $mail_message = "<table role='presentation' border='0' cellpadding='0' cellspacing='0' class='body'>
@@ -234,8 +229,7 @@ if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($
 
 
 $message = "<table class=\"table table-striped table-hover\">
-<tr><th style=\"width:160px;\">Description:</th><td>" . $description . "</td></tr>
-<tr><th>Total Amount:</th><td>NGN" . formatNumber($amount) . "</td></tr>
+<tr><th>Total Amount:</th><td>NGN" . number_format($amount, 2) . "</td></tr>
 <tr><th>Transaction Reference ID:</th><td>" . $merchant_ref . "</td></tr>
 <tr><th>Status Code:</th><td>" . $response_code . "</td></tr>
 <tr><th>Status Description:</th><td>" . $response_description . "</td></tr>
