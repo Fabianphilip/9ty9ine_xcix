@@ -2,11 +2,15 @@ body {
   font-family: Arial, sans-serif;
 }
 .sidebar {
-  height: 100vh;
+  height: 100%;
   width: 250px;
   background-color: #343a40;
   padding-top: 20px;
   position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 .sidebar a {
   text-decoration: none;
@@ -24,15 +28,18 @@ body {
 .content {
   margin-left: 250px;
   padding: 20px;
+  transition: margin-left 0.3s ease;
 }
 .navbar {
   margin-left: 250px;
 }
 @media (max-width: 992px) {
   .sidebar {
+    padding-top: 50px;
+    z-index: 1;
     width: 100%;
-    height: auto;
-    position: relative;
+/*    height: auto;*/
+/*    position: relative;*/
   }
   .content {
     margin-left: 0;
@@ -69,4 +76,42 @@ body {
   cursor: pointer;
   padding: 2px 5px;
   font-size: 12px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+}
+
+.sidebar-toggler {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggler {
+    display: inline-block;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+  }
 }

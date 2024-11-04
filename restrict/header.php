@@ -42,7 +42,7 @@
   </style>
 
   <!-- Sidebar -->
-  <div class="sidebar" style="overflow-y: scroll;">
+  <div class="sidebar" id="sidebar" style="overflow-y: scroll;">
     <a href="dashboard" class="<?php if($web_file_name == 'dashboard'){ ?>active<?php } ?>"><i class="fas fa-home"></i> Dashboard</a>
     <h5 style="color: silver; padding: 20px 0px 0px 20px;">User Management</h5>
     <a href="manage-users" class="<?php if($web_file_name == 'manage-users'){ ?>active<?php } ?>"><i class="fas fa-users"></i> Users</a>

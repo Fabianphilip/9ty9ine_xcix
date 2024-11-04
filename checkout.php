@@ -97,12 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                                 <input type="text" placeholder="" />
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="checkout-form-list">
-                                                <label>Company Name</label>
-                                                <input type="text" placeholder="" />
-                                            </div>
-                                        </div>
                                         <div class="col-lg-6">
                                             <div class="checkout-form-list">
                                                 <label>Email Address <span class="required">*</span></label>                                        

@@ -109,7 +109,7 @@
                                     <li><a href="shop">Shop</a></li>
                                     <li><a href="shop?category=men">Men</a></li>
                                     <li><a href="shop?category=women">Women</a></li>
-                                    <li><a href="shop?category=unisex">Unisex</a></li>
+                                    <li><a href="shop?category=unisex" style="display: none;">Unisex</a></li>
                                     <li><a href="login">Login</a></li>
                                 </ul>
                             </div>
@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="user-menu-area">
                                     <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon m-0 p-0">
+                                        <a href="#" class="user-icon m-0 p-0" style="display: none;">
                                             <i class="fa animated fa-gear"></i>
                                         </a>
                                         <div class="user-menu">
@@ -228,7 +228,8 @@
                         <div class="col-4 col-lg-2 col-md-6">
                             <div class="logo m-0">
                                 <a href="/">
-                                    <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;">
+                                    <!-- <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"> -->
+                                    <strong><h1 style="padding: 20px; color: black;">9ty9ine</h1></strong>
                                 </a>
                             </div>
                         </div>
@@ -276,10 +277,10 @@
                                 </div>
                                 <div class="user-menu-area">
                                     <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon">
+                                        <a href="#" class="user-icon" style="display: none;">
                                             <i class="fa animated fa-gear"></i>
                                         </a>
-                                        <div class="user-menu">
+                                        <div class="user-menu" style="display: none;">
                                             <h3>ACCOUNT</h3>
                                             <ul>
                                                 <li>

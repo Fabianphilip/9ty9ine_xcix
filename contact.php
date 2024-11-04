@@ -62,15 +62,15 @@
                      <div class="address-area">
                          <ul>
                             <li>
-                                <a href="#"><i class="fa fa-map-marker"></i>
+                                <a href=""><i class="fa fa-map-marker"></i>
                                 <span><?php echo $row_general['site_address'] ?></span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-envelope"></i>
+                                <a href="mailto:<?php echo $row_general['site_email'] ?>"><i class="fa fa-envelope"></i>
                                 <span><?php echo $row_general['site_email'] ?></span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-phone"></i>
+                                <a href="tel:<?php echo $row_general['site_phone'] ?>"><i class="fa fa-phone"></i>
                                 <span><?php echo $row_general['site_phone'] ?></span></a>
                             </li>
                         </ul>

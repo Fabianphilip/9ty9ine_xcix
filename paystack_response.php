@@ -118,7 +118,7 @@ if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($
 
     $updateTransactiopnLog = mysqli_query($conn, "UPDATE transaction_log SET response_code = '$response_code', response_desc = '$response_description', status = 1, date_time = '$date_time', paystack_transaction_ref = '$transaction_id' WHERE id = '$log_id'");
 
-    $updateProduct_order = mysqli_query($conn, "UPDATE product_order SET status = 'Confirmed' pay_status = '1' WHERE ref = '$reference'"); 
+    $updateProduct_order = mysqli_query($conn, "UPDATE product_order SET status = 'Confirmed', pay_status = '1' WHERE ref = '$reference'"); 
 
     $queryProduct = mysqli_query($conn, "SELECT p.id AS id, p.price AS price, p.name AS name, i.image AS image FROM cart c JOIN product p ON p.id = c.product JOIN product_images i ON i.token = p.image_token  WHERE c.user = '$userCart' AND c.status = '1'");
 

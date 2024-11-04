@@ -2,7 +2,7 @@
 
 <?php
   	$productId = get_input($conn, 'id');
-  	$queryProduct = mysqli_query($conn, "SELECT p.rating AS rating, p.id AS id, p.out_of_stock AS out_of_stock, p.name AS name, c.name AS category_name, sc.name AS sub_category_name, p.description AS description, p.price AS price, p.discount AS discount, p.image_token AS image_token, p.category AS category, p.keypoint AS keypoint FROM product p JOIN category c ON c.id = p.category LEFT JOIN sub_category sc ON sc.id = p.sub_category  WHERE p.id = '$productId'");
+  	$queryProduct = mysqli_query($conn, "SELECT sc.id AS sub_category_id, c.id AS category_id, p.rating AS rating, p.id AS id, p.out_of_stock AS out_of_stock, p.name AS name, c.name AS category_name, sc.name AS sub_category_name, p.description AS description, p.price AS price, p.discount AS discount, p.image_token AS image_token, p.category AS category, p.keypoint AS keypoint FROM product p JOIN category c ON c.id = p.category LEFT JOIN sub_category sc ON sc.id = p.sub_category  WHERE p.id = '$productId'");
     if(mysqli_num_rows($queryProduct) > 0){
       	$rowProduct = mysqli_fetch_array($queryProduct);
       	$token = $rowProduct['image_token'];
@@ -30,9 +30,9 @@
                     <div class="col-12">
                         <div class="breadcrumb-menu">
                             <ul>
-                                <li><a href="#">Home</a> | </li>
-                                <li><a href="#"><?php echo $rowProduct['category_name'] ?></a> | </li>
-                                <li><a href="#"><?php echo $rowProduct['sub_category_name'] ?></a> | </li>
+                                <li><a href="/">Home</a> | </li>
+                                <li><a href="shop?category=<?php echo $rowProduct['category_id'] ?>"><?php echo $rowProduct['category_name'] ?></a> | </li>
+                                <li><a href="shop?category=<?php echo $rowProduct['sub_category_id'] ?>"><?php echo $rowProduct['sub_category_name'] ?></a> | </li>
                                 <li><span><?php echo $rowProduct['name'] ?></span></li>
                             </ul>
                         </div>

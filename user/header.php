@@ -41,8 +41,10 @@
         }
   </style>
 
+  <button class="sidebar-toggler" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Menu</button>
+
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <a href="dashboard" class="<?php if($web_file_name == 'dashboard'){ ?>active<?php } ?>"><i class="fas fa-home"></i> Dashboard</a>
     <?php if($is_admin == '1'){ ?>
       <a href="../restrict/dashboard" class=""><i class="fas fa-home"></i> Admin</a>

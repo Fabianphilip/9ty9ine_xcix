@@ -18,7 +18,7 @@
             <div class="col-12">
                 <div class="breadcrumb-menu">
                     <ul>
-                        <li><a href="#">Home</a> | </li>
+                        <li><a href="/">Home</a> | </li>
                         <li><span>About Us</span></li>
                     </ul>
                 </div>
