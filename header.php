@@ -229,7 +229,7 @@
                             <div class="m-0 p-0" style="align-content: center !important;">
                                 <a href="/">
                                     <!-- <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"> -->
-                                    <strong><h1 style="padding: 20px; color: black; font-family: 'Pe-icon-7-stroke' !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong>
+                                    <strong><h1 style="padding: 20px; color: black; font-family: serif !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong>
                                 </a>
                             </div>
                         </div>
