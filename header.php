@@ -226,7 +226,7 @@
                     <div class="row">
                         <!-- LOGO AREA START -->
                         <div class="col-4 col-lg-2 col-md-6" style="align-content: center;">
-                            <div class="logo m-0">
+                            <div class="">
                                 <a href="/">
                                     <!-- <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"> -->
                                     <strong><h1 style="padding: 20px; color: black; font-family: initial; font-weight: 900; margin: 0px;">9ty9ine</h1></strong>
