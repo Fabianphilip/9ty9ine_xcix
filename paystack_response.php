@@ -217,9 +217,9 @@ if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($
 
         $clearCart = mysqli_query($conn, "DELETE FROM cart  WHERE user = '$userCart'"); 
     }
-    
+   
 }else if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($chargeAmount == $amount2)  && ($chargeCurrency == $currency) && $status == 1){
-    $update_status = "Account Already Updated";
+    $update_status = "Order Already Updated";
 }else if(!empty($reference) && (($response_code != "00" && $response_code != "0") || $chargeAmount != $amount2  || $chargeCurrency != $currency) && $status == 0){
 
     
@@ -246,33 +246,35 @@ $message .= "</td></tr>
         }
         -->
     </style>
-<div class="az-content-body">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <?php include 'order_success.php' ?>
+    <div class="row d-flex justify-content-center">
        
-        <div class="col-lg-12 mg-t-20">
-            <div class="card card-table-two">
+        <div class="col-lg-8 mg-t-20">
+            <div class="card card-table-two p-4">
                 <h3 class="card-title">Paystack Payment Response</h3>
-    <br />
-    <div>
+                <br />
+                <div>
+            
+                    <?php echo $message; ?>
+            
+                </div>
 
-        <?php echo $message; ?>
-
-    </div>
-
-    <?php $users = "users/new-index"; ?>
-            <div class="row">
-            <div class="col-lg-6">
-            <div class="bottom-edit text-left">
-                <button class="btn btn-danger btn-rounded" onClick="window.location.reload();"> <i class="typcn typcn-refresh"></i> Refresh Payment</button>
-            </div>
-            </div>
-            <div class="col-lg-6">
-            <div class="bottom-edit text-right">
-                <a href="/"
-                   class="btn btn-danger btn-rounded">Back to Dashboard
-                </a>
-            </div>
-            </div>
-        </div>
+                <?php $users = "users/new-index"; ?>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="bottom-edit text-left">
+                            <button class="btn btn-danger btn-rounded" onClick="window.location.reload();"> <i class="typcn typcn-refresh"></i> Refresh Payment</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bottom-edit text-right">
+                            <a href="/"
+                               class="btn btn-danger btn-rounded">Back to Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             
         </div>
