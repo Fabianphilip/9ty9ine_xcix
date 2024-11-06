@@ -69,7 +69,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <?php
-                                            $query_view = mysqli_query($conn, "SELECT p.discount AS discount, p.name AS name, p.price AS price, po.qty AS qty, i.image AS image, po.amount AS amount, p.price AS price, p.id AS id FROM product_order po JOIN product p ON po.products = p.id JOIN product_images i ON i.token = p.image_token WHERE po.ref = '$reference'");
+                                            $query_view = mysqli_query($conn, "SELECT p.discount AS discount, p.name AS name, p.price AS price, po.qty AS qty, i.image AS image, po.amount AS amount, p.price AS price, p.id AS id FROM product_order po JOIN product p ON po.products = p.id JOIN product_images i ON i.token = p.image_token WHERE po.ref = '$reference' GROUP BY p.id");
                                             $sn = 1;
                                             if(mysqli_num_rows($query_view) > 0){
                                                 while($row = mysqli_fetch_array($query_view)){

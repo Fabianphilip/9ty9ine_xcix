@@ -43,7 +43,7 @@
                                                 <div class="sub-title">
                                                     <center><p class="fadeInDown" style="width: 70%;"><?php echo $rowFeatures['content'] ?></p></center>
                                                 </div>
-                                                <a href="#" class="sl-button fadeInUp">SHOP NOW</a>
+                                                <a href="shop" class="sl-button fadeInUp">SHOP NOW</a>
                                             </div>
                                         </div>
                                         <?php
@@ -73,7 +73,7 @@
                                                 <div class="sub-title">
                                                     <center><p class="fadeInDown" style="width: 70%;"><?php echo $rowFeatures['content'] ?></p></center>
                                                 </div>
-                                                <a href="#" class="sl-button fadeInUp">SHOP NOW</a>
+                                                <a href="shop" class="sl-button fadeInUp">SHOP NOW</a>
                                             </div>
                                         </div>
                                         <?php
@@ -109,7 +109,7 @@
                                     $queryNo = mysqli_query($conn, "SELECT category FROM product WHERE category = '$categoryId'");
                                 ?>
                                 <div class="single-category-product">
-                                    <a href="#">
+                                    <a href="shop?category=<?php echo $rowCategories['name'] ?>">
                                         <div class="category-thumb">
                                             <img width="540" height="692" src="category_images/<?php echo $rowCategories['image'] ?>" alt="Category">
                                         </div>
@@ -212,7 +212,7 @@
                                                 </div>
                                                 <div class="product-info">
                                                     <div class="product-title">
-                                                        <a href="#"><?php echo $rowProduct['name'] ?></a>
+                                                        <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['name'] ?></a>
                                                     </div>
                                                     <div class="price-rating">
                                                         <div class="star-rating">
