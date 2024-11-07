@@ -106,7 +106,6 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
         }
 
 
-        echo "hhh".$amount."hhh";
                         
 
         $initials = $full_name;

@@ -112,7 +112,6 @@ $response_description = (($transStatus == "success") && ($chargeAmount == $amoun
 $update_status = "";
 
 
-
 //============ Updates Plan ================//
 if(!empty($reference) && ($response_code == "00" || $response_code == "0") && ($chargeAmount == $amount2)  && ($chargeCurrency == $currency) && $status == 0){
 
