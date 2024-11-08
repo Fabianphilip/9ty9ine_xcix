@@ -145,6 +145,7 @@
                       checkCartno(productId);
                       checkCartTotal(productId);
                       cartsidebar();
+                      document.getElementById("carttotal2").innerHTML = document.getElementById("cartSpan").innerHTML;
                     }
                   }
                   xhttp.open("GET", "xhttp?addtocart=1&productId=" + productId + "&qty=" + qty + "&currentdate="+ currentDate + "&sessionId=<?php echo $sessionId ?><?php if(!empty($email)){ ?>&email=<?php if(!empty($email)){ echo $email; } ?><?php } ?>");
@@ -193,6 +194,7 @@
                   var currentDate = new Date();
                   xhttp.onload = function() {
                     document.getElementById("cartSpan").innerHTML = this.responseText;
+                    document.getElementById("carttotal2").innerHTML = this.responseText;
                   }
                   xhttp.open("GET", "xhttp?checkCart=1&productId=" + productId + "&currentdate="+ currentDate + "&sessionId=<?php echo $sessionId ?><?php if(!empty($email)){ ?>&email=<?php if(!empty($email)){ echo $email; } ?><?php } ?>");
                   xhttp.send();

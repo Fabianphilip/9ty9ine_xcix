@@ -225,11 +225,11 @@
                 <div class="">
                     <div class="row">
                         <!-- LOGO AREA START -->
-                        <div class="col-4 col-lg-2 col-md-6" style="align-content: center !important;">
+                        <div class="col-4 col-lg-2 col-md-6" style="align-content: center !important; background-color: black;">
                             <div class="m-0 p-0" style="align-content: center !important;">
                                 <a href="/">
                                     <!-- <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"> -->
-                                    <strong><h1 style="padding: 20px; color: black; font-family: serif !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong>
+                                    <strong><h1 style="padding: 20px; color: white; font-family: serif !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong>
                                 </a>
                             </div>
                         </div>
@@ -262,19 +262,6 @@
                         <!-- HEADER RIGHT START -->
                         <div class="col-8 col-lg-3 col-md-6">
                             <div class="header-right">
-                                <div class="search-box-area">
-                                    <div class="header-menu-item-icon">
-                                       <a href="#" class="icon-search">
-                                            <i class="fa animated fa-search search-icon"></i>
-                                        </a>
-                                    </div>
-                                    <div class="search-form">
-                                        <form action="#" method="post">
-                                            <input type="text" placeholder="Search here...">
-                                            <a title="Close" class="close-icon" href="#">X</a>
-                                        </form>
-                                    </div>
-                                </div>
                                 <div class="user-menu-area">
                                     <div class="header-menu-item-icon">
                                         <a href="#" class="user-icon" style="display: none;">
