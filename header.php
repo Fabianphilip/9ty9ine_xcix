@@ -225,8 +225,8 @@
                 <div class="">
                     <div class="row">
                         <!-- LOGO AREA START -->
-                        <div class="col-4 col-lg-2 col-md-6" style="align-content: center !important; background-color: black;">
-                            <div class="m-0 p-0" style="align-content: center !important;">
+                        <div class="col-5 col-lg-2 col-md-6" style="align-content: center !important;">
+                            <div class="m-0 p-0" style="align-content: center !important; background-color: black; border: 4px solid white;">
                                 <a href="/">
                                     <!-- <img src="assets/img/9ty9inelogo.png" alt="Logo" style="width: 50px;"> -->
                                     <strong><h1 style="padding: 20px; color: white; font-family: serif !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong>
@@ -260,7 +260,7 @@
                         </div>
                         <!-- MAIN MENU AREA END -->
                         <!-- HEADER RIGHT START -->
-                        <div class="col-8 col-lg-3 col-md-6">
+                        <div class="col-7 col-lg-3 col-md-6">
                             <div class="header-right">
                                 <div class="user-menu-area">
                                     <div class="header-menu-item-icon">

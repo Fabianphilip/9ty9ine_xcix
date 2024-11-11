@@ -88,6 +88,30 @@
         </div>
         <!-- SLIDER AREA END -->
 
+        <div id="breadcrumb">
+            <?php
+                $backgroundColors = ['#c9e726', '#C22D2E', '#4A90E2', '#F5A623', '#7ED321', '#D0021B'];
+                $queryFeatures = mysqli_query($conn, "SELECT * FROM feature WHERE discount_news != '' AND position = '1' ORDER BY RAND(id)");
+                    if(mysqli_num_rows($queryFeatures) > 0){
+                        $sn = 1;
+                        while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
+                            $snn = $sn++;
+                            $featureId = $rowFeatures['id'];
+                            $bgColor = $backgroundColors[array_rand($backgroundColors)];
+                        ?>
+                        <div class="slide" style="background-color: <?php echo $bgColor; ?>;">
+                            <div class="content">
+                                <h1 class="title"><?php echo $rowFeatures['name'] ?> <?php echo $rowFeatures['discount_news'] ?></h1>
+                                <p class="subtitle"><?php echo $rowFeatures['content'] ?></p>
+                            </div>
+                            <img src="feature_images/<?php echo $rowFeatures['image'] ?>" alt="Model Image" class="model">
+                        </div>
+                    <?php
+                    }
+                }
+            ?>
+        </div>
+
         <div class="popular-category-area marg-b70">
             <div class="container">
                 <div class="row">
@@ -178,10 +202,9 @@
                                             <div class="single-product">
                                                 <div class="product_height">
                                                     <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                                                        <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;"><?php } ?>
-                                                        <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;"><?php } ?>
+                                                        <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
+                                                        <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
                                                     </a>
-                                                    <span class="onsale">Sale!</span>
                                                     <div class="category-action-buttons">
                                                         <div class="row">
                                                             <div class="col-6">
@@ -286,5 +309,27 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            let currentSlide = 0;
+            const slides = document.querySelectorAll(".slide");
+
+            function showSlide(index) {
+              slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) {
+                  slide.classList.add("active");
+                }
+              });
+            }
+
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % slides.length;
+              showSlide(currentSlide);
+            }
+
+            showSlide(currentSlide);
+            setInterval(nextSlide, 5000);
+
+        </script>
         <!-- BRAND-LOGO-AREA END -->
         <?php include 'footer.php' ?>
