@@ -6573,3 +6573,69 @@ h3.widget-title-modal {
   transform: translateX(0);
   opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider_details {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.main-image_details {
+  position: relative;
+}
+
+.main-image_details img {
+  width: 100%;
+  display: block;
+}
+
+.arrow_details {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transform: translateY(-50%);
+}
+
+.left-arrow_details {
+  left: 10px;
+}
+
+.right-arrow_details {
+  right: 10px;
+}
+
+.thumbnail-container_details {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail-container_details img {
+  width: 60px;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.thumbnail-container_details img.active_details {
+  border: 2px solid #333;
+  opacity: 1;
+}
+

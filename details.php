@@ -49,7 +49,47 @@
                         <div class="product-view-area">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="zoomWrapper">
+
+                                    <div class="slider_details">
+                                        <!-- Main large image display -->
+                                        <div class="main-image_details">
+                                            <?php
+                                                $query_image = mysqli_query($conn, "SELECT * FROM product_images WHERE token = '$token' LIMIT 1");
+                                                if(mysqli_num_rows($query_image) > 0){
+                                                    $sn = 1;
+                                                    while ($rowImage = mysqli_fetch_assoc($query_image)) {
+                                                        ?>
+                                                        <img id="currentImage" src="product_images/<?php echo $rowImage['image'] ?>" alt="Main Image">
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
+                                            <button class="arrow_details left-arrow_details" onclick="prevImage()">&#10094;</button>
+                                            <button class="arrow_details right-arrow_details" onclick="nextImage()">&#10095;</button>
+                                        </div>
+
+                                        <!-- Thumbnails for navigation -->
+                                        <div class="thumbnail-container_details">
+                                            <?php
+                                                $query_image = mysqli_query($conn, "SELECT * FROM product_images WHERE token = '$token'");
+                                                if(mysqli_num_rows($query_image) > 0){
+                                                    $sn = 0;
+                                                    $imagess = "";
+                                                    while ($rowImage = mysqli_fetch_assoc($query_image)) {
+                                                        $imafgf = $rowImage['image'];
+                                                        $imagess .= "'product_images/$imafgf', ";
+                                                        $snn = $sn++;
+                                                        ?>
+                                                        <img src="product_images/<?php echo $rowImage['image'] ?>" alt="Thumbnail" onclick="selectImage(<?php echo $snn; ?>)">
+                                                    <?php
+                                                    }//$imagess .= "''";
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="zoomWrapper" style="display: none;">
                                         <div id="img-1" class="product-image">
                                             <?php
                                                 $query_image = mysqli_query($conn, "SELECT * FROM product_images WHERE token = '$token' LIMIT 1");
@@ -64,7 +104,6 @@
                                                     }
                                                 }
                                             ?>
-                                            <span class="onsale">Sale!</span>
                                         </div>
                                         <div class="single-zoom-thumb">
                                             <ul class="bxslider" id="gallery_01">
@@ -394,5 +433,35 @@
                 </div>
             </div>
         </div>
+<script type="text/javascript">
+    const images = [<?php echo $imagess ?>];
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const mainImage = document.getElementById("currentImage");
+      mainImage.src = images[index];
+
+      const thumbnails = document.querySelectorAll(".thumbnail-container img");
+      thumbnails.forEach((img, i) => img.classList.toggle("active", i === index));
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function selectImage(index) {
+      currentIndex = index;
+      showImage(index);
+    }
+
+    showImage(currentIndex);
+
+</script>
 
 <?php include 'footer.php' ?>
