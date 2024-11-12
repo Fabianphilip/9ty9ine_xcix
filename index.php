@@ -14,7 +14,7 @@
     <?php } ?>
 
         <!-- SLIDER AREA START -->
-        <div class="">
+        <div class="" style="display: none;">
             <div class="row">
                 <div class="col-12">
                     <div class="slider-area marg-b70">
@@ -88,7 +88,7 @@
         </div>
         <!-- SLIDER AREA END -->
 
-        <div id="breadcrumb">
+        <!-- <div id="breadcrumb">
             <?php
                 $backgroundColors = ['#c9e726', '#C22D2E', '#4A90E2', '#F5A623', '#7ED321', '#D0021B'];
                 $queryFeatures = mysqli_query($conn, "SELECT * FROM feature WHERE discount_news != '' AND position = '1' ORDER BY RAND(id)");
@@ -110,9 +110,31 @@
                     }
                 }
             ?>
+        </div> -->
+
+        <div id="breadcrumb">
+            
+            <div class="slide" style="background-color: #9b969d;">
+                <div class="content">
+                    <h1 class="title">9ty9ine</h1>
+                    <p class="subtitle">Luxry Street Wear redefined</p>
+                    <div><span style="background: black; color: white; padding: 10px;">Shop Now</span></div>
+                </div>
+                <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model Image" class="model">
+            </div>
+
+            <div class="slide" style="background-color: #c9a364;">
+                <div class="content">
+                    <h1 class="title">9ty9ine</h1>
+                    <p class="subtitle">Compliment Dresses</p>
+                    <div><span style="background: black; color: white; padding: 10px;">Shop Now</span></div>
+                </div>
+                <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model">
+            </div>
+              
         </div>
 
-        <div class="popular-category-area marg-b70">
+        <div class="popular-category-area marg-b70" style="display: none;">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -205,32 +227,15 @@
                                                         <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
                                                         <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
                                                     </a>
-                                                    <div class="category-action-buttons">
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="category">
-                                                                    <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['category_name'] ?></a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="action-button">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="details?id=<?php echo $rowProduct['id']; ?>" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="pe-7s-search"></i></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" data-bs-toggle="tooltip" title="Add to Compare"><i class="pe-7s-repeat"></i></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#" class="cart-button" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
+                                                    <div class="category-action-buttons d-flex justify-content-center">
+                                                        <button type="button" id="addproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="addtocart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: none;<?php  } ?> padding: 10px; background-color: black; color: white;">
+                                                          <i class="ld ld-Plus" title="add to cart"></i>
+                                                          <span class="mr2">Add To Cart</span>
+                                                        </button>
+                                                        <div class="" id="product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" data-qty="1" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: block;<?php }else{ ?>display: none;<?php } ?>">
+                                                            <input type="number" style="width: 100px; <?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: block;<?php }else{ ?>display: none;<?php } ?>" value="1" id="product_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)" onchange="quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)">
                                                         </div>
+                                                        <button id="removeproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="removefromcart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" class="w_hhLG w_8nsR w_jDfj pointer bn sans-serif b ph2 flex items-center justify-center w-auto shadow-1" style="background: #68696b; display: none"><i class="ld ld-Minus"></i><span class="mr2">Remove</span></button>
                                                     </div>
                                                 </div>
                                                 <div class="product-info">

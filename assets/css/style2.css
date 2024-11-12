@@ -1220,6 +1220,12 @@ span.cart-total {
 .single-product:hover .category-action-buttons {
   bottom: 0;
   opacity: 1;
+  margin-top: 150px;
+  top: 0;
+  /*background: black;
+  color: white;*/
+  height: fit-content;
+  background: transparent;
 }
 
 .category a {
@@ -6561,7 +6567,7 @@ h3.widget-title-modal {
 }
 
 .model {
-  width: 600px;
+  width: 400px;
   height: auto;
   margin-right: 20px;
   transform: translateX(50px);
