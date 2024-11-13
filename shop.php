@@ -62,14 +62,7 @@
                             <a href="#"><?php echo $rowProduct['name'] ?></a>
                         </div>
                         <div class="price-rating">
-                            <div class="star-rating">
-                            <?php
-                                for ($i = 1; $i <= $rowProduct['rating']; $i++) {
-                                    echo "<i class='fa fa-star'></i>";
-                                }
-                            ?>
-                            </div>
-                            <div class="price">
+                            <div class="" style="color: grey; font-weight: 900;">
                                 <span class="old-price">
                                 <?php 
                                     if($rowProduct['discount'] > 1){
@@ -86,6 +79,13 @@
                                   $slashed = $rowProduct['price'] - $slashed;
                                   echo number_format($slashed, 2);
                                 }else{ echo '₦'.number_format($rowProduct['price'], 2); } ?></span>
+                            </div>
+                            <div class="">
+                            <?php
+                                for ($i = 1; $i <= $rowProduct['rating']; $i++) {
+                                    echo "<i class='fa fa-star'></i>";
+                                }
+                            ?>
                             </div>
                         </div>
                     </div>

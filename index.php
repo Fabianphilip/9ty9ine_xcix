@@ -117,8 +117,8 @@
             <div class="slide" style="background-color: #9b969d;">
                 <div class="content">
                     <h1 class="title">9ty9ine</h1>
-                    <p class="subtitle">Luxry Street Wear redefined</p>
-                    <div><span style="background: black; color: white; padding: 10px;">Shop Now</span></div>
+                    <p class="subtitle">Luxery Street Wear redefined</p>
+                    <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model Image" class="model">
             </div>
@@ -127,7 +127,7 @@
                 <div class="content">
                     <h1 class="title">9ty9ine</h1>
                     <p class="subtitle">Compliment Dresses</p>
-                    <div><span style="background: black; color: white; padding: 10px;">Shop Now</span></div>
+                    <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model">
             </div>
@@ -243,14 +243,7 @@
                                                         <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['name'] ?></a>
                                                     </div>
                                                     <div class="price-rating">
-                                                        <div class="star-rating">
-                                                        <?php
-                                                            for ($i = 1; $i <= $rowProduct['rating']; $i++) {
-                                                                echo "<i class='fa fa-star'></i>";
-                                                            }
-                                                        ?>
-                                                        </div>
-                                                        <div class="price">
+                                                        <div class="" style="color: grey; font-weight: 900;">
                                                             <span class="old-price">
                                                             <?php 
                                                                 if($rowProduct['discount'] > 1){
@@ -267,6 +260,13 @@
                                                               $slashed = $rowProduct['price'] - $slashed;
                                                               echo number_format($slashed, 2);
                                                             }else{ echo '₦'.number_format($rowProduct['price'], 2); } ?></span>
+                                                        </div>
+                                                        <div class="">
+                                                        <?php
+                                                            for ($i = 1; $i <= $rowProduct['rating']; $i++) {
+                                                                echo "<i class='fa fa-star'></i>";
+                                                            }
+                                                        ?>
                                                         </div>
                                                     </div>
                                                 </div>
