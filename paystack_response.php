@@ -246,10 +246,12 @@ $message .= "</td></tr>
         -->
     </style>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <?php if($transStatus == "success"){ ?>
     <?php include 'order_success.php' ?>
+    <?php }else{ ?>
     <div class="row d-flex justify-content-center">
        
-        <div class="col-lg-8 mg-t-20">
+        <div class="col-lg-8 mg-t-20" style="display: none !important;">
             <div class="card card-table-two p-4">
                 <h3 class="card-title">Paystack Payment Response</h3>
                 <br />
@@ -278,13 +280,5 @@ $message .= "</td></tr>
             
         </div>
     
-        <!--<div>-->
-            
-            <!--<a href="<?php // echo $users; ?>" class="btn gen-btn float-right"><i class="fa fa-dashboard" aria-hidden="true"></i> Back to Dashboard</a>-->
-            
-        <!--</div>-->
-    
-        <!--<script src="new-js/general-form.js"></script>-->
-    
-        </div>
-
+    </div>
+    <?php } ?>

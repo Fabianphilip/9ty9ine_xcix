@@ -116,7 +116,7 @@
             
             <div class="slide" style="background-color: #9b969d;">
                 <div class="content">
-                    <h1 class="title">9ty9ine</h1>
+                    <h1 class="title"><strong>XCIX</strong></h1>
                     <p class="subtitle">Luxery Street Wear redefined</p>
                     <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
@@ -125,7 +125,7 @@
 
             <div class="slide" style="background-color: #c9a364;">
                 <div class="content">
-                    <h1 class="title">9ty9ine</h1>
+                    <h1 class="title"><strong>XCIX</strong></h1>
                     <p class="subtitle">Compliment Dresses</p>
                     <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
