@@ -1,35 +1,34 @@
 <style type="text/css">
-.whatsapp_div {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: left;
-    z-index: 50000;
+#whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+/*  background-color: #25d366;*/
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 }
 
+#whatsapp-button img {
+/*  width: 35px;*/
+/*  height: 35px;*/
+}
 
-@media only screen and (max-width: 600px) {
-    .mobileapp{
-        width: 22%; 
-        z-index: 50000;
-        padding-bottom: 15px;
-        padding-left: 10px;
-    }
+#whatsapp-button:hover {
+  transform: scale(1.1);
 }
-@media only screen and (min-width: 600px) {
-    .whatsapp_image{
-        width: 5%; 
-        z-index: 50000;
-        padding-bottom: 15px;
-        padding-left: 10px;
-    }
-}
+
 </style>
-<div class="whatsapp_div">
-    <a traget="_blank" href="https://wa.me/<?php echo $row_general['site_phone'] ?>"><img src="assets/img/whatsapplogo.png" alt="whatsapp" class="whatsapp_image mobileapp"></a>
-</div><div class="footer-top-area hm-4">
+<a href="https://wa.me/<?php echo $row_general['site_phone'] ?>" target="_blank" id="whatsapp-button">
+  <img src="assets/img/whatsapplogo.png" alt="WhatsApp" />
+</a>
+<div class="footer-top-area hm-4">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-4">

@@ -116,8 +116,8 @@
             
             <div class="slide" style="background-color: #555257;">
                 <div class="content">
-                    <h1 class="title" style="color: white; font-size: 68px;"><strong>XCIX</strong></h1>
-                    <p class="subtitle" style="color: white; font-size: 48px; line-height: 1;">Luxery Street Wear redefined</p>
+                    <h1 class="title" style="color: white; font-size: 38px;"><strong>XCIX</strong></h1>
+                    <p class="subtitle" style="color: white; font-size: 28px; line-height: 1;">Luxery Street Wear redefined</p>
                     <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model Image" class="model">
@@ -125,8 +125,8 @@
 
             <div class="slide" style="background-color: #d58d16;">
                 <div class="content">
-                    <h1 class="title" style="color: white; font-size: 68px;"><strong>XCIX</strong></h1>
-                    <p class="subtitle" style="color: white; font-size: 48px; line-height: 1;">Compliment Dresses</p>
+                    <h1 class="title" style="color: white; font-size: 38px;"><strong>XCIX</strong></h1>
+                    <p class="subtitle" style="color: white; font-size: 28px; line-height: 1;">Compliment Dresses</p>
                     <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model">
