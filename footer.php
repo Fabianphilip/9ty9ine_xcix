@@ -122,6 +122,23 @@
             </div>
         </div>
         <script type="text/javascript">
+            const sliderContainer_mobile = document.querySelector('.slider-container_mobile');
+            const slides_mobile = document.querySelectorAll('.slide_mobile');
+            let currentIndex_mobile = 0;
+
+            // Function to update slide position
+            function updateSlider() {
+              sliderContainer_mobile.style.transform = `translateX(-${currentIndex_mobile * 50}%)`;
+            }
+
+            // Automatic sliding every 3 seconds
+            setInterval(() => {
+              currentIndex_mobile = (currentIndex_mobile + 1) % slides_mobile.length; // Loop back to first slide
+              updateSlider();
+            }, 3000);
+
+        </script>
+        <script type="text/javascript">
             document.getElementById("carttotal2").innerHTML = document.getElementById("cartSpan").innerHTML;
         </script>
 

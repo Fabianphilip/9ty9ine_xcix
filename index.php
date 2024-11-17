@@ -2,6 +2,18 @@
     <?php if(!isset($_SESSION['firstsee'])){ 
         $_SESSION['firstsee'] = 1;
     ?>
+    <style type="text/css">
+        @media only screen and (max-width: 600px){
+          .breadcrum_mobile{
+              display: none;
+          }
+        }
+        @media only screen and (min-width: 600px){
+          .breadcrum_desktop{
+              display: none;
+          }
+        }
+    </style>
     <div id="firstsee" style="position: fixed;top: 0;left: 0; width: 100%;height: 100%;background-color: white;align-items: center;justify-content: center;z-index: 999999999;text-align: center; align-content: center;">
         <img src="assets/img/9ty9inelogo.png" style="background-color: #fff;padding: 20px; width: 80%;max-width: 400px;border-radius: 8px;position: relative;text-align: center; animation: fadeIn 0.3s ease-in-out;"><br>
         <span style="padding: 10px 10px; background: black; color: white; font-weight: 900; border-radius: 50px; display: inline-block;" onclick="closefirstseen()">Continue</span>
@@ -112,27 +124,54 @@
             ?>
         </div> -->
 
-        <div id="breadcrumb">
+        <div id="breadcrumb" class="breadcrum_mobile">
             
             <div class="slide" style="background-color: #555257;">
                 <div class="content">
-                    <h1 class="title" style="color: white; font-size: 38px;"><strong>XCIX</strong></h1>
-                    <p class="subtitle" style="color: white; font-size: 28px; line-height: 1;">Luxery Street Wear redefined</p>
+                    <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
+                    <p style="color: white !important; font-size: 38px;">Luxery Street Wear redefined</p>
                     <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
-                <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model Image" class="model">
+                <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model Image" class="model mobile-image">
             </div>
 
             <div class="slide" style="background-color: #d58d16;">
                 <div class="content">
-                    <h1 class="title" style="color: white; font-size: 38px;"><strong>XCIX</strong></h1>
-                    <p class="subtitle" style="color: white; font-size: 28px; line-height: 1;">Compliment Dresses</p>
+                    <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
+                    <p style="color: white !important; font-size: 38px;" >Compliment Dresses</p>
                     <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
                 </div>
-                <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model">
+                <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model mobile-image">
             </div>
               
         </div>
+
+        <div class="slider_mobile breadcrum_desktop">
+            <div class="slider-container_mobile">
+                <div class="slide_mobile" style="background-color: #555257;">
+                    <div class="background_mobile"></div>
+                    <div class="content_mobile">
+                        <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model 1" class="model-image_mobile">
+                        <div class="overlay_mobile"></div>
+                        <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
+                        <p style="color: white !important; font-size: 28px; z-index: 9;">Luxery Street Wear redefined</p>
+                        <div style="z-index: 8;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px;">Shop Now</a></div>
+                    </div>
+                </div>
+                <div class="slide_mobile" style="background-color: #d58d16;">
+                    <div class="background_mobile"></div>
+                    <div class="content_mobile">
+                        <img src="assets/img/6729bf40a3bc44234.png" alt="Model 2" class="model-image_mobile">
+                        <div class="overlay_mobile"></div>
+                        <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
+                        <p style="color: white !important; font-size: 28px; z-index: 9;">Compliment Dresses</p>
+                        <div style="z-index: 8;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px;">Shop Now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+
 
         <div class="popular-category-area marg-b70" style="display: none;">
             <div class="container">

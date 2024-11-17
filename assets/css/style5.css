@@ -6645,3 +6645,67 @@ h3.widget-title-modal {
   opacity: 1;
 }
 
+
+
+
+
+.slider_mobile {
+  position: relative;
+  width: 100%;
+  height: fit-content; /* Adjust height for mobile */
+  overflow: hidden;
+}
+
+.slider-container_mobile {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* Double the width for two slides */
+}
+
+.slide_mobile {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222; /* Background color */
+}
+
+.content_mobile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.model-image_mobile {
+  position: absolute;
+/*  width: 150px;*/
+  height: auto;
+/*  opacity: 0.7; /* Make the model image slightly transparent */*/
+  z-index: 2;
+}
+
+.overlay_mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay to make text stand out */
+  z-index: 1;
+}
+
+.text_mobile {
+  position: relative;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 3;
+  padding: 0 10px; /* Adjust for mobile padding */
+}
