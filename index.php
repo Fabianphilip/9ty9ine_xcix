@@ -3,16 +3,7 @@
         $_SESSION['firstsee'] = 1;
     ?>
     <style type="text/css">
-        @media only screen and (max-width: 600px){
-          .breadcrum_mobile{
-              display: none;
-          }
-        }
-        @media only screen and (min-width: 600px){
-          .breadcrum_desktop{
-              display: none;
-          }
-        }
+        
     </style>
     <div id="firstsee" style="position: fixed;top: 0;left: 0; width: 100%;height: 100%;background-color: white;align-items: center;justify-content: center;z-index: 999999999;text-align: center; align-content: center;">
         <img src="assets/img/9ty9inelogo.png" style="background-color: #fff;padding: 20px; width: 80%;max-width: 400px;border-radius: 8px;position: relative;text-align: center; animation: fadeIn 0.3s ease-in-out;"><br>

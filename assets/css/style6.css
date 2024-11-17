@@ -6709,3 +6709,14 @@ h3.widget-title-modal {
   z-index: 3;
   padding: 0 10px; /* Adjust for mobile padding */
 }
+
+@media only screen and (max-width: 600px){
+  .breadcrum_mobile{
+      display: none !important;
+  }
+}
+@media only screen and (min-width: 600px){
+  .breadcrum_desktop{
+      display: none !important;
+  }
+}

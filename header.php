@@ -54,7 +54,7 @@
         <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
         <link rel="stylesheet" href="assets/custom-slider/css/nivo-slider.css" type="text/css" />
         <link rel="stylesheet" href="assets/custom-slider/css/preview.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="assets/css/style5.css">
+		<link rel="stylesheet" href="assets/css/style6.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
