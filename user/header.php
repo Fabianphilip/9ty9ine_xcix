@@ -35,6 +35,9 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
 </head>
 <body>
+  <div id="loader" style="display: none;">
+      <div class="spinner"></div>
+    </div>
   <style type="text/css">
     html{
         font-size: 70% !important;

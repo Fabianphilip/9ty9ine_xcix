@@ -1,6 +1,16 @@
  <?php if(!empty($email)){ ?>
  </div>
  <script>
+    function showLoader() {
+      document.getElementById('loader').style.display = 'flex';
+    }
+    
+    function hideLoader() {
+      document.getElementById('loader').style.display = 'none';
+    }
+
+ </script>
+ <script>
   function toggleSidebar() {
     document.getElementById("sidebar").classList.toggle("show");
   }
