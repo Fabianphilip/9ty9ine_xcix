@@ -6,9 +6,6 @@
       <p>This is where you can manage your website, view statistics, and much more.</p>
 
       <style>
-          .sidebar .active {
-                background-color: #d3941a !important;
-            }
         .modal-overlay {
               position: fixed;
               top: 0;

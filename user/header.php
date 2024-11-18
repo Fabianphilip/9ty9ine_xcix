@@ -42,6 +42,9 @@
     .btn-primary{
       background-color: black !important;
     }
+    .sidebar .active {
+      background-color: black !important;
+  }
   </style>
 
   <button class="sidebar-toggler" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Menu</button>
