@@ -5,7 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $_SESSION['payment_userCart'] = tp_input($conn, "userCart"); 
     $_SESSION['payment_full_name'] = tp_input($conn, "full_name"); 
-    $_SESSION['payment_address'] = tp_input($conn, "address"); 
+    $address = (!empty(tp_input($conn, "selected_address")))? tp_input($conn, "selected_address") : tp_input($conn, "address");
+    $_SESSION['payment_address'] = $address; 
     $_SESSION['payment_country'] = tp_input($conn, "country"); 
     $_SESSION['payment_state'] = tp_input($conn, "state"); 
     $_SESSION['payment_email'] = tp_input($conn, "email"); 
@@ -125,12 +126,39 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                                 </select>                                     
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="checkout-form-list">
-                                                <label>Address <span class="required">*</span></label>
-                                                <input type="text" placeholder="Street address" name="address" value="<?php if(!empty($email)){ echo $row_user['address']; } ?>" />
+                                        <?php if(!empty($email)){ ?>
+                                        <h5>Choose Your Address</h5>
+                                        <div class="mb-3">
+                                            <?php
+                                            $query_addresses = mysqli_query($conn, "SELECT * FROM user_addresses WHERE email = '$email'");
+                                            
+                                            while ($row_address = mysqli_fetch_array($query_addresses)) {
+                                                ?>
+                                                <div class="form-check">
+                                                    <input class="form-check-input address-radio" type="radio" name="selected_address" id="address_<?php echo $row_address['id']; ?>" value="<?php echo $row_address['address']; ?>">
+                                                    <label class="form-check-label" for="address_<?php echo $row_address['id']; ?>">
+                                                        <?php echo $row_address['address']; ?>
+                                                    </label>
+                                                </div>
+                                                <?php
+                                            }
+                                            ?>
+                                            <div class="form-check">
+                                                <input class="form-check-input address-radio" type="radio" name="selected_address" id="other_address" value="other">
+                                                <label class="form-check-label" for="other_address">
+                                                    Enter a New Address
+                                                </label>
+                                            </div>
+                                            <div id="other_address_field" class="mt-3" style="display: none;">
+                                                <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address">
                                             </div>
                                         </div>
+                                        <?php }else{ ?>
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" value="<?php if(!empty($email)){ echo $row_user['address']; } ?>">
+                                        </div>
+                                        <?php } ?>
                                         <div class="col-lg-6">
                                             <div class="country-select" id="state_call">
                                                 <label>State<span class="required">*</span></label>                         

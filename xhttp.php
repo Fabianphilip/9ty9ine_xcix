@@ -15,6 +15,14 @@
     $email = get_input($conn, 'email');
     $sessionId = get_input($conn, 'sessionId');
     $searchquery = get_input($conn, 'searchquery');
+    $updatequantityChangeNew = get_input($conn, 'updatequantityChangeNew');
+    $get_addresses = get_input($conn, 'get_addresses');
+    $emailPOST = tp_input($conn, 'email');
+    $address = get_input($conn, 'address');
+    $edit_address = get_input($conn, 'edit_address'); 
+    $delete_address = get_input($conn, 'delete_address'); 
+    $add_address = get_input($conn, 'add_address');
+    $choose_address = get_input($conn, 'choose_address');
     // $sessionId = $_SESSION['id'];
     if(!empty($email)){
         $userCart = $email;
@@ -240,6 +248,104 @@
         </select>
     <?php
   }
+
+  if(!empty($get_addresses) && !empty($email)){ 
+        $result = mysqli_query($conn, "SELECT id, address, setDefault FROM user_addresses WHERE email = '$email'");
+        ?><?php
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <div class="row mb-3" style="<?php if($row['setDefault'] == '1'){ ?> border: 1px solid green; padding-top: 10px; padding-bottom: 10px; <?php } ?>">
+            <div class="col-md-9">
+                <input type="text" class="form-control existing-address" value="<?php echo $row['address'] ?>" id="value_<?php echo $row['id'] ?>">
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-primary editAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="editBtn(<?php echo $row['id'] ?>)">Edit</button>
+                <button class="btn btn-danger deleteAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="deleteBtn(<?php echo $row['id'] ?>)">x</button>
+                <button class="btn btn-success chooseAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="chooseBtn(<?php echo $row['id'] ?>)"><i class="fa fa-check"></i></button>
+              </div>
+              </div>
+            <?php
+        }
+    }
+    
+    if(!empty($email) && !empty($address) && !empty($add_address)){
+        $query = mysqli_query($conn, "INSERT INTO user_addresses (email, address) VALUES ('$email', '$address')");
+        if($query){
+            $result = mysqli_query($conn, "SELECT id, address, setDefault FROM user_addresses WHERE email = '$email'");
+            ?><?php
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <div class="row mb-3" style="<?php if($row['setDefault'] == '1'){ ?> border: 1px solid green; padding-top: 10px; padding-bottom: 10px; <?php } ?>">
+                <div class="col-md-9">
+                    <input type="text" class="form-control existing-address" value="<?php echo $row['address'] ?>" id="value_<?php echo $row['id'] ?>">
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary editAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="editBtn(<?php echo $row['id'] ?>)">Edit</button>
+                    <button class="btn btn-danger deleteAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="deleteBtn(<?php echo $row['id'] ?>)">x</button>
+                    <button class="btn btn-success chooseAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="chooseBtn(<?php echo $row['id'] ?>)"><i class="fa fa-check"></i></button>
+                  </div>
+                  </div>
+                <?php
+            }
+        }else{
+            echo 2;
+        }
+    }
+   if(!empty($address) && !empty($edit_address)){ 
+        $query = mysqli_query($conn, "UPDATE user_addresses SET address = '$address' WHERE id = '$edit_address'");
+        if($query){
+            echo 1;
+        }
+   }
+   if(!empty($delete_address) && !empty($email)){ 
+        $queryDel = mysqli_query($conn, "DELETE FROM user_addresses WHERE id = '$delete_address'");
+        if($queryDel){
+            $result = mysqli_query($conn, "SELECT id, address, setDefault FROM user_addresses WHERE email = '$email'");
+            ?><?php
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <div class="row mb-3" style="<?php if($row['setDefault'] == '1'){ ?> border: 1px solid green; padding-top: 10px; padding-bottom: 10px; <?php } ?>">
+                <div class="col-md-9">
+                    <input type="text" class="form-control existing-address" value="<?php echo $row['address'] ?>" id="value_<?php echo $row['id'] ?>">
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary editAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="editBtn(<?php echo $row['id'] ?>)">Edit</button>
+                    <button class="btn btn-danger deleteAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="deleteBtn(<?php echo $row['id'] ?>)">x</button>
+                    <button class="btn btn-success chooseAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="chooseBtn(<?php echo $row['id'] ?>)"><i class="fa fa-check"></i></button>
+                  </div>
+                  </div>
+                <?php
+            }
+        }else{
+            echo 2;
+        }
+   }
+   
+   if(!empty($choose_address) && !empty($email)){ 
+       $setsetDefault = mysqli_query($conn, "UPDATE user_addresses SET setDefault = '' WHERE email = '$email'");
+       $update = mysqli_query($conn, "UPDATE user_addresses SET setDefault = '1' WHERE id = '$choose_address' AND email = '$email'");
+        if($update){
+            $result = mysqli_query($conn, "SELECT id, address, setDefault FROM user_addresses WHERE email = '$email'");
+            ?><?php
+            while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <div class="row mb-3" style="<?php if($row['setDefault'] == '1'){ ?> border: 1px solid green; padding-top: 10px; padding-bottom: 10px; <?php } ?>">
+                <div class="col-md-9">
+                    <input type="text" class="form-control existing-address" value="<?php echo $row['address'] ?>" id="value_<?php echo $row['id'] ?>">
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary editAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="editBtn(<?php echo $row['id'] ?>)">Edit</button>
+                    <button class="btn btn-danger deleteAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="deleteBtn(<?php echo $row['id'] ?>)">x</button>
+                    <button class="btn btn-success chooseAddressBtn" data-id="<?php echo $row['id'] ?>" onclick="chooseBtn(<?php echo $row['id'] ?>)"><i class="fa fa-check"></i></button>
+                  </div>
+                  </div>
+                <?php
+            }
+        }else{
+            echo mysqli_error($conn);
+            echo 2;
+        }
+   }
 
 
 
