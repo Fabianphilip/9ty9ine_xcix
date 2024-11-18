@@ -6,10 +6,6 @@
       <p>This is where you can manage your website, view statistics, and much more.</p>
 
       <style>
-          .btn-primari {
-              background:#d3941a;
-              color: #fff;
-          }
           .sidebar .active {
                 background-color: #d3941a !important;
             }
@@ -46,7 +42,7 @@
                 <div><?php echo $row_user['email'] ?></div>
                 <div class="col-md-12 mt-4">
                   <a href="profile" class="btn btn-secondary"><i class="fa fa-edit"></i> Edit</a>
-                  <a href="settings" class="btn btn-primari"><i class="fa fa-cogs"></i> Settings</a>
+                  <a href="settings" class="btn btn-primary"><i class="fa fa-cogs"></i> Settings</a>
                 </div>
               </div>
             </div>
@@ -74,7 +70,7 @@
               </div>
               <div class="col-md-12 mt-4" style="text-align: right;">
                 <a href="orders" class="btn btn-secondary"><i class="fa fa-box"></i> All</a>
-                <a href="orders?track=1" class="btn btn-primari"><i class="fa fa-truck"></i> Settings</a>
+                <a href="orders?track=1" class="btn btn-primary"><i class="fa fa-truck"></i> Settings</a>
               </div>
             </div>
           </div>
@@ -85,7 +81,7 @@
           <div class="card shadow p-3 mb-5 bg-white rounded p-4">
             <div class="row d-flex justify-content-between">
               <div class="col-auto"><h5>Default Shipping Address</h5></div>
-              <div class="col-auto"><button class="btn btn-primari" id="addNewAddressBtn"><i class="fa fa-address-book"></i> Add/Manage New Address</button></div>
+              <div class="col-auto"><button class="btn btn-primary" id="addNewAddressBtn"><i class="fa fa-address-book"></i> Add/Manage New Address</button></div>
               <div class="col-md-12 p-4">
                   <?php
                     $result = mysqli_query($conn, "SELECT id, address, setDefault FROM user_addresses WHERE email = '$email'");
@@ -114,7 +110,7 @@
           <div class="card shadow p-3 mb-5 bg-white rounded p-4">
             <div class="row d-flex justify-content-between">
               <div class="col-auto"><h5>Recently Saved item</h5></div>
-              <div class="col-auto"><button class="btn btn-primari"><i class="fa fa-floppy-o"></i> See all saved items</button></div>
+              <div class="col-auto"><button class="btn btn-primary"><i class="fa fa-floppy-o"></i> See all saved items</button></div>
               <div class="col-md-12 p-4"> 
                   <?php
                     $result = mysqli_query($conn, "SELECT p.name AS name, pi.image AS image, p.id AS id FROM wishlist w LEFT JOIN product p ON w.product_id = p.id LEFT JOIN product_images pi ON p.image_token = pi.token  WHERE w.email = '$email' GROUP BY p.id");

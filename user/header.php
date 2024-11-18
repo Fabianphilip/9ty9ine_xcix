@@ -37,8 +37,11 @@
 <body>
   <style type="text/css">
     html{
-            font-size: 70% !important;
-        }
+        font-size: 70% !important;
+    }
+    .btn-primary{
+      background-color: black !important;
+    }
   </style>
 
   <button class="sidebar-toggler" onclick="toggleSidebar()"><i class="fas fa-bars"></i> Menu</button>
