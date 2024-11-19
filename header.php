@@ -221,7 +221,7 @@
                 </div>
             </div>
             <!-- HEADER-TOP END -->
-			<div class="header-area header-two hm-5 px-3" id="sticker">
+			<div class="header-area header-two hm-5" id="sticker">
                 <div class="">
                     <div class="row">
                         <!-- LOGO AREA START -->

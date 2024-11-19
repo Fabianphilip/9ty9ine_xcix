@@ -120,8 +120,8 @@
             <div class="slide" style="background-color: #555257;">
                 <div class="content">
                     <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 38px;">Luxery Street Wear redefined</p>
-                    <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
+                    <p style="color: white !important; font-size: 22px;">Luxery Street Wear redefined</p>
+                    <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model Image" class="model mobile-image">
             </div>
@@ -129,8 +129,8 @@
             <div class="slide" style="background-color: #d58d16;">
                 <div class="content">
                     <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 38px;" >Compliment Dresses</p>
-                    <div><a href="shop" style="background: black; color: white; padding: 10px;">Shop Now</a></div>
+                    <p style="color: white !important; font-size: 22px;" >Compliment Dresses</p>
+                    <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model mobile-image">
             </div>
@@ -145,8 +145,8 @@
                         <img src="assets/img/6729bf57b6fcfferuyu.png" alt="Model 1" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
-                        <p style="color: white !important; font-size: 28px; z-index: 9;">Luxery Street Wear redefined</p>
-                        <div style="z-index: 8;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px;">Shop Now</a></div>
+                        <p style="color: white !important; font-size: 22px; z-index: 9;">Luxery Street Wear redefined</p>
+                        <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
                 </div>
                 <div class="slide_mobile" style="background-color: #d58d16;">
@@ -155,8 +155,8 @@
                         <img src="assets/img/6729bf40a3bc44234.png" alt="Model 2" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
-                        <p style="color: white !important; font-size: 28px; z-index: 9;">Compliment Dresses</p>
-                        <div style="z-index: 8;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px;">Shop Now</a></div>
+                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Dresses</p>
+                        <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
                 </div>
             </div>

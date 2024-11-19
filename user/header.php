@@ -54,6 +54,7 @@
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
+    <a href="../"><img style="width: 100px;" src="../assets/img/9ty9inelogo.png" alt="logo with link to homepage."> <span><?php echo $row_general['site_name'] ?></span></a>
     <a href="dashboard" class="<?php if($web_file_name == 'dashboard'){ ?>active<?php } ?>"><i class="fas fa-home"></i> Dashboard</a>
     <?php if($is_admin == '1'){ ?>
       <a href="../restrict/dashboard" class=""><i class="fas fa-home"></i> Admin</a>
