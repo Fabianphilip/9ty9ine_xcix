@@ -34,16 +34,16 @@
 <!doctype html>
 <html class="no-js" lang="en">
     
-<head>
+    <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title><?php echo $row_general['site_name'] ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="assets/img/favicon.webp" />
-	<link rel="preconnect" href="assets/fonts.googleapis.com/index.html">
-	<link rel="preconnect" href="assets/fonts.gstatic.com/index.html" crossorigin>
-	<link href="assets/fonts.googleapis.com/css24895.css?family=Monda:wght@400;700&amp;family=Oswald:wght@300;400;700&amp;family=Playfair+Display:ital,wght@0,400;1,700&amp;display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/img/9ty9inelogo.png" />
+    	<link rel="preconnect" href="assets/fonts.googleapis.com/index.html">
+    	<link rel="preconnect" href="assets/fonts.gstatic.com/index.html" crossorigin>
+    	<link href="assets/fonts.googleapis.com/css24895.css?family=Monda:wght@400;700&amp;family=Oswald:wght@300;400;700&amp;family=Playfair+Display:ital,wght@0,400;1,700&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
@@ -250,10 +250,6 @@
                                             <?php include 'mega-menu.php' ?>
                                         </li>
 
-                                        <li>
-                                            <a href="#">Brands</a>
-                                            <?php include 'mega-menu2.php'; ?>
-                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -406,9 +402,6 @@
                                             </li>
                                             <li><a href="shop">Items</a>
                                                 <?php include 'mega-menu.php' ?>
-                                            </li>
-                                            <li><a href="brands">Brands</a>
-                                                <<?php include 'mega-menu2.php'; ?>
                                             </li>
                                             <li><a href="contact">Contact</a></li>
                                         </ul>

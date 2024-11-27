@@ -245,44 +245,26 @@
             </div>
         </div>
         
-        <!-- PRODUCT-TAB AREA START -->
+        <hr>
         <div class="product-tab-area marg-b70">
             <div class="container mobilexmargin">
                 <div class="row">
-                    <div class="col-12">
-                        <div class="section-title style-two">
-                            <h2>THE TRENDY PRODUCTS</h2>
-                        </div>
-                        <div class="tab-menu">
-                          <ul class="nav">
-                            <?php
-                                $queryFeatures = mysqli_query($conn, "SELECT * FROM feature WHERE discount_news != '' AND position = '3' LIMIT 4");
-                                if(mysqli_num_rows($queryFeatures) > 0){
-                                    $sn = 1;
-                                    while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
-                                        $snn = $sn++;
-                                        $featureId = $rowFeatures['id'];
-                                    ?>
-                                    <li class="nav-item"><button class="nav-link <?php if($snn == '1'){ ?>active <?php } ?>" data-bs-toggle="tab" href="#<?php echo $rowFeatures['slug'] ?>" aria-expanded="true"><?php echo $rowFeatures['name'] ?></button></li>
-                                    <?php
-                                    }
-                                }
-                            ?>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="tab-content">
+                    <div class="">
                         <?php
-                            $queryFeatures = mysqli_query($conn, "SELECT * FROM feature WHERE discount_news != '' AND position = '3' LIMIT 4");
+                            $queryFeatures = mysqli_query($conn, "SELECT * FROM feature WHERE discount_news != '' AND position = '3'");
                             if(mysqli_num_rows($queryFeatures) > 0){
                                 $sn = 1;
                                 while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
                                 $snn = $sn++;
                                 $featureId = $rowFeatures['id'];
                             ?>
-                        <div id="<?php echo $rowFeatures['slug'] ?>" class="tab-pane fade <?php if($snn == '1'){ ?>active show <?php } ?>">
+                        <div id="<?php echo $rowFeatures['slug'] ?>">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3><?php echo $rowFeatures['name'] ?></h3>
+                                    <hr>
+                                </div>
+                            </div>
                             <div class="row">
                                 <?php
                                     $queryProduct = mysqli_query($conn, "SELECT c.name AS category_name, p.id AS id, p.price AS price, p.rating AS rating, p.discount AS discount, p.name AS name, (SELECT GROUP_CONCAT(image ORDER BY id ASC) FROM product_images i WHERE i.token = p.image_token LIMIT 2) AS images, p.image_token AS image_token FROM product p JOIN product_images i ON i.token  = p.image_token JOIN category c ON c.id = p.category WHERE p.feature LIKE '%$featureId%' GROUP BY p.id ");

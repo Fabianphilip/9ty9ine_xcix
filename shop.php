@@ -24,42 +24,25 @@
         ?>
             <div class="col-6 col-lg-3 col-sm-6 col-md-6">
                 <div class="single-product">
-                    <div class="product-image product_height">
+                    <div class="product_height" style="border: 10px solid white;">
                         <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                            <img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; border: 10px solid white">
-                            <img class="secondary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover; border: 10px solid white">
+                            <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
+                            <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
                         </a>
-                        <div class="category-action-buttons">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="category">
-                                        <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['category_name'] ?></a>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="action-button">
-                                        <ul>
-                                            <li>
-                                                <a href="details?id=<?php echo $rowProduct['id']; ?>" data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View"><i class="pe-7s-search"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="pe-7s-like"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" data-bs-toggle="tooltip" title="Add to Compare"><i class="pe-7s-repeat"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="cart-button" data-bs-toggle="tooltip" title="Add to Cart"><i class="pe-7s-cart"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                        <div class="category-action-buttons d-flex justify-content-center">
+                            <button type="button" id="addproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="addtocart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: none;<?php  } ?> padding: 10px; background-color: black; color: white;">
+                              <i class="ld ld-Plus" title="add to cart"></i>
+                              <span class="mr2">Add To Cart</span>
+                            </button>
+                            <div class="" id="product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" data-qty="1" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: block;<?php }else{ ?>display: none;<?php } ?>">
+                                <input type="number" style="width: 100px; <?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: block;<?php }else{ ?>display: none;<?php } ?>" value="1" id="product_qty<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onkeyup="quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)" onchange="quantityChange('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>', this.id)">
                             </div>
+                            <button id="removeproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="removefromcart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" class="w_hhLG w_8nsR w_jDfj pointer bn sans-serif b ph2 flex items-center justify-center w-auto shadow-1" style="background: #68696b; display: none"><i class="ld ld-Minus"></i><span class="mr2">Remove</span></button>
                         </div>
                     </div>
                     <div class="product-info">
                         <div class="product-title">
-                            <a href="#"><?php echo $rowProduct['name'] ?></a>
+                            <a href="details?id=<?php echo $rowProduct['id']; ?>"><?php echo $rowProduct['name'] ?></a>
                         </div>
                         <div class="price-rating">
                             <div class="" style="color: grey; font-weight: 900;">
