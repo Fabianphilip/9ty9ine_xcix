@@ -181,8 +181,11 @@ if(!empty($userCart) && !empty($country_ip) && !empty($user_id) && !empty($name)
     /////=============Paystack Process=============//////
 
     $url = "https://api.paystack.co/transaction/initialize";
-     $public_key = "pk_test_ad58a6411f3c79ed8f37156bcbdc68f9a580870d"; 
-     $secret_key = "sk_test_e2ee709a238dbe23b1457ddb8e049161af692826";
+     // $public_key = "pk_test_ad58a6411f3c79ed8f37156bcbdc68f9a580870d"; 
+     // $secret_key = "sk_test_e2ee709a238dbe23b1457ddb8e049161af692826";
+
+     $public_key = "pk_live_304f46c632be3b532a637831eec488f8605ab9a0"; 
+     $secret_key ="sk_live_0312c91eb44a957cd50c492726b613654a751570";
 
     $redirect_url = "https://$domain/paystack_response"; 
     $txref = $ref;

@@ -60,7 +60,9 @@ $ref = $merchant_ref;
 // $transaction_id = $_GET["trxref"];
 $transaction_id = $_GET["ssiref"];
 $curl = curl_init();
-$secret_key = "sk_test_e2ee709a238dbe23b1457ddb8e049161af692826";
+// $secret_key = "sk_test_e2ee709a238dbe23b1457ddb8e049161af692826";
+// $public_key = "pk_live_304f46c632be3b532a637831eec488f8605ab9a0"; 
+$secret_key ="sk_live_0312c91eb44a957cd50c492726b613654a751570";
 curl_setopt_array($curl, array(
     CURLOPT_URL => "https://api.paystack.co/transaction/verify/".$transaction_id,
     CURLOPT_RETURNTRANSFER => true,
