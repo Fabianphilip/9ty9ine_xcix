@@ -113,7 +113,7 @@
                                     <?php if(empty($email)){ ?>
                                     <li><a href="login">Login</a></li>
                                     <?php }else{ ?>
-                                    <li><a href="user/dshboard">Dashboard</a></li>
+                                    <li><a href="user/dashboard">Dashboard</a></li>
                                     <?php } ?>
                                 </ul>
                             </div>
@@ -162,7 +162,7 @@
                                                 <?php if(empty($email)){ ?>
                                                 <li><a href="login"><i class="fa fa-fw fa-unlock-alt"></i>Login</a></li>
                                                 <?php }else{ ?>
-                                                <li><a href="user/dshboard">Dashboard</a></li>
+                                                <li><a href="user/dashboard">Dashboard</a></li>
                                                 <?php } ?>
                                             </ul>
                                         </div>
