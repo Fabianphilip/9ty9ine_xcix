@@ -110,7 +110,11 @@
                                     <li><a href="shop?category=men">Men</a></li>
                                     <li><a href="shop?category=women">Women</a></li>
                                     <li><a href="shop?category=unisex" style="display: none;">Unisex</a></li>
+                                    <?php if(empty($email)){ ?>
                                     <li><a href="login">Login</a></li>
+                                    <?php }else{ ?>
+                                    <li><a href="user/dshboard">Dashboard</a></li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </div>
@@ -155,9 +159,11 @@
                                                 <li>
                                                     <a href="checkout"><i class="fa fa-fw fa-usd"></i>Checkout</a>
                                                 </li>
-                                                <li>
-                                                    <a href="login"><i class="fa fa-fw fa-unlock-alt"></i>Login</a>
-                                                </li>
+                                                <?php if(empty($email)){ ?>
+                                                <li><a href="login"><i class="fa fa-fw fa-unlock-alt"></i>Login</a></li>
+                                                <?php }else{ ?>
+                                                <li><a href="user/dshboard">Dashboard</a></li>
+                                                <?php } ?>
                                             </ul>
                                         </div>
                                     </div>
