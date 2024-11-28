@@ -270,4 +270,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			</div>
 		</div>
 
+        <?php if(!empty($email)){ ?>
+        <script>
+            document.querySelectorAll(".address-radio").forEach((radio) => {
+                radio.addEventListener("change", function() {
+                    const otherAddressField = document.getElementById("other_address_field");
+                    if (this.value === "other") {
+                        otherAddressField.style.display = "block";
+                    } else {
+                        otherAddressField.style.display = "none";
+                    }
+                });
+            });
+
+        </script>
+
+        <?php } ?>
+
         <?php include 'footer.php' ?>
