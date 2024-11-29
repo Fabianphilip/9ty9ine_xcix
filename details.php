@@ -400,18 +400,6 @@
 	                            ?>
                             </div>
                         </div>
-                         <!-- special-product-area-end -->
-                         <div class="banner-area">
-                            <div class="single-banner">
-                                <a href="#">
-                                    <img alt="" width="271" height="480" src="assets/img/banner/4.webp">
-                                </a>
-                                <div class="banner-text">
-                                    <h2>SAVE</h2>
-                                    <h3>MEN’S COLLECTION<span> MID SEASON SALE</span></h3>
-                                </div>
-                            </div>
-                        </div>
                         <!-- popular-tag-area-start -->
                         <div class="populer-tag-area">
                             <div class="section-title">

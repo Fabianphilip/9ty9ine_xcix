@@ -86,34 +86,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <div class="checkbox-form">                     
                                     <h3>Shipping Address Details</h3>
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="checkout-form-list">
                                                 <label>Full Name <span class="required">*</span></label>                                       
-                                                <input type="text" placeholder="" name="full_name" value="<?php if(!empty($email)){ echo $row_user['full_name']; } ?>" />
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="checkout-form-list">
-                                                <label>Last Name <span class="required">*</span></label>                                        
-                                                <input type="text" placeholder="" />
+                                                <input type="text" placeholder="" required name="full_name" value="<?php if(!empty($email)){ echo $row_user['full_name']; } ?>" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="checkout-form-list">
                                                 <label>Email Address <span class="required">*</span></label>                                        
-                                                <input type="email" placeholder="" name="email" value="<?php if(!empty($email)){ echo $row_user['email']; } ?>"/>
+                                                <input type="email" placeholder="" required name="email" value="<?php if(!empty($email)){ echo $row_user['email']; } ?>"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="checkout-form-list">
                                                 <label>Phone <span class="required">*</span></label>                                        
-                                                <input type="text" placeholder="" name="phone" value="<?php if(!empty($email)){ echo $row_user['phone']; } ?>"/>
+                                                <input type="text" placeholder="" required name="phone" value="<?php if(!empty($email)){ echo $row_user['phone']; } ?>"/>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="country-select">
                                                 <label>Country <span class="required">*</span></label>
-                                                <select name="country" id="country" onchange="country_select();">
+                                                <select name="country" id="country" onchange="country_select();" required>
                                                     <option value="" selected disabled>** Select Country **</option>
                                                     <?php
                                                     $query_country = mysqli_query($conn, "SELECT * FROM countries_ where status='1'");
