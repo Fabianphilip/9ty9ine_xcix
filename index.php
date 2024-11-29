@@ -274,10 +274,10 @@
                                     ?>
                                         <div class="col-6 col-lg-3 col-sm-6 col-md-6">
                                             <div class="single-product">
-                                                <div class="product_height" style="border: 10px solid white;">
+                                                <div class="product_height">
                                                     <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                                                        <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
-                                                        <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover; border: 10px solid white"><?php } ?>
+                                                        <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover;"><?php } ?>
+                                                        <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;"><?php } ?>
                                                     </a>
                                                     <div class="category-action-buttons d-flex justify-content-center">
                                                         <button type="button" id="addproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="addtocart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" style="<?php if (in_array($rowProduct['id'], $cartProduct)) { ?>display: none;<?php  } ?> padding: 10px; background-color: black; color: white;">
