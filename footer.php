@@ -100,7 +100,8 @@
                         <div class="footer-menu">
                             <h3 class="footer-title">Sub LINK</h3>
                             <ul>
-                                <li><a href="faq">Faq</a></li>
+                                <li><a href="faq">FAQs</a></li>
+                                <li><a href="shipping-and-returns">Shipping & Returns</a></li>
                             </ul>
                          </div>
                     </div>
