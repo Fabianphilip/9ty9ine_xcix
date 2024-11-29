@@ -25,8 +25,9 @@
             <div class="col-6 col-lg-3 col-sm-6 col-md-6">
                 <div class="single-product">
                     <div class="product_height" style="">
+                        <center>
                         <a href="details?id=<?php echo $rowProduct['id']; ?>">
-                            <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="540" height="692" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; "><?php } ?>
+                            <?php if(!empty($images[0])){ ?><img class="primary-image product_height" alt="Special" width="200" height="200" src="product_images/<?php echo $images[0]; ?>" style="object-fit: cover; "><?php } ?>
                             <?php if(!empty($images[1])){ ?><img class="secondary-image product_height" style="display: none" alt="Special" width="540" height="692" src="product_images/<?php echo $images[1]; ?>" style="object-fit: cover;"><?php } ?>
                         </a>
                         <div class="category-action-buttons d-flex justify-content-center">
@@ -39,6 +40,7 @@
                             </div>
                             <button id="removeproduct_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>" onclick="removefromcart('product_<?php echo $rowProduct['id'] ?>_<?php echo $rowProduct['image_token'] ?>')" class="w_hhLG w_8nsR w_jDfj pointer bn sans-serif b ph2 flex items-center justify-center w-auto shadow-1" style="background: #68696b; display: none"><i class="ld ld-Minus"></i><span class="mr2">Remove</span></button>
                         </div>
+                        </center>
                     </div>
                     <div class="product-info">
                         <div class="product-title">
