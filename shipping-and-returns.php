@@ -1,8 +1,10 @@
 <?php include 'header.php' ?>
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 p-4">
+			<div class="card p-4">
 			<h4>SHIPPING AND RETURNS</h4>
+			<hr><br>
 
 			<h5>DOMESTIC SHIPPING</h5>
 				<div>•	Delivery within Lagos, Nigeria: 1-2 Working Days</div>
@@ -34,6 +36,7 @@
 			<div>Note: Always confirm your size using our size guide before making a purchase.</div>
 
 			<div>For further assistance, please contact us via email at: support@9ty9ine.com</div>
+			</div>
 		</div>
 	</div>
 </div>
