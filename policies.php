@@ -39,14 +39,9 @@
         </div>
         <div class="about-us-content">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="about-us-text">
-                        <?php html_entity_decode($row_general['policies']) ?>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-us-image">
-                        <img width="570" height="500" src="img/about-us.webp" alt="About US">
+                        <?php echo html_entity_decode($row_general['policies']) ?>
                     </div>
                 </div>
             </div>
