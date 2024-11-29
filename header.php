@@ -256,7 +256,7 @@
                                             <?php include 'mega-menu.php' ?>
                                         </li>
                                         <li>
-                                            <a href="faq">Faq</a>
+                                            <a href="faq">FAQs</a>
                                         </li>
 
                                     </ul>
