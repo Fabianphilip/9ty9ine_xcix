@@ -95,6 +95,15 @@
                             </ul>
                          </div>
                     </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-menu">
+                            <h3 class="footer-title">Sub LINK</h3>
+                            <ul>
+                                <li><a href="faq">Faq</a></li>
+                            </ul>
+                         </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -255,6 +255,9 @@
 											<a href="#">Items</a>
                                             <?php include 'mega-menu.php' ?>
                                         </li>
+                                        <li>
+                                            <a href="faq">Faq</a>
+                                        </li>
 
                                     </ul>
                                 </nav>
