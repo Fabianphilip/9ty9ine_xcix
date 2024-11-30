@@ -13,7 +13,7 @@ if(!empty($_SESSION['email'])){
 			$status_fetch = mysqli_fetch_array($status_query);
 			$status = $status_fetch['status'];
 			if ($status == "0") {
-				header('location:../verify_page');
+				// header('location:../verify_page');
 			}
 		}
 	}

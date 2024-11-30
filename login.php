@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="page-title">
-                            <h2>Login Or Register</h2>
+                            <h2>Login</h2>
                         </div>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
                         <div class="breadcrumb-menu">
                             <ul>
                                 <li><a href="#">Home</a> | </li>
-                                <li><span>Login Or Register</span></li>
+                                <li><span>Login</span></li>
                             </ul>
                         </div>
                     </div>

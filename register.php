@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="page-title">
-                            <h2>Login Or Register</h2>
+                            <h2> Register</h2>
                         </div>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
                         <div class="breadcrumb-menu">
                             <ul>
                                 <li><a href="#">Home</a> | </li>
-                                <li><span>Login Or Register</span></li>
+                                <li><span>Register</span></li>
                             </ul>
                         </div>
                     </div>
@@ -176,8 +176,8 @@
 				<div class="row d-flex justify-content-center">
                     <div class="col-md-6 col-12">
                         <div class="login-form-area">
-                           <h5 class="form-title">Login</h5>
-                           <p class="sub-form-title">Hello, Welcome your to account</p>
+                           <h5 class="form-title">Register</h5>
+                           <p class="sub-form-title">Sign Up Here</p>
                            <div class="social-login" style="display: none;">
                                 <a href="#" class="facebook-login"><i class="fa fa-facebook"></i>Sign In With Facebook</a>
                                 <a href="#" class="twitter-login"><i class="fa fa-twitter"></i>Sign In With Twitter</a>
