@@ -134,7 +134,7 @@
                                     </label>
                                 </p>
                                 <p class="login-submit">
-                                    <input type="submit" name="signin" value="LogIn" class="button-primary">
+                                    <input type="submit" name="signin" value="LogIn" class="button-primary" style="background-color: black;">
                                 </p>
                             </form>
                             <p>Don't have an acconut Signup <a href="register">Here</a></p>

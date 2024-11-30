@@ -1,10 +1,10 @@
 <?php include 'header.php' ?>
-<div class="page-header-area">
+<div class="page-header-area" style="background-image: url(assets/img/breadcrumpolo.jpeg); background-size: 400px; object-fit: fill; background-repeat: no-repeat; align-content: center;">
     <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="page-title">
-                    <h2>About Us</h2>
+                    <!-- <h2>About Us</h2> -->
                 </div>
             </div>
         </div>

@@ -145,7 +145,7 @@
                                                         <td>
                                                             <div class="row d-flex" style="width: 170px;">
                                                                 <div class="col-auto px-0"><a href="general-management?edit=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-edit"></i></a></div>
-                                                                <div class="col-auto px-0"><a href="general-management?del=<?php echo $row['id'] ?>" class="btn btn-secondary m-1"><i class="fa fa-trash"></i></a></div>
+                                                                <div class="col-auto px-0" style="display: none;"><a href="general-management?del=<?php echo $row['id'] ?>" class="btn btn-secondary m-1"><i class="fa fa-trash"></i></a></div>
                                                                 <div class="col-auto px-0"><a href="general-management?view=<?php echo $row['id'] ?>" class="btn btn-primary m-1"><i class="fa fa-eye"></i></a></div>
                                                             </div>
                                                         </td>

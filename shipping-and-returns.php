@@ -1,10 +1,10 @@
 <?php include 'header.php' ?>
-<div class="page-header-area">
+<div class="page-header-area" style="background-color: black;">
     <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="page-title">
-                    <h2>Terms & Conditions</h2>
+                    <h2>Shipping & Returns</h2>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                 <div class="breadcrumb-menu">
                     <ul>
                         <li><a href="#">Home</a> | </li>
-                        <li><span>Terms & Conditions</span></li>
+                        <li><span>Shipping & Returns</span></li>
                     </ul>
                 </div>
             </div>
@@ -28,8 +28,8 @@
 </div>
 <div class="">
 	<div class="row d-flex justify-content-center">
-		<div class="col-md-7">
-			<div class="card p-4">
+		<div class="col-md-12">
+			<div class="card p-4" style="color: black;">
 			<h4>SHIPPING AND RETURNS</h4>
 			<hr><br>
 
