@@ -38,15 +38,12 @@
             </div>
         </div>
         <div class="about-us-content">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-us-text">
-                        <?php echo html_entity_decode($row_general['about']) ?>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-us-image">
-                        <img width="570" height="500" src="assets/img/about-us.webp" alt="About US">
+            <div class="row ">
+                <div class="col-lg-8">
+                    <div class="card p-4">
+                        <div class="about-us-text">
+                            <?php echo html_entity_decode($row_general['about']) ?>
+                        </div>
                     </div>
                 </div>
             </div>
