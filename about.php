@@ -41,12 +41,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="about-us-text">
-                        <?php html_entity_decode($row_general['about']) ?>
+                        <?php echo html_entity_decode($row_general['about']) ?>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-us-image">
-                        <img width="570" height="500" src="img/about-us.webp" alt="About US">
+                        <img width="570" height="500" src="assets/img/about-us.webp" alt="About US">
                     </div>
                 </div>
             </div>

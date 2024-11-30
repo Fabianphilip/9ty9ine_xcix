@@ -1,4 +1,31 @@
 <?php include 'header.php' ?>
+<div class="page-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title">
+                    <h2>Terms & Conditions</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAGE-HEADER-AREA-END -->
+<!-- BREADCRUMB-AREA-START -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-menu">
+                    <ul>
+                        <li><a href="#">Home</a> | </li>
+                        <li><span>Terms & Conditions</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 p-4">
