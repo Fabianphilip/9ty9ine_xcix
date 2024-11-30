@@ -24,7 +24,7 @@
     }
 ?>
 <div class="page-header-area">
-    <div class="container">
+    <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="page-title">
@@ -37,7 +37,7 @@
 <!-- PAGE-HEADER-AREA-END -->
 <!-- BREADCRUMB-AREA-START -->
 <div class="breadcrumb-area">
-    <div class="container">
+    <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="breadcrumb-menu">
@@ -51,7 +51,7 @@
     </div>
 </div>
 <!-- BREADCRUMB-AREA-END -->
-<div class="container my-4 py-4">
+<div class="my-4 py-4">
     <div class="row">
         <div class="col-12">
             <!-- MAP START-->
