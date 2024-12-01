@@ -38,8 +38,8 @@
             </div>
         </div>
         <div class="about-us-content">
-            <div class="row">
-                <div class="col-lg-12">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-11">
                     <div class="about-us-text" style="color: black !important;">
                         <?php echo html_entity_decode($row_general['policies']) ?>
                     </div>

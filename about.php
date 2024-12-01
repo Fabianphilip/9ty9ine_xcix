@@ -38,10 +38,10 @@
             </div>
         </div>
         <div class="about-us-content">
-            <div class="row ">
+            <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <div class="card p-4">
-                        <div class="about-us-text">
+                        <div class="about-us-text" style="color: black !important;">
                             <?php echo html_entity_decode($row_general['about']) ?>
                         </div>
                     </div>

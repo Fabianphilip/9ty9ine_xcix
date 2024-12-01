@@ -28,7 +28,7 @@
 </div>
 <div class="">
 	<div class="row d-flex justify-content-center">
-		<div class="col-md-12">
+		<div class="col-md-11">
 			<div class="card p-4" style="color: black;">
 			<h4>SHIPPING AND RETURNS</h4>
 			<hr><br>
