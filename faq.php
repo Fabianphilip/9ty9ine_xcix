@@ -23,7 +23,7 @@
         }
     }
 ?>
-<div class="page-header-area" style="background-image: url(assets/img/breadcrumpolo.jpeg); background-size: 400px; object-fit: fill; background-repeat: no-repeat; align-content: center;">
+<div class="page-header-area" style="background-image: url(assets/img/breadcrumpolo.jpeg); background-size: 400px; object-fit: fill; background-repeat: no-repeat; align-content: center; background-color: black;">
     <div class="container">
         <div class="row">
             <div class="col-12">
