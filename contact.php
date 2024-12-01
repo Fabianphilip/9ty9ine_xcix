@@ -23,12 +23,12 @@
         }
     }
 ?>
-<div class="page-header-area" style="background-image: url(assets/img/breadcrumpolo.jpeg); background-size: 400px; object-fit: fill; background-repeat: no-repeat; align-content: center;">
+<div class="page-header-area" style="background-color: black;">
     <div class="">
         <div class="row">
             <div class="col-12">
                 <div class="page-title">
-                    <!-- <h2>Contact</h2> -->
+                    <h2>Contact</h2>
                 </div>
             </div>
         </div>
@@ -51,66 +51,70 @@
     </div>
 </div>
 <!-- BREADCRUMB-AREA-END -->
-<div class="my-4 py-4">
+<div class="">
     <div class="row">
-        <div class="col-12">
-            <!-- MAP START-->
-            <div class="contact-map position-relative">
-                <div id="googleMap" style="width:100%;height:430px;"></div>
-                <div class="contact-info">
-                     <h3 class="footer-title">CONTACT US</h3>
-                     <div class="address-area">
-                         <ul>
-                            <li>
-                                <a href=""><i class="fa fa-map-marker"></i>
-                                <span><?php echo $row_general['site_address'] ?></span></a>
-                            </li>
-                            <li>
-                                <a href="mailto:<?php echo $row_general['site_email'] ?>"><i class="fa fa-envelope"></i>
-                                <span><?php echo $row_general['site_email'] ?></span></a>
-                            </li>
-                            <li>
-                                <a href="tel:<?php echo $row_general['site_phone'] ?>"><i class="fa fa-phone"></i>
-                                <span><?php echo $row_general['site_phone'] ?></span></a>
-                            </li>
-                        </ul>
-                     </div>
-                 </div>
-            </div>
-            <!-- MAP END-->
-        </div>
+        <h3 class="px-4">Contact Us</h3>
     </div>
     <div class="contact-form">
         <form method="post" >
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="contact-form-area">
-                        <p>
-                            <label>Name <span class="required">*</span></label>
-                            <input type="text" name="name">
-                        </p>
-                        <p>
-                            <label>Email <span class="required">*</span></label>
-                            <input type="text" name="client_email">
-                        </p>
-                        <p>
-                            <label>Subject</label>
-                            <input type="text" name="subject">
-                        </p>
+                <div class="col-md-8 p-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="">
+                                <p>
+                                    <label>Name <span class="required">*</span></label>
+                                    <input type="text" name="name">
+                                </p>
+                                <p>
+                                    <label>Email <span class="required">*</span></label>
+                                    <input type="text" name="client_email">
+                                </p>
+                                <p>
+                                    <label>Subject</label>
+                                    <input type="text" name="subject">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="">
+                                <p class="comment-form-comment">
+                                    <label>Content <span class="required">*</span></label>
+                                    <textarea cols="60" rows="6" name="message"></textarea>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="form-submit">
+                                <input type="submit" value="Send Message" name="submitform">
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-form-area">
-                        <p class="comment-form-comment">
-                            <label>Content <span class="required">*</span></label>
-                            <textarea cols="60" rows="6" name="message"></textarea>
-                        </p>
+                <div class="col-md-4 p-4">
+                    <!-- MAP START-->
+                    <div class="">
+                        <div class="contact-info">
+                             <h3 class="footer-title">CONTACT US</h3>
+                             <div class="address-area">
+                                 <ul>
+                                    <li>
+                                        <a href=""><i class="fa fa-map-marker"></i>
+                                        <span><<?php echo $row_general['site_address'] ?></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:<?php echo $row_general['site_email'] ?>"><i class="fa fa-envelope"></i>
+                                        <span><?php echo $row_general['site_email'] ?></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:<?php echo $row_general['site_phone'] ?>"><i class="fa fa-phone"></i>
+                                        <span><?php echo $row_general['site_phone'] ?></span></a>
+                                    </li>
+                                </ul>
+                             </div>
+                         </div>
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <p class="form-submit">
-                        <input type="submit" value="Send Message" name="submitform">
-                    </p>
+                    <!-- MAP END-->
                 </div>
             </div>
          </form>
