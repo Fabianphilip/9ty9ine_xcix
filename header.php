@@ -60,7 +60,7 @@
         <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
     </head>
-    <body>
+    <body style="width: 100%;">
         <style type="text/css">
             @media only screen and (max-width: 600px){
                 .product_height{
@@ -229,7 +229,7 @@
             <!-- HEADER-TOP END -->
 			<div class="header-area header-two hm-5" id="sticker">
                 <div class="">
-                    <div class="row">
+                    <div class="row p-0 m-0">
                         <!-- LOGO AREA START -->
                         <div class="col-6 col-lg-2 col-md-6" style="align-content: center !important;">
                             <div class="m-0 p-0" style="align-content: center !important; background-color: black; border: 4px solid white;">
