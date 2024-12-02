@@ -9,7 +9,7 @@
             if(mysqli_num_rows($queryCategories) > 0){
                 $sn = 1;
                 while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>" class="my-1"><img src="category_images/<?php echo $rowCategories['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
+                    ?><a href="shop?category=<?php echo $rowCategories['id'] ?>" class="my-1"><img src="assets/img/9ty9inelogo.png" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
                 }
             }
         ?>
@@ -24,7 +24,7 @@
             if(mysqli_num_rows($queryFeatures) > 0){
                 $sn = 1;
                 while ($rowFeatures = mysqli_fetch_array($queryFeatures)) {
-                    ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><img src="feature_images/<?php echo $rowFeatures['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowFeatures['name'] ?></a><?php
+                    ?><a href="shop?feature=<?php echo $rowFeatures['id'] ?>"><img src="assets/img/9ty9inelogo.png" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowFeatures['name'] ?></a><?php
                 }
             }
         ?>
@@ -43,7 +43,7 @@
                 if(mysqli_num_rows($queryCategories) > 0){
                     $sn = 1;
                     while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><img src="sub_category_images/<?php echo $rowCategories['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
+                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><img src="assets/img/9ty9inelogo.png" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
                     }
                 }
             }
@@ -64,7 +64,7 @@
                 if(mysqli_num_rows($queryCategories) > 0){
                     $sn = 1;
                     while ($rowCategories = mysqli_fetch_array($queryCategories)) {
-                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><img src="sub_category_images/<?php echo $rowCategories['image'] ?>" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
+                        ?><a href="shop?category=<?php echo $rowCategories['id'] ?>"><img src="assets/img/9ty9inelogo.png" style="border-radius: 50px; width: 30px; margin-right: 10px;"><?php echo $rowCategories['name'] ?></a><?php
                     }
                 }
             }

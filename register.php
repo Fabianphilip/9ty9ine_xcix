@@ -92,7 +92,7 @@
 	                </script>
 	                <?php
 	            }else{
-	                if(strlen($full_name) < 40 && strlen($phone) < 18 && strlen($email) < 50 && strlen($city) < 50){
+	                if(strlen($full_name) < 40 && strlen($phone) < 18 && strlen($email) < 50 && strlen($address) < 80 && strlen($city) < 50){
 	                    $sql = "INSERT INTO users ".
 	                    "(full_name, email, phone, password, otp, profile_photo, uniq_otp_id, country, state, city, address, sex, dob) ".
 	                    "VALUES ".
