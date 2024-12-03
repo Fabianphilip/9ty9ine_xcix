@@ -309,11 +309,11 @@ select {
 }
 
 .header-area.stick .logo {
-  height: 80px;
+/*  height: 80px;*/
 }
 
 .header-area.stick .header-right {
-  line-height: 80px;
+/*  line-height: 80px;*/
 }
 
 /*----------------------------------------*/
@@ -1912,7 +1912,7 @@ span.cart-total {
 }
 
 .header-top-ber .header-right {
-  line-height: 40px;
+/*  line-height: 40px;*/
 }
 
 .header-top-ber .header-menu-item-icon a {
