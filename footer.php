@@ -34,7 +34,7 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="footer-logo">
                             <a href="">
-                                <img width="144" height="60" src="assets/img/logo2.jpg" alt="Logo">
+                                <img width="144" height="60" src="assets/img/notwlogo.png" alt="Logo">
                             </a>
                         </div>
                     </div>

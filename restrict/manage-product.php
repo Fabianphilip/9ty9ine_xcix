@@ -298,17 +298,17 @@
                                                 <input type="number" name="price" class="form-control" required placeholder="Price" value="">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">Cost Price/Unit</p>
                                                 <input type="number" name="cost_price" class="form-control" placeholder="Price" value="">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">Outside Price/Unit</p>
                                                 <input type="number" name="outside_price" class="form-control" placeholder="Price" value="">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">Outside Cost Price</p>
                                                 <input type="number" name="outside_cost_price" class="form-control" placeholder="Price" value="">
                                             </div>
@@ -367,7 +367,7 @@
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">SKU (Store Keeping Unit)</p>
                                                 <input type="text" name="sku" class="form-control" placeholder="" value="">
                                             </div>
@@ -518,19 +518,19 @@
                                                 <input type="number" name="price" class="form-control" required placeholder="Price" value="<?php echo $row['price'] ?>">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">Cost Price/Unit</p>
-                                                <input type="number" name="cost_price" class="form-control" required placeholder="Price" value="<?php echo $row['cost_price'] ?>">
+                                                <input type="number" name="cost_price" class="form-control"  placeholder="Price" value="<?php echo $row['cost_price'] ?>">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">Outside Price/Unit</p>
-                                                <input type="number" name="outside_price" class="form-control" required placeholder="Price" value="<?php echo $row['outside_price'] ?>">
+                                                <input type="number" name="outside_price" class="form-control"  placeholder="Price" value="<?php echo $row['outside_price'] ?>">
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">Outside Cost Price</p>
-                                                <input type="number" name="outside_cost_price" class="form-control" required placeholder="Price" value="<?php echo $row['outside_cost_price'] ?>">
+                                                <input type="number" name="outside_cost_price" class="form-control"  placeholder="Price" value="<?php echo $row['outside_cost_price'] ?>">
                                             </div>
 
                                             <div class="col-md-6 my-2">
@@ -593,9 +593,9 @@
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-6 my-2">
+                                            <div class="col-md-6 my-2" style="display: none;">
                                                 <p class="m-0">SKU (Store Keeping Unit)</p>
-                                                <input type="text" name="sku" class="form-control" required placeholder="" value="<?php echo $row['sku'] ?>">
+                                                <input type="text" name="sku" class="form-control"  placeholder="" value="<?php echo $row['sku'] ?>">
                                             </div>
 
                                             <div class="col-md-6 my-2">
@@ -617,7 +617,7 @@
 
                                             <div class="col-md-6 my-2">
                                                 <p class="m-0">Origin</p>
-                                                <input type="text" name="origin" class="form-control" required placeholder="Origin" value="<?php echo $row['origin'] ?>">
+                                                <input type="text" name="origin" class="form-control"  placeholder="Origin" value="<?php echo $row['origin'] ?>">
                                             </div>
                                             <br>
                                             <hr>

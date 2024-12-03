@@ -3,14 +3,16 @@
 <?php
     $category = get_input($conn, 'category');
     $feature = get_input($conn, 'feature');
+    $search = get_input($conn, "search");
 
     $where = 'WHERE p.id > 0';
     if(!empty($category)){ 
-        $where .= " AND c.name = '$category'"; 
+        $where .= " AND c.name = '$category' OR c.id = '$category'"; 
         if($category == 'unisex'){ $where .= " OR (c.name = 'men' OR c.name = 'women')"; }
         if($category == 'men'){ $where .= " OR c.name = 'unisex'"; }
         if($category == 'women'){ $where .= " OR c.name = 'unisex'"; }
     }
+    if(!empty($search)){ $where .= " AND c.id = '$search' OR c.name = '$search' OR p.id = '$search' OR p.name = '$search'"; }
     if(!empty($feature)){ $where .= " AND f.name = '$feature'"; }
 ?>
 
