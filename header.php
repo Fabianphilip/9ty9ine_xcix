@@ -402,17 +402,17 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="mobile-menu">
+                                <div class="mobile-menu" style="background-color: white;">
                                     <nav id="dropdown">
                                         <ul>
-                                            <li><a href="/">Home</a>
+                                            <li><a href="/" style="color: black;">Home</a>
                                             </li>
-                                            <li><a href="shop">Shop</a>
+                                            <li><a href="shop" style="color: black;">Shop</a>
                                             </li>
-                                            <li><a href="shop">Items</a>
+                                            <li><a href="shop" style="color: black;">Items</a>
                                                 <?php include 'mega-menu.php' ?>
                                             </li>
-                                            <li><a href="contact">Contact</a></li>
+                                            <li><a href="contact" style="color: black;">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>                  

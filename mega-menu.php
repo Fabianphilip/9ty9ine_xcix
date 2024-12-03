@@ -1,4 +1,4 @@
-<div class="mega-menu">
+<div class="mega-menu" style="height: 200px;overflow-y: scroll;">
     <div class="single-mega-menu">
         <h3 class="menu-hedding">
             <a href="shop?category=all">Product Category</a>
