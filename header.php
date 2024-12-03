@@ -54,7 +54,7 @@
         <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
         <link rel="stylesheet" href="assets/custom-slider/css/nivo-slider.css" type="text/css" />
         <link rel="stylesheet" href="assets/custom-slider/css/preview.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="assets/css/style6.css">
+		<link rel="stylesheet" href="assets/css/style7.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
@@ -232,7 +232,7 @@
                     <div class="row p-0 m-0">
                         <!-- LOGO AREA START -->
                         <div class="col-6 col-lg-2 col-md-6" style="align-content: center !important;">
-                            <div class="m-0 p-0">
+                            <div class="m-0 p-2">
                                 <a href="/">
                                     <img src="assets/img/notwlogo.jpeg" alt="Logo" style="width: 344px;">
                                     <!-- <strong><h1 style="padding: 10px; color: white; font-family: serif !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong> -->

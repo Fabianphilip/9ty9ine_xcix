@@ -554,7 +554,7 @@ select {
 /*  3. Header-right
 /*----------------------------------------*/
 .header-right {
-  line-height: 100px;
+/*  line-height: 100px;*/
   position: relative;
   text-align: right;
   z-index: 1000;
