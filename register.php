@@ -1,5 +1,5 @@
 <?php include 'header.php' ?>
-<div class="page-header-area">
+<div class="page-header-area" style="background-color: black;"style="background-color: black;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
