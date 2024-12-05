@@ -1,7 +1,7 @@
 <div class="mega-menu" style="height: 200px;overflow-y: scroll;">
     <div class="single-mega-menu">
         <h3 class="menu-hedding" id="toggleDropdownCategory">
-            <a href="shop?category=all">Product Category <i class="fa fa-angle-down"></i></a>
+            <span href="shop?category=all">Product Category <i class="fa fa-angle-down"></i></span>
         </h3>
         <div id="dropdownMenuCategory" class="dropdownMenu" style="display: none;">
         <a href="shop?category=all">View all</a>
@@ -18,7 +18,7 @@
     </div>
     <div class="single-mega-menu" style="display: none;">
         <h3 class="menu-hedding">
-            <a href="shop?feature=all" id="toggleDropdownFeature">Featured Products <i class="fa fa-angle-down"></i></a>
+            <span id="toggleDropdownFeature">Featured Products <i class="fa fa-angle-down"></i></span>
         </h3>
         <div id="dropdownMenuFeature" class="dropdownMenu" style="display: none;">
         <a href="shop?category=feature">View all</a>
@@ -35,7 +35,7 @@
     </div>
     <div class="single-mega-menu">
         <h3 class="menu-hedding">
-            <a href="shop?category=men" id="toggleDropdownMen">Men <i class="fa fa-angle-down"></i></a>
+            <span id="toggleDropdownMen">Men <i class="fa fa-angle-down"></i></span>
         </h3>
         <div id="dropdownMenuMen" class="dropdownMenu" style="display: none;">
         <a href="shop?category=men">View all</a>
@@ -58,7 +58,7 @@
     </div>
     <div class="single-mega-menu">
         <h3 class="menu-hedding">
-            <a href="shop?category=women" id="toggleDropdownWomen">Women <i class="fa fa-angle-down"></i></a>
+            <span id="toggleDropdownWomen">Women <i class="fa fa-angle-down"></i></span>
         </h3>
         <div id="dropdownMenuWomen" class="dropdownMenu" style="display: none;">
         <a href="shop?category=women">View all</a>
