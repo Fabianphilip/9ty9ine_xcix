@@ -132,80 +132,80 @@
             </div>
         </div>
         <script>
-            const toggleDropdownCategory = document.getElementById('toggleDropdownCategory');
-            const dropdownMenuCategory = document.getElementById('dropdownMenuCategory');
+            // const toggleDropdownCategory = document.getElementById('toggleDropdownCategory');
+            // const dropdownMenuCategory = document.getElementById('dropdownMenuCategory');
 
-            const toggleDropdownFeature = document.getElementById('toggleDropdownFeature');
-            const dropdownMenuFeature = document.getElementById('dropdownMenuFeature');
+            // const toggleDropdownFeature = document.getElementById('toggleDropdownFeature');
+            // const dropdownMenuFeature = document.getElementById('dropdownMenuFeature');
 
-            const toggleDropdownMen = document.getElementById('toggleDropdownMen');
-            const dropdownMenuMen = document.getElementById('dropdownMenuMen');
+            // const toggleDropdownMen = document.getElementById('toggleDropdownMen');
+            // const dropdownMenuMen = document.getElementById('dropdownMenuMen');
 
-            const toggleDropdownWomen = document.getElementById('toggleDropdownWomen');
-            const dropdownMenuWomen = document.getElementById('dropdownMenuWomen');
-
-
-            toggleDropdownCategory.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action
-                if (dropdownMenuCategory.style.display === 'none' || dropdownMenuCategory.style.display === '') {
-                    dropdownMenuCategory.style.display = 'block';
-                } else {
-                    dropdownMenuCategory.style.display = 'none';
-                }
-            });
+            // const toggleDropdownWomen = document.getElementById('toggleDropdownWomen');
+            // const dropdownMenuWomen = document.getElementById('dropdownMenuWomen');
 
 
-            toggleDropdownFeature.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action
-                if (dropdownMenuFeature.style.display === 'none' || dropdownMenuFeature.style.display === '') {
-                    dropdownMenuFeature.style.display = 'block';
-                } else {
-                    dropdownMenuFeature.style.display = 'none';
-                }
-            });
-
-            toggleDropdownMen.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action
-                if (dropdownMenuMen.style.display === 'none' || dropdownMenuMen.style.display === '') {
-                    dropdownMenuMen.style.display = 'block';
-                } else {
-                    dropdownMenuMen.style.display = 'none';
-                }
-            });
-
-            toggleDropdownWomen.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent the default link action
-                if (dropdownMenuWomen.style.display === 'none' || dropdownMenuWomen.style.display === '') {
-                    dropdownMenuWomen.style.display = 'block';
-                } else {
-                    dropdownMenuWomen.style.display = 'none';
-                }
-            });
+            // toggleDropdownCategory.addEventListener('click', (event) => {
+            //     event.preventDefault(); // Prevent the default link action
+            //     if (dropdownMenuCategory.style.display === 'none' || dropdownMenuCategory.style.display === '') {
+            //         dropdownMenuCategory.style.display = 'block';
+            //     } else {
+            //         dropdownMenuCategory.style.display = 'none';
+            //     }
+            // });
 
 
-            document.addEventListener('click', (event) => {
-                if (!toggleDropdownCategory.contains(event.target) && !dropdownMenuCategory.contains(event.target)) {
-                    dropdownMenuCategory.style.display = 'none';
-                }
-            });
+            // toggleDropdownFeature.addEventListener('click', (event) => {
+            //     event.preventDefault(); // Prevent the default link action
+            //     if (dropdownMenuFeature.style.display === 'none' || dropdownMenuFeature.style.display === '') {
+            //         dropdownMenuFeature.style.display = 'block';
+            //     } else {
+            //         dropdownMenuFeature.style.display = 'none';
+            //     }
+            // });
 
-            document.addEventListener('click', (event) => {
-                if (!toggleDropdownFeature.contains(event.target) && !dropdownMenuFeature.contains(event.target)) {
-                    dropdownMenuFeature.style.display = 'none';
-                }
-            });
+            // toggleDropdownMen.addEventListener('click', (event) => {
+            //     event.preventDefault(); // Prevent the default link action
+            //     if (dropdownMenuMen.style.display === 'none' || dropdownMenuMen.style.display === '') {
+            //         dropdownMenuMen.style.display = 'block';
+            //     } else {
+            //         dropdownMenuMen.style.display = 'none';
+            //     }
+            // });
 
-            document.addEventListener('click', (event) => {
-                if (!toggleDropdownMen.contains(event.target) && !dropdownMenuMen.contains(event.target)) {
-                    dropdownMenuMen.style.display = 'none';
-                }
-            });
+            // toggleDropdownWomen.addEventListener('click', (event) => {
+            //     event.preventDefault(); // Prevent the default link action
+            //     if (dropdownMenuWomen.style.display === 'none' || dropdownMenuWomen.style.display === '') {
+            //         dropdownMenuWomen.style.display = 'block';
+            //     } else {
+            //         dropdownMenuWomen.style.display = 'none';
+            //     }
+            // });
 
-            document.addEventListener('click', (event) => {
-                if (!toggleDropdownWomen.contains(event.target) && !dropdownMenuWomen.contains(event.target)) {
-                    dropdownMenuWomen.style.display = 'none';
-                }
-            });
+
+            // document.addEventListener('click', (event) => {
+            //     if (!toggleDropdownCategory.contains(event.target) && !dropdownMenuCategory.contains(event.target)) {
+            //         dropdownMenuCategory.style.display = 'none';
+            //     }
+            // });
+
+            // document.addEventListener('click', (event) => {
+            //     if (!toggleDropdownFeature.contains(event.target) && !dropdownMenuFeature.contains(event.target)) {
+            //         dropdownMenuFeature.style.display = 'none';
+            //     }
+            // });
+
+            // document.addEventListener('click', (event) => {
+            //     if (!toggleDropdownMen.contains(event.target) && !dropdownMenuMen.contains(event.target)) {
+            //         dropdownMenuMen.style.display = 'none';
+            //     }
+            // });
+
+            // document.addEventListener('click', (event) => {
+            //     if (!toggleDropdownWomen.contains(event.target) && !dropdownMenuWomen.contains(event.target)) {
+            //         dropdownMenuWomen.style.display = 'none';
+            //     }
+            // });
 
         </script>
         <script type="text/javascript">
