@@ -1,8 +1,9 @@
 <div class="mega-menu" style="height: 200px;overflow-y: scroll;">
     <div class="single-mega-menu">
-        <h3 class="menu-hedding">
-            <a href="shop?category=all">Product Category</a>
+        <h3 class="menu-hedding" id="toggleDropdownCategory">
+            <a href="shop?category=all">Product Category <i class="fa fa-angle-down"></i></a>
         </h3>
+        <div id="dropdownMenuCategory" class="dropdownMenu" style="display: none;">
         <a href="shop?category=all">View all</a>
         <?php
             $queryCategories = mysqli_query($conn, "SELECT * FROM category LIMIT 4");
@@ -13,11 +14,13 @@
                 }
             }
         ?>
+        </div>
     </div>
     <div class="single-mega-menu" style="display: none;">
         <h3 class="menu-hedding">
-            <a href="shop?feature=all">Featured Products</a>
+            <a href="shop?feature=all" id="toggleDropdownFeature">Featured Products <i class="fa fa-angle-down"></i></a>
         </h3>
+        <div id="dropdownMenuFeature" class="dropdownMenu" style="display: none;">
         <a href="shop?category=feature">View all</a>
         <?php
             $queryFeatures = mysqli_query($conn, "SELECT * FROM feature LIMIT 4");
@@ -28,12 +31,14 @@
                 }
             }
         ?>
+        </div>
     </div>
     <div class="single-mega-menu">
         <h3 class="menu-hedding">
-            <a href="shop?category=men">Men</a>
+            <a href="shop?category=men" id="toggleDropdownMen">Men <i class="fa fa-angle-down"></i></a>
         </h3>
-        <a href="shop?category=menn">View all</a>
+        <div id="dropdownMenuMen" class="dropdownMenu" style="display: none;">
+        <a href="shop?category=men">View all</a>
         <?php
             $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%men%' LIMIT 4");
             if(mysqli_num_rows($getCategory) > 0){
@@ -49,11 +54,13 @@
             }
             
         ?>
+        </div>
     </div>
     <div class="single-mega-menu">
         <h3 class="menu-hedding">
-            <a href="shop?category=women">Women</a>
+            <a href="shop?category=women" id="toggleDropdownWomen">Women <i class="fa fa-angle-down"></i></a>
         </h3>
+        <div id="dropdownMenuWomen" class="dropdownMenu" style="display: none;">
         <a href="shop?category=women">View all</a>
         <?php
             $getCategory = mysqli_query($conn, "SELECT * FROM category WHERE name LIKE '%women%' LIMIT 4");
@@ -70,10 +77,11 @@
             }
             
         ?>
+        </div>
     </div>
     <div class="single-mega-menu" style="display: none;">
         <h3 class="menu-hedding">
-            <a href="shop?category=unisex">Unisex</a>
+            <a href="shop?category=unisex">Unisex <i class="fa fa-angle-down"></i></a>
         </h3>
         <a href="shop?category=unisex">View all</a>
         <div class="menu-img">

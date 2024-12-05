@@ -6720,3 +6720,30 @@ h3.widget-title-modal {
       display: none !important;
   }
 }
+
+.dropdownMenu {
+/*    background: #f9f9f9; */
+    border: 1px solid black; 
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    display: none; 
+    overflow-y: scroll;
+    height: 120px;
+}
+
+.dropdownMenu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.dropdownMenu a:hover {
+    background-color: #ddd; 
+}
+

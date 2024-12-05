@@ -54,7 +54,7 @@
         <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
         <link rel="stylesheet" href="assets/custom-slider/css/nivo-slider.css" type="text/css" />
         <link rel="stylesheet" href="assets/custom-slider/css/preview.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="assets/css/style8.css">
+		<link rel="stylesheet" href="assets/css/style9.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
         <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
@@ -128,7 +128,7 @@
                                         <button aria-label="Search icon" class="absolute bn br-100 hover-bg-navy search-icon-redesigned-v2" style="cursor:pointer">
                                             <i class="ld ld-Search absolute" style="font-size:1rem;vertical-align:-0.175em;top:50%;left:50%;transform:translate(-50%, -50%);width:1rem;height:1rem;box-sizing:content-box"></i>
                                         </button>
-                                        <div id="resultBox" style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid #ddd; z-index: 19; margin-top: -52px; display: none;">
+                                        <div id="resultBox" style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid #ddd; z-index: 19; margin-top: -52px; display: none; overflow-y: scroll;">
                                         </div>
                                     </div>
 
@@ -257,6 +257,9 @@
                                         </li>
                                         <li>
                                             <a href="faq">FAQs</a>
+                                        </li>
+                                        <li>
+                                            <a href="login">Login</a>
                                         </li>
 
                                     </ul>

@@ -164,7 +164,7 @@ a.meanmenu-reveal {
 
 .mean-container .mean-bar::after {
     color: #ffffff;
-    content: "MENU";
+/*    content: "MENU";*/
     font-size: 21px;
     left: 5%;
     position: absolute;

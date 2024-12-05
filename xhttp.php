@@ -39,6 +39,7 @@
         while($rowSearch = mysqli_fetch_array($querySearch)){
           ?>
             <div class="col-auto">
+            <a href="shop?category=<?php echo $rowSearch['id'] ?>" style="color: black;">
               <div class=""><img src="category_images/<?php echo $rowSearch['image'] ?>" style="width: 150px;"></div>
               <div class="">
                 <?php
@@ -46,6 +47,7 @@
                   echo $highlightedWord;
                 ?>
                 </div>
+              </a>
               <hr>
             </div>
           <?php
@@ -59,12 +61,14 @@
         while($rowSearch = mysqli_fetch_array($querySearch)){
           ?>
             <div class="row m-2 py-2" style="border: 2px solid silver;">
-              <div class="col-auto" style="display: none;"><img src="product_images/<?php echo $rowSearch['image'] ?>" style="width: 20px;"></div>
+              <div class="col-auto" style="display: none;"><a href="shop?search=<?php echo $rowSearch['name'] ?>" style="color: black;"><img src="product_images/<?php echo $rowSearch['image'] ?>" style="width: 20px;"></a></div>
               <div class="col-auto">
+                <a href="shop?search=<?php echo $rowSearch['name'] ?>" style="color: black;">
                 <?php
                   $highlightedWord = preg_replace("/($searchquery)/i", "<strong>$1</strong>", $rowSearch['name']);
                   echo $highlightedWord;
                 ?>    
+              </a>
               </div>
             </div>
           <?php
