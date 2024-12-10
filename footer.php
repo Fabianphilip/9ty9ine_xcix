@@ -209,20 +209,37 @@
 
         </script>
         <script type="text/javascript">
+            // const sliderContainer_mobile = document.querySelector('.slider-container_mobile');
+            // const slides_mobile = document.querySelectorAll('.slide_mobile');
+            // let currentIndex_mobile = 0;
+
+            // function updateSlider() {
+            //   sliderContainer_mobile.style.transform = `translateX(-${currentIndex_mobile * 50}%)`;
+            // }
+
+            // setInterval(() => {
+            //   currentIndex_mobile = (currentIndex_mobile + 1) % slides_mobile.length; // Loop back to first slide
+            //   updateSlider();
+            // }, 3000);
+
             const sliderContainer_mobile = document.querySelector('.slider-container_mobile');
             const slides_mobile = document.querySelectorAll('.slide_mobile');
             let currentIndex_mobile = 0;
 
+            // Update slider width to accommodate 4 slides
+            sliderContainer_mobile.style.width = `${slides_mobile.length * 100}%`;
+
             // Function to update slide position
             function updateSlider() {
-              sliderContainer_mobile.style.transform = `translateX(-${currentIndex_mobile * 50}%)`;
+                sliderContainer_mobile.style.transform = `translateX(-${currentIndex_mobile * (100 / slides_mobile.length)}%)`;
             }
 
             // Automatic sliding every 3 seconds
             setInterval(() => {
-              currentIndex_mobile = (currentIndex_mobile + 1) % slides_mobile.length; // Loop back to first slide
-              updateSlider();
+                currentIndex_mobile = (currentIndex_mobile + 1) % slides_mobile.length; // Loop back to the first slide
+                updateSlider();
             }, 3000);
+
 
         </script>
         <script type="text/javascript">

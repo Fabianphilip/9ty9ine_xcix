@@ -177,7 +177,6 @@
                         <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
                 </div>
-<!-- 
                 <div class="slide_mobile" style="background-color: #5d5c81;">
                     <div class="background_mobile"></div>
                     <div class="content_mobile">
@@ -198,7 +197,7 @@
                         <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Dresses</p>
                         <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>  
 
