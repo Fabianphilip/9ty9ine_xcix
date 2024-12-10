@@ -237,7 +237,7 @@
                         <div class="col-6 col-lg-2 col-md-6" style="align-content: center !important; display: block;">
                             <div class="header-right">
                                 <div class="mini-cart-area">
-                                    <div class="header-menu-item-icon">
+                                    <div class="">
                                         
                                         <a href="/">
                                             <img src="assets/img/nottlogoblack.png" alt="Logo" style="width: 344px; margin: auto;">
