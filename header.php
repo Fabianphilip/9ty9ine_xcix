@@ -234,7 +234,7 @@
                 <div class="">
                     <div class="row p-0 m-0">
                         <!-- LOGO AREA START -->
-                        <div class="col-6 col-lg-2 col-md-6" style="align-content: center !important;">
+                        <div class="col-6 col-lg-2 col-md-6" style="align-content: center !important; display: block;">
                             <div class="m-0 p-2">
                                 <a href="/">
                                     <img src="assets/img/nottlogoblack.png" alt="Logo" style="width: 344px;">
