@@ -236,7 +236,7 @@
                         <!-- LOGO AREA START -->
                         <div class="col-6 col-lg-2 col-md-6" style="align-content: center !important; display: block;">
                             <a href="/">
-                                <img src="assets/img/nottlogoblack.png" alt="Logo" style="width: 344px;">
+                                <img src="assets/img/nottlogoblack.png" alt="Logo" style="width: 344px; margin: auto;">
                                 <!-- <strong><h1 style="padding: 10px; color: white; font-family: serif !important; font-weight: 900; margin: 0px; font-size: 40px;">9ty9ine</h1></strong> -->
                             </a>
                         </div>
