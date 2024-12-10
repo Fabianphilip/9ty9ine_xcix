@@ -87,6 +87,9 @@
                 -webkit-appearance: inner-spin-button; /* Ensures spin buttons show */
                 margin: 0; /* Removes any margin for better alignment */
             }
+            .mean-bar{
+                height: fit-content;
+            }
 
         </style>
         <div class="btn btn-success p-2" id="succesAlert" style="color: white; position: fixed; z-index: 999999; width: 100%; display: none;">
@@ -427,3 +430,4 @@
             </div>
 		</header>
         <!-- HEADER AREA END -->
+        <script src="assets/js/jquery.meanmenu.js"></script>
