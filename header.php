@@ -409,7 +409,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="mobile-menu" style="background-color: white;">
-                                    <nav id="dropdown">
+                                    <nav id="dropdown" style="display: none;">
                                         <ul>
                                             <li><a href="/" style="color: black;">Home</a>
                                             </li>
@@ -430,4 +430,3 @@
             </div>
 		</header>
         <!-- HEADER AREA END -->
-        <script src="assets/js/jquery.meanmenu.js"></script>

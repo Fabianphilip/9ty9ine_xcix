@@ -482,7 +482,7 @@
 		<!-- owl.carousel js -->
         <script src="assets/js/owl.carousel.min.js"></script>
 		<!-- meanmenu js -->
-        
+        <script src="assets/js/jquery.meanmenu.js"></script>
 		<!-- jquery-ui js -->
         <script src="assets/js/jquery-ui.min.js"></script>
         <!-- jquery.mixitup js -->
