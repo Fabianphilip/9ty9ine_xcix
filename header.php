@@ -2,6 +2,7 @@
     include 'includes/connect.php';
     include 'includes/functions.php';
     include 'session_front.php';
+    $web_file_name = basename($_SERVER["PHP_SELF"],".php");
     if(!empty($email)){
         $sql_sel = mysqli_query ($conn, "SELECT * FROM users where email = '$email'");
         $row_user = mysqli_fetch_array ($sql_sel);
@@ -253,20 +254,20 @@
                             <div class="mainmenu">
                                 <nav>
                                     <ul>
-                                        <li class="active">
+                                        <li class="<?php if($web_file_name == '/' || $web_file_name == 'index' || $web_file_name == ''){ ?>active<?php } ?>">
 											<a href="/">Home</a>
                                         </li>
-                                        <li>
+                                        <li class="<?php if($web_file_name == 'shop'){ ?>active<?php } ?>">
 											<a href="shop">Shop</a>
                                         </li>
                                         <li>
 											<a href="#">Items</a>
                                             <?php include 'mega-menu.php' ?>
                                         </li>
-                                        <li>
+                                        <li class="<?php if($web_file_name == 'faq'){ ?>active<?php } ?>">
                                             <a href="faq">FAQs</a>
                                         </li>
-                                        <li>
+                                        <li class="<?php if($web_file_name == 'login'){ ?>active<?php } ?>">
                                             <a href="login">Login</a>
                                         </li>
 

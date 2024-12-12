@@ -129,7 +129,7 @@
             <div class="slide" style="background-color: #d58d16;">
                 <div class="content">
                     <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 22px;" >Compliment Dresses</p>
+                    <p style="color: white !important; font-size: 22px;" >Compliment Fashion And Lifestyle</p>
                     <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/6729bf40a3bc44234.png" alt="Model Image" class="model mobile-image">
@@ -138,7 +138,7 @@
             <div class="slide" style="background-color: #5d5c81;">
                 <div class="content">
                     <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 22px;" >Compliment Dresses</p>
+                    <p style="color: white !important; font-size: 22px;" >Compliment Fashion And Lifestyle</p>
                     <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/PHOTO-2024-11-20-14-13-10_2.png" alt="Model Image" class="model mobile-image">
@@ -147,7 +147,7 @@
             <div class="slide" style="background-color: #82bcb0;">
                 <div class="content">
                     <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 22px;" >Compliment Dresses</p>
+                    <p style="color: white !important; font-size: 22px;" >Compliment Fashion And Lifestyle</p>
                     <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
                 <img src="assets/img/PHOTO-2024-11-20-14-13-10.png" alt="Model Image" class="model mobile-image">
@@ -173,7 +173,7 @@
                         <img src="assets/img/6729bf40a3bc44234.png" alt="Model 2" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
-                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Dresses</p>
+                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Fashion AND Lifestyle</p>
                         <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
                         <img src="assets/img/PHOTO-2024-11-20-14-13-10_2.png" alt="Model 2" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
-                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Dresses</p>
+                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Fashion AND Lifestyle</p>
                         <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                         <img src="assets/img/PHOTO-2024-11-20-14-13-10.png" alt="Model 2" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: white !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
-                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Dresses</p>
+                        <p style="color: white !important; font-size: 22px; z-index: 9;">Compliment Fashion AND Lifestyle</p>
                         <div style="z-index: 8; margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; z-index: 9; font-size: 20px; margin-top: 10px;">Shop Now</a></div>
                     </div>
                 </div>
