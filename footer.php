@@ -45,6 +45,8 @@
                                 <li><a href="<?php //echo $row_general['site_twitter'] ?>"><i class="fa fa-twitter" style="color:#1C96E9;"></i></a></li> -->
                                 <li><a href="<?php echo $row_general['site_insta'] ?>"><i class="fa fa-instagram" style="color:#D01688;"></i></a></li>
                                 <li><a href="https://wa.me/<?php echo $row_general['site_phone'] ?>"><i class="fa fa-whatsapp" style="color:#46C355;"></i></a></li>
+                                <li><a href="https://www.tiktok.com/@9ty9ine.xcix?_t=ZM-8sB3JllUsaL&_r=1"><img src="assets/img/tiktok.png" style="width: 15px;"></a></li>
+                                <li><a href="https://snapchat.com/t/9uKLD12V"><i class="fa fa-snapchat" style="color:gold;"></i></a></li>
                             </ul>
                         </div>
                     </div>
