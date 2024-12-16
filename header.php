@@ -104,8 +104,8 @@
         <header>
             <!-- HEADER-TOP START -->
             <div class="header-top-ber hide-show">
-                <div class="container">
-                    <div class="row">
+                <div class="">
+                    <div class="row px-4">
                         <div class="col-12 col-md-5">
                             <div class="top-menu">
                                 <ul>
@@ -113,7 +113,6 @@
                                     <li><a href="shop">Shop</a></li>
                                     <li><a href="shop?category=men">Men</a></li>
                                     <li><a href="shop?category=women">Women</a></li>
-                                    <li><a href="shop?category=unisex" style="display: none;">Unisex</a></li>
                                     <?php if(empty($email)){ ?>
                                     <li><a href="login">Login</a></li>
                                     <?php }else{ ?>
@@ -122,7 +121,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-12 col-md-7 d-none d-md-block m-0 p-0">
+                        <div class="col-12 col-md-7 d-md-block m-0 p-0 py-2">
                             <div class="header-right">
 
                                 <div class="search-box-area">
