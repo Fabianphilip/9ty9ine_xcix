@@ -124,7 +124,7 @@
                         <div class="col-12 col-md-7 d-md-block m-0 p-0 py-2">
                             <div class="header-right">
 
-                                <div class="search-box-area">
+                                <div class="search-box-area col-6">
 
                                     <div class="headerFormRelative" style="position: relative;">
                                         <input type="search" class="headerFormInput" style="z-index: 20; width: 400px;" name="search" id="search" onkeyup="searchCheck()" placeholder="Search everything" value="">
