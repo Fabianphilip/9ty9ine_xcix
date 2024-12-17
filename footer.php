@@ -114,13 +114,13 @@
         <!-- FOOTER BOTTOM AREA START -->
         <div class="footer-bottom hm-4">
             <div class="container">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="col-12 col-md-6">
                         <div class="copy-right">
                             ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i><a href="https://wa.me/+2347030083673" target="_blank">Suave</a>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6" style="display: none;">
                         <div class="footer-socials">
                             <ul>
                                 <li><a href="<?php echo $row_general['site_linkedin'] ?>"><i class="fa fa-linkedin" style="color:#006ABB;"></i></a></li>
