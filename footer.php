@@ -117,7 +117,10 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-12 col-md-6">
                         <div class="copy-right">
-                            ©  <?php echo date("Y") ?> Developed by <i class="fa fa-heart text-danger"></i><a href="https://wa.me/+2347030083673" target="_blank">Suave</a>
+                            <canter>
+                                <div>©  <?php echo date("Y") ?> 9TY9INE</div>
+                                Developed by <i class="fa fa-heart text-danger"></i><a href="https://wa.me/+2347030083673" target="_blank">Suave</a>
+                            </canter>
                         </div>
                     </div>
                     <div class="col-12 col-md-6" style="display: none;">
