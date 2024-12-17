@@ -119,7 +119,7 @@
                                             <th>image</th>
                                             <th>Name</th>
                                             <th>Content</th>
-                                            <th>Discount News</th>
+                                            <th>Discount News</th> 
                                             <th style="width: 100px;">Action</th>
                                         </thead>
                                         <tbody>
