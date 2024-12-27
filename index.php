@@ -117,13 +117,13 @@
 
         <div id="breadcrumb" class="breadcrum_mobile">
             
-            <div class="slide" style="background-color: #fff;">
+            <div class="slide" style="background-color: #F0EFEC;">
                 <div class="content">
-                    <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 22px;">Luxury Street Wear redefined</p>
+                    <h1 style="color: black !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
+                    <p style="color: black !important; font-size: 22px;">Luxury Street Wear redefined</p>
                     <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
-                <img src="assets/img/PHOT4874.png" alt="Model Image" class="model mobile-image">
+                <img src="assets/img/IMG_5684.jpg" alt="Model Image" class="model mobile-image">
             </div>
 
             <div class="slide" style="background-color: #d58d16;">
@@ -144,23 +144,23 @@
                 <img src="assets/img/PHOTO-2024-11-20-14-13-10_2.png" alt="Model Image" class="model mobile-image">
             </div>
 
-            <div class="slide" style="background-color: #fff;">
+            <div class="slide" style="background-color: #F6F4F4;">
                 <div class="content">
-                    <h1 style="color: white !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
-                    <p style="color: white !important; font-size: 22px;" >Compliment Fashion And Lifestyle</p>
+                    <h1 style="color: black !important; font-size: 28px; line-height: 1;"><strong>XCIX</strong></h1>
+                    <p style="color: black !important; font-size: 22px;" >Compliment Fashion And Lifestyle</p>
                     <div style="margin-top: 15px;"><a href="shop" style="background: black; color: white; padding: 10px; margin-top: 20px;">Shop Now</a></div>
                 </div>
-                <img src="assets/img/PHOTO6767.png" alt="Model Image" class="model mobile-image">
+                <img src="assets/img/IMG_5699.jpg" alt="Model Image" class="model mobile-image">
             </div>
               
         </div>
 
         <div class="slider_mobile breadcrum_desktop">
             <div class="slider-container_mobile">
-                <div class="slide_mobile" style="background-color: #fff;">
+                <div class="slide_mobile" style="background-color: #F0EFEC;">
                     <div class="background_mobile"></div>
                     <div class="content_mobile">
-                        <img src="assets/img/PHOT4874.png" alt="Model 1" class="model-image_mobile">
+                        <img src="assets/img/IMG_5684.jpg" alt="Model 1" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: black !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
                         <p style="color: black !important; font-size: 22px; z-index: 9;">Luxury Street Wear redefined</p>
@@ -188,10 +188,10 @@
                     </div>
                 </div>
 
-                <div class="slide_mobile" style="background-color: #fff;">
+                <div class="slide_mobile" style="background-color: #F6F4F4;">
                     <div class="background_mobile"></div>
                     <div class="content_mobile">
-                        <img src="assets/img/PHOTO6767.png" alt="Model 2" class="model-image_mobile">
+                        <img src="assets/img/IMG_5699.jpg" alt="Model 2" class="model-image_mobile">
                         <div class="overlay_mobile"></div>
                         <h1 style="color: black !important; font-size: 38px; line-height: 1; z-index: 9;"><strong>XCIX</strong></h1>
                         <p style="color: black !important; font-size: 22px; z-index: 9;">Compliment Fashion AND Lifestyle</p>
