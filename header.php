@@ -148,7 +148,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="user-menu-area">
+                                <!-- <div class="user-menu-area">
                                     <div class="header-menu-item-icon">
                                         <a href="#" class="user-icon m-0 p-0" style="display: none;">
                                             <i class="fa animated fa-gear"></i>
@@ -170,7 +170,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="mini-cart-area">
                                     <div class="header-menu-item-icon m-0 p-0">
                                         <a href="#" class="icon-cart m-0 p-0">
@@ -278,7 +278,7 @@
                         <!-- HEADER RIGHT START -->
                         <div class="col-6 col-lg-3 col-md-6">
                             <div class="header-right">
-                                <div class="user-menu-area">
+                                <!-- <div class="user-menu-area">
                                     <div class="header-menu-item-icon">
                                         <a href="#" class="user-icon" style="display: none;">
                                             <i class="fa animated fa-gear"></i>
@@ -349,7 +349,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="mini-cart-area">
                                     <div class="header-menu-item-icon">
                                         <a href="#" class="icon-cart">
