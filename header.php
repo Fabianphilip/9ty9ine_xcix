@@ -124,7 +124,7 @@
                         <div class="col-12 col-md-7 d-md-block m-0 p-0 py-2">
                             <div class="header-right">
 
-                                <div class="search-box-area col-6">
+                                <div class="search-box-area">
 
                                     <div class="headerFormRelative" style="position: relative;">
                                         <input type="search" class="headerFormInput" style="z-index: 20; width: 400px;" name="search" id="search" onkeyup="searchCheck()" placeholder="Search everything" value="">
@@ -148,29 +148,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <!-- <div class="user-menu-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon m-0 p-0" style="display: none;">
-                                            <i class="fa animated fa-gear"></i>
-                                        </a>
-                                        <div class="user-menu">
-                                            <h3>ACCOUNT</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="users/dashboard"><i class="fa fa-fw fa-user"></i>My Account</a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout"><i class="fa fa-fw fa-usd"></i>Checkout</a>
-                                                </li>
-                                                <?php if(empty($email)){ ?>
-                                                <li><a href="login"><i class="fa fa-fw fa-unlock-alt"></i>Login</a></li>
-                                                <?php }else{ ?>
-                                                <li><a href="user/dashboard">Dashboard</a></li>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                
                                 <div class="mini-cart-area">
                                     <div class="header-menu-item-icon m-0 p-0">
                                         <a href="#" class="icon-cart m-0 p-0">
@@ -278,78 +256,7 @@
                         <!-- HEADER RIGHT START -->
                         <div class="col-6 col-lg-3 col-md-6">
                             <div class="header-right">
-                                <!-- <div class="user-menu-area">
-                                    <div class="header-menu-item-icon">
-                                        <a href="#" class="user-icon" style="display: none;">
-                                            <i class="fa animated fa-gear"></i>
-                                        </a>
-                                        <div class="user-menu" style="display: none;">
-                                            <h3>ACCOUNT</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="my-account.html">
-                                                        <i class="fa fa-fw fa-user"></i>My Account
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html">
-                                                        <i class="fa fa-fw fa-heart"></i>My Wishlist
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shopping-cart.html">
-                                                        <i class="fa fa-fw fa-shopping-cart"></i>My Cart
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout.html">
-                                                        <i class="fa fa-fw fa-usd"></i>Checkout
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="login.html">
-                                                        <i class="fa fa-fw fa-unlock-alt"></i>Login
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <h3>LANGUAGE</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/en.webp" alt="">English
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/fr.webp" alt="">French
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/ge.webp" alt="">German
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img width="18" height="12" src="assets/img/icon/sp.webp" alt="">Spanish
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <h3>CURRENCY</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">$ - USD</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">€ - Euro</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">£ - GBP</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                
                                 <div class="mini-cart-area">
                                     <div class="header-menu-item-icon">
                                         <a href="#" class="icon-cart">
